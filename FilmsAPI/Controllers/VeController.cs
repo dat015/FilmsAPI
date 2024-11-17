@@ -17,11 +17,11 @@ namespace FilmsAPI.Controllers
         }
 
         [HttpGet(Name = "GetVe")]
-        public async Task<IActionResult> GetVe()
+        public ActionResult GetVe()
         {
             try
             {
-                var ve = await _db.Ves.ToListAsync();
+                var ve = _db.Ves.ToListAsync();
                 return Ok(ve);
             }
             catch (Exception ex)
@@ -51,7 +51,7 @@ namespace FilmsAPI.Controllers
             }
         }
 
-        [HttpPost(Name = "Update")]
+        [HttpPut(Name = "Update")]
         public async Task<IActionResult> UpdateVe([FromBody] Ve dto)
         {
             if (dto == null)

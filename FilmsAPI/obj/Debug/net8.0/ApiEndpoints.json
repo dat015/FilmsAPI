@@ -1,5 +1,185 @@
 [
   {
+    "ContainingType": "FilmsAPI.Controllers.QuyenController",
+    "Method": "GetQuyen",
+    "RelativePath": "api/Quyen",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "EndpointName": "GetQuyen"
+  },
+  {
+    "ContainingType": "FilmsAPI.Controllers.QuyenController",
+    "Method": "AddQuyen",
+    "RelativePath": "api/Quyen",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "FilmsAPI.Models.Quyen",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [],
+    "EndpointName": "AddQuyen"
+  },
+  {
+    "ContainingType": "FilmsAPI.Controllers.QuyenController",
+    "Method": "UpdateQuyen",
+    "RelativePath": "api/Quyen",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "FilmsAPI.Models.Quyen",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [],
+    "EndpointName": "UpdateQuyen"
+  },
+  {
+    "ContainingType": "FilmsAPI.Controllers.TinhTrangController",
+    "Method": "GetTinhTrang",
+    "RelativePath": "api/TinhTrang",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "EndpointName": "GetTinhTrang"
+  },
+  {
+    "ContainingType": "FilmsAPI.Controllers.TinhTrangController",
+    "Method": "AddTinhTrang",
+    "RelativePath": "api/TinhTrang",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "FilmsAPI.Models.TinhTrang",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [],
+    "EndpointName": "AddTinhTrang"
+  },
+  {
+    "ContainingType": "FilmsAPI.Controllers.TinhTrangController",
+    "Method": "UpdateTinhTrang",
+    "RelativePath": "api/TinhTrang",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "FilmsAPI.Models.TinhTrang",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [],
+    "EndpointName": "UpdateTinhTrang"
+  },
+  {
+    "ContainingType": "FilmsAPI.Controllers.VeController",
+    "Method": "GetVe",
+    "RelativePath": "api/Ve",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "EndpointName": "GetVe"
+  },
+  {
+    "ContainingType": "FilmsAPI.Controllers.VeController",
+    "Method": "AddVe",
+    "RelativePath": "api/Ve",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "FilmsAPI.Models.Ve",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [],
+    "EndpointName": "ThemVe"
+  },
+  {
+    "ContainingType": "FilmsAPI.Controllers.VeController",
+    "Method": "UpdateVe",
+    "RelativePath": "api/Ve",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "FilmsAPI.Models.Ve",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [],
+    "EndpointName": "Update"
+  },
+  {
+    "ContainingType": "FilmsAPI.Controllers.XuatChieuController",
+    "Method": "GetXuatChieu",
+    "RelativePath": "api/XuatChieu",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "EndpointName": "GetXuatChieu"
+  },
+  {
+    "ContainingType": "FilmsAPI.Controllers.XuatChieuController",
+    "Method": "AddXuatChieu",
+    "RelativePath": "api/XuatChieu",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "FilmsAPI.Models.XuatChieu",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [],
+    "EndpointName": "AddXuatChieu"
+  },
+  {
+    "ContainingType": "FilmsAPI.Controllers.XuatChieuController",
+    "Method": "UpdateXuatChieu",
+    "RelativePath": "api/XuatChieu",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "FilmsAPI.Models.XuatChieu",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [],
+    "EndpointName": "UpdateXuatChieu"
+  },
+  {
     "ContainingType": "FilmsAPI.Controllers.WeatherForecastController",
     "Method": "Get",
     "RelativePath": "WeatherForecast",

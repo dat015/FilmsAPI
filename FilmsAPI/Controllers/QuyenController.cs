@@ -17,11 +17,11 @@ namespace FilmsAPI.Controllers
         }
 
         [HttpGet(Name = "GetQuyen")]
-        public async Task<IActionResult> GetQuyen()
+        public ActionResult GetQuyen()
         {
             try
             {
-                var quyen = await _db.Quyens.ToListAsync();
+                var quyen = _db.Quyens.ToList();
                 return Ok(quyen);
             }
             catch (Exception ex)
@@ -55,7 +55,7 @@ namespace FilmsAPI.Controllers
             }
         }
 
-        [HttpPost(Name = "UpdateQuyen")]
+        [HttpPut(Name = "UpdateQuyen")]
         public async Task<IActionResult> UpdateQuyen([FromBody] Quyen dto)
         {
             if (string.IsNullOrWhiteSpace(dto.TenQuyen))

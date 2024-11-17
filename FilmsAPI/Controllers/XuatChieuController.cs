@@ -17,11 +17,11 @@ namespace FilmsAPI.Controllers
         }
 
         [HttpGet(Name = "GetXuatChieu")]
-        public async Task<IActionResult> GetXuatChieu()
+        public ActionResult GetXuatChieu()
         {
             try
             {
-                var xuatChieu = await _db.XuatChieus.ToListAsync();
+                var xuatChieu = _db.XuatChieus.ToListAsync();
                 return Ok(xuatChieu);
             }
             catch (Exception ex)
@@ -51,7 +51,7 @@ namespace FilmsAPI.Controllers
             }
         }
 
-        [HttpPost(Name = "UpdateXuatChieu")]
+        [HttpPut(Name = "UpdateXuatChieu")]
         public async Task<IActionResult> UpdateXuatChieu([FromBody] XuatChieu dto)
         {
             if (dto == null)

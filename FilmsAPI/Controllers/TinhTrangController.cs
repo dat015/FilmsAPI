@@ -17,11 +17,11 @@ namespace FilmsAPI.Controllers
         }
 
         [HttpGet(Name = "GetTinhTrang")]
-        public async Task<IActionResult> GetTinhTrang()
+        public ActionResult GetTinhTrang()
         {
             try
             {
-                var tinhTrang = await _db.TinhTrangs.ToListAsync();
+                var tinhTrang = _db.TinhTrangs.ToListAsync();
                 return Ok(tinhTrang);
             }
             catch (Exception ex)
@@ -55,7 +55,7 @@ namespace FilmsAPI.Controllers
             }
         }
 
-        [HttpPost(Name = "UpdateTinhTrang")]
+        [HttpPut(Name = "UpdateTinhTrang")]
         public async Task<IActionResult> UpdateTinhTrang([FromBody] TinhTrang dto)
         {
             if (string.IsNullOrWhiteSpace(dto.TenTinhTrang))
