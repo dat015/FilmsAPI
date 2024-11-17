@@ -29,9 +29,14 @@ namespace FilmsAPI.Controllers
         }
 
 
-        [HttpPut("DangPhim", Name = "UpdateDangPhim")]
+        [HttpPost]
         public async Task<IActionResult> Update([FromBody] DangPhim dto)
         {
+            if (dto == null)
+            {
+                return BadRequest(new { message = "Dữ liệu không hợp lệ." });
+            }
+
             if (string.IsNullOrWhiteSpace(dto.TenDangPhim))
             {
                 return BadRequest(new { message = "Tên dạng phim không được để trống" });
@@ -40,14 +45,12 @@ namespace FilmsAPI.Controllers
             try
             {
                 var dangPhim = await _db.DangPhims.FirstOrDefaultAsync(dp => dp.MaDangPhim == dto.MaDangPhim);
-
                 if (dangPhim == null)
                 {
                     return NotFound(new { message = "Không tìm thấy bản ghi cần cập nhật" });
                 }
 
                 dangPhim.TenDangPhim = dto.TenDangPhim;
-
                 await _db.SaveChangesAsync();
                 return Ok(new { message = "Cập nhật thành công" });
             }
@@ -57,6 +60,8 @@ namespace FilmsAPI.Controllers
             }
         }
 
+
+
         [HttpPut(Name = "Create")]
         public async Task<IActionResult> Create([FromBody] DangPhim dto)
         {
@@ -64,11 +69,7 @@ namespace FilmsAPI.Controllers
             {
                 return BadRequest(new { message = "Tên dạng phim không được để trống" });
             }
-            if (dto.MaDangPhim != 0)
-            {
-                return BadRequest(new { message = "Không được điền mã dạng phim" });
-
-            }
+           
 
             try
             {

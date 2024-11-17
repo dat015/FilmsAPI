@@ -321,6 +321,22 @@
   },
   {
     "ContainingType": "FilmsAPI.Controllers.DangPhimController",
+    "Method": "Update",
+    "RelativePath": "DangPhim",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "FilmsAPI.Models.DangPhim",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FilmsAPI.Controllers.DangPhimController",
     "Method": "Create",
     "RelativePath": "DangPhim",
     "HttpMethod": "PUT",
@@ -335,22 +351,5 @@
     ],
     "ReturnTypes": [],
     "EndpointName": "Create"
-  },
-  {
-    "ContainingType": "FilmsAPI.Controllers.DangPhimController",
-    "Method": "Update",
-    "RelativePath": "DangPhim/DangPhim",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "dto",
-        "Type": "FilmsAPI.Models.DangPhim",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [],
-    "EndpointName": "UpdateDangPhim"
   }
 ]
