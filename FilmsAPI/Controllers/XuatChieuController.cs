@@ -30,7 +30,7 @@ namespace FilmsAPI.Controllers
             }
         }
 
-        [HttpPost(Name = "AddXuatChieu")]
+        [HttpPut(Name = "AddXuatChieu")]
         public async Task<IActionResult> AddXuatChieu([FromBody] XuatChieu dto)
         {
             if (dto == null)
