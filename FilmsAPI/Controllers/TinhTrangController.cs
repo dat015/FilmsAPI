@@ -17,7 +17,11 @@ namespace FilmsAPI.Controllers
         }
 
         [HttpGet(Name = "GetTinhTrang")]
+<<<<<<< HEAD
         public  IActionResult GetTinhTrang()
+=======
+        public IActionResult GetTinhTrang()
+>>>>>>> 1c869951a1616141ed403888775c3e70a4a3ad35
         {
             try
             {

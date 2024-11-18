@@ -17,11 +17,11 @@ namespace FilmsAPI.Controllers
         }
 
         [HttpGet(Name = "GetQuyen")]
-        public async Task<IActionResult> GetQuyen()
+        public IActionResult GetQuyen()
         {
             try
             {
-                var quyen = await _db.Quyens.ToListAsync();
+                var quyen = _db.Quyens.ToList();
                 return Ok(quyen);
             }
             catch (Exception ex)
