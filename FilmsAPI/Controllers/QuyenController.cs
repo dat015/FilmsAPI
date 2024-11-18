@@ -30,7 +30,7 @@ namespace FilmsAPI.Controllers
             }
         }
 
-        [HttpPost(Name = "AddQuyen")]
+        [HttpPut(Name = "AddQuyen")]
         public async Task<IActionResult> AddQuyen([FromBody] Quyen dto)
         {
             if (dto == null)

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace FilmsAPI.Models;
 
-public partial class QuocGium
+public partial class QuocGia
 {
     public int IdQuocGia { get; set; }
 

@@ -4948,19 +4948,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\luong\\.nuget\\packages\\": {}
+    "C:\\Users\\NHAN\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\project\\FilmsAPI\\FilmsAPI\\FilmsAPI.csproj",
+      "projectUniqueName": "D:\\HỌC KỲ 1 2024-2025\\Lập trình trực quan\\FilmsAPI\\FilmsAPI\\FilmsAPI.csproj",
       "projectName": "FilmsAPI",
-      "projectPath": "C:\\project\\FilmsAPI\\FilmsAPI\\FilmsAPI.csproj",
-      "packagesPath": "C:\\Users\\luong\\.nuget\\packages\\",
-      "outputPath": "C:\\project\\FilmsAPI\\FilmsAPI\\obj\\",
+      "projectPath": "D:\\HỌC KỲ 1 2024-2025\\Lập trình trực quan\\FilmsAPI\\FilmsAPI\\FilmsAPI.csproj",
+      "packagesPath": "C:\\Users\\NHAN\\.nuget\\packages\\",
+      "outputPath": "D:\\HỌC KỲ 1 2024-2025\\Lập trình trực quan\\FilmsAPI\\FilmsAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\luong\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\NHAN\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

@@ -19,12 +19,12 @@ namespace FilmsAPI.Controllers
             _logger = logger;
         }
 
-        [HttpGet(Name = "GetNhanVien")]
-        public IActionResult Get()
-        {
-            FilmsmanageDbContext db = new FilmsmanageDbContext();
-            var nhanvien = db.NhanViens.ToList(); 
-            return Ok(nhanvien);
-        }
+        //[HttpGet(Name = "GetNhanVien")]
+        //public IActionResult Get()
+        //{
+        //    FilmsmanageDbContext db = new FilmsmanageDbContext();
+        //    var nhanvien = db.NhanViens.ToList();
+        //    return Ok(nhanvien);
+        //}
     }
 }

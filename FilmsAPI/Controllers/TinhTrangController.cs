@@ -17,11 +17,11 @@ namespace FilmsAPI.Controllers
         }
 
         [HttpGet(Name = "GetTinhTrang")]
-        public async Task<IActionResult> GetTinhTrang()
+        public  IActionResult GetTinhTrang()
         {
             try
             {
-                var tinhTrang = await _db.TinhTrangs.ToListAsync();
+                var tinhTrang =  _db.TinhTrangs.ToList();
                 return Ok(tinhTrang);
             }
             catch (Exception ex)
@@ -30,7 +30,7 @@ namespace FilmsAPI.Controllers
             }
         }
 
-        [HttpPost(Name = "AddTinhTrang")]
+        [HttpPut(Name = "AddTinhTrang")]
         public async Task<IActionResult> AddTinhTrang([FromBody] TinhTrang dto)
         {
             if (dto == null)
