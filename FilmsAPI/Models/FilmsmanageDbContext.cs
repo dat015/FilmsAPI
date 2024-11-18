@@ -35,7 +35,7 @@ public partial class FilmsmanageDbContext : DbContext
 
     public virtual DbSet<PhongChieu> PhongChieus { get; set; }
 
-    public virtual DbSet<QuocGium> QuocGia { get; set; }
+    public virtual DbSet<QuocGia> QuocGia { get; set; }
 
     public virtual DbSet<Quyen> Quyens { get; set; }
 
@@ -47,7 +47,11 @@ public partial class FilmsmanageDbContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
+<<<<<<< HEAD
+        => optionsBuilder.UseSqlServer("Server=LAPTOP-98U3CSGC\\MATERMOS;Database=Filmsmanage_Db;Trusted_Connection=True;TrustServerCertificate=True;");
+=======
         => optionsBuilder.UseSqlServer("Server=.\\SQLEXPRESS;Database=Filmsmanage_Db;Trusted_Connection=True;TrustServerCertificate=True;");
+>>>>>>> 1c869951a1616141ed403888775c3e70a4a3ad35
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -215,7 +219,7 @@ public partial class FilmsmanageDbContext : DbContext
             entity.Property(e => e.TenPhongChieu).HasMaxLength(255);
         });
 
-        modelBuilder.Entity<QuocGium>(entity =>
+        modelBuilder.Entity<QuocGia>(entity =>
         {
             entity.HasKey(e => e.IdQuocGia).HasName("PK__QuocGia__DEA34C5E655B07F0");
 

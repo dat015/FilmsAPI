@@ -1,5 +1,10 @@
 [
   {
+<<<<<<< HEAD
+    "ContainingType": "FilmsAPI.Controllers.NhanVienController",
+    "Method": "Get",
+    "RelativePath": "api/NhanVien",
+=======
     "ContainingType": "FilmsAPI.Controllers.DanhSachDatVeOnlineController",
     "Method": "AddDS",
     "RelativePath": "api/DanhSachDatVeOnline",
@@ -132,11 +137,195 @@
     "ContainingType": "FilmsAPI.Controllers.QuyenController",
     "Method": "GetQuyen",
     "RelativePath": "api/Quyen",
+>>>>>>> 1c869951a1616141ed403888775c3e70a4a3ad35
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": [],
+<<<<<<< HEAD
+    "EndpointName": "GetNhanVien"
+  },
+  {
+    "ContainingType": "FilmsAPI.Controllers.NhanVienController",
+    "Method": "AddNhanVien",
+    "RelativePath": "api/NhanVien",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "FilmsAPI.Models.NhanVien",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [],
+    "EndpointName": "AddNhanVien"
+  },
+  {
+    "ContainingType": "FilmsAPI.Controllers.NhanVienController",
+    "Method": "UpdateNhanVien",
+    "RelativePath": "api/NhanVien",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "FilmsAPI.Models.NhanVien",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [],
+    "EndpointName": "UpdateNhanVien"
+  },
+  {
+    "ContainingType": "FilmsAPI.Controllers.PhimController",
+    "Method": "Get",
+    "RelativePath": "api/Phim",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "EndpointName": "GetPhim"
+  },
+  {
+    "ContainingType": "FilmsAPI.Controllers.PhimController",
+    "Method": "AddPhim",
+    "RelativePath": "api/Phim",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "FilmsAPI.Models.Phim",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [],
+    "EndpointName": "AddPhim"
+  },
+  {
+    "ContainingType": "FilmsAPI.Controllers.PhimController",
+    "Method": "UpdatePhim",
+    "RelativePath": "api/Phim",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "FilmsAPI.Models.Phim",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [],
+    "EndpointName": "UpdatePhim"
+  },
+  {
+    "ContainingType": "FilmsAPI.Controllers.PhongChieuController",
+    "Method": "GetPhongChieu",
+    "RelativePath": "api/PhongChieu",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "EndpointName": "GetPhongChieu"
+  },
+  {
+    "ContainingType": "FilmsAPI.Controllers.PhongChieuController",
+    "Method": "AddPhongChieu",
+    "RelativePath": "api/PhongChieu",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "FilmsAPI.Models.PhongChieu",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [],
+    "EndpointName": "AddPhongChieu"
+  },
+  {
+    "ContainingType": "FilmsAPI.Controllers.PhongChieuController",
+    "Method": "UpdatePhongChieu",
+    "RelativePath": "api/PhongChieu",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "FilmsAPI.Models.PhongChieu",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [],
+    "EndpointName": "UpdatePhongChieu"
+  },
+  {
+    "ContainingType": "FilmsAPI.Controllers.QuocGiaController",
+    "Method": "Get",
+    "RelativePath": "api/QuocGia",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "EndpointName": "GetQuocGia"
+  },
+  {
+    "ContainingType": "FilmsAPI.Controllers.QuocGiaController",
+    "Method": "AddQuocGia",
+    "RelativePath": "api/QuocGia",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "FilmsAPI.Models.QuocGia",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [],
+    "EndpointName": "AddQuocGia"
+  },
+  {
+    "ContainingType": "FilmsAPI.Controllers.QuocGiaController",
+    "Method": "UpdateQuocGia",
+    "RelativePath": "api/QuocGia",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "FilmsAPI.Models.QuocGia",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [],
+    "EndpointName": "UpdateQuocGia"
+  },
+  {
+    "ContainingType": "FilmsAPI.Controllers.QuyenController",
+    "Method": "GetQuyen",
+    "RelativePath": "api/Quyen",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+=======
+>>>>>>> 1c869951a1616141ed403888775c3e70a4a3ad35
     "EndpointName": "GetQuyen"
   },
   {
@@ -249,8 +438,13 @@
   {
     "ContainingType": "FilmsAPI.Controllers.VeController",
     "Method": "UpdateVe",
+<<<<<<< HEAD
+    "RelativePath": "api/Ve",
+    "HttpMethod": "POST",
+=======
     "RelativePath": "api/Ve/api/Ve",
     "HttpMethod": "PUT",
+>>>>>>> 1c869951a1616141ed403888775c3e70a4a3ad35
     "IsController": true,
     "Order": 0,
     "Parameters": [
@@ -261,7 +455,11 @@
       }
     ],
     "ReturnTypes": [],
+<<<<<<< HEAD
+    "EndpointName": "Update"
+=======
     "EndpointName": "UpdateVe"
+>>>>>>> 1c869951a1616141ed403888775c3e70a4a3ad35
   },
   {
     "ContainingType": "FilmsAPI.Controllers.XuatChieuController",
@@ -307,6 +505,8 @@
     ],
     "ReturnTypes": [],
     "EndpointName": "UpdateXuatChieu"
+<<<<<<< HEAD
+=======
   },
   {
     "ContainingType": "FilmsAPI.Controllers.DangPhimController",
@@ -351,5 +551,6 @@
     ],
     "ReturnTypes": [],
     "EndpointName": "Create"
+>>>>>>> 1c869951a1616141ed403888775c3e70a4a3ad35
   }
 ]

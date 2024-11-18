@@ -35,7 +35,7 @@ public partial class Phim
 
     public virtual ICollection<DanhSachDatVeOnline> DanhSachDatVeOnlines { get; set; } = new List<DanhSachDatVeOnline>();
 
-    public virtual QuocGium IdQuocGiaNavigation { get; set; } = null!;
+    public virtual QuocGia IdQuocGiaNavigation { get; set; } = null!;
 
     public virtual DangPhim MaDangPhimNavigation { get; set; } = null!;
 
