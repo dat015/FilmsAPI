@@ -1,48 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\project\\FilmsAPI\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|c:\\project\\filmsapi\\filmsapi\\controllers\\xuatchieucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|solutionrelative:filmsapi\\controllers\\xuatchieucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|c:\\project\\filmsapi\\filmsapi\\controllers\\dangphimcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|solutionrelative:filmsapi\\controllers\\dangphimcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|c:\\project\\filmsapi\\filmsapi\\controllers\\vecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|solutionrelative:filmsapi\\controllers\\vecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|c:\\project\\filmsapi\\filmsapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|solutionrelative:filmsapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|c:\\project\\filmsapi\\filmsapi\\controllers\\quyencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|solutionrelative:filmsapi\\controllers\\quyencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|c:\\project\\filmsapi\\filmsapi\\controllers\\tinhtrangcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|solutionrelative:filmsapi\\controllers\\tinhtrangcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|c:\\project\\filmsapi\\filmsapi\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|solutionrelative:filmsapi\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|c:\\project\\filmsapi\\filmsapi\\filmsapi.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
-      "RelativeMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|solutionrelative:filmsapi\\filmsapi.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|c:\\project\\filmsapi\\filmsapi\\models\\filmsmanagedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|solutionrelative:filmsapi\\models\\filmsmanagedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|c:\\project\\filmsapi\\filmsapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|solutionrelative:filmsapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 1,
@@ -50,7 +9,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 250,
-          "SelectedChildIndex": 12,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -99,127 +58,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{57d563b6-44a5-47df-85be-f4199ad6b651}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "XuatChieuController.cs",
-              "DocumentMoniker": "C:\\project\\FilmsAPI\\FilmsAPI\\Controllers\\XuatChieuController.cs",
-              "RelativeDocumentMoniker": "FilmsAPI\\Controllers\\XuatChieuController.cs",
-              "ToolTip": "C:\\project\\FilmsAPI\\FilmsAPI\\Controllers\\XuatChieuController.cs",
-              "RelativeToolTip": "FilmsAPI\\Controllers\\XuatChieuController.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAAwCAAAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-16T16:04:12.248Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "DangPhimController.cs",
-              "DocumentMoniker": "C:\\project\\FilmsAPI\\FilmsAPI\\Controllers\\DangPhimController.cs",
-              "RelativeDocumentMoniker": "FilmsAPI\\Controllers\\DangPhimController.cs",
-              "ToolTip": "C:\\project\\FilmsAPI\\FilmsAPI\\Controllers\\DangPhimController.cs",
-              "RelativeToolTip": "FilmsAPI\\Controllers\\DangPhimController.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-16T16:01:20.556Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "QuyenController.cs",
-              "DocumentMoniker": "C:\\project\\FilmsAPI\\FilmsAPI\\Controllers\\QuyenController.cs",
-              "RelativeDocumentMoniker": "FilmsAPI\\Controllers\\QuyenController.cs",
-              "ToolTip": "C:\\project\\FilmsAPI\\FilmsAPI\\Controllers\\QuyenController.cs",
-              "RelativeToolTip": "FilmsAPI\\Controllers\\QuyenController.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAAwBcAAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-16T16:00:44.074Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "VeController.cs",
-              "DocumentMoniker": "C:\\project\\FilmsAPI\\FilmsAPI\\Controllers\\VeController.cs",
-              "RelativeDocumentMoniker": "FilmsAPI\\Controllers\\VeController.cs",
-              "ToolTip": "C:\\project\\FilmsAPI\\FilmsAPI\\Controllers\\VeController.cs",
-              "RelativeToolTip": "FilmsAPI\\Controllers\\VeController.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAAAADYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-16T15:59:39.555Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "launchSettings.json",
-              "DocumentMoniker": "C:\\project\\FilmsAPI\\FilmsAPI\\Properties\\launchSettings.json",
-              "RelativeDocumentMoniker": "FilmsAPI\\Properties\\launchSettings.json",
-              "ToolTip": "C:\\project\\FilmsAPI\\FilmsAPI\\Properties\\launchSettings.json",
-              "RelativeToolTip": "FilmsAPI\\Properties\\launchSettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-11-16T15:58:05.337Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\project\\FilmsAPI\\FilmsAPI\\Program.cs",
-              "RelativeDocumentMoniker": "FilmsAPI\\Program.cs",
-              "ToolTip": "C:\\project\\FilmsAPI\\FilmsAPI\\Program.cs",
-              "RelativeToolTip": "FilmsAPI\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-16T15:56:55.767Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "TinhTrangController.cs",
-              "DocumentMoniker": "C:\\project\\FilmsAPI\\FilmsAPI\\Controllers\\TinhTrangController.cs",
-              "RelativeDocumentMoniker": "FilmsAPI\\Controllers\\TinhTrangController.cs",
-              "ToolTip": "C:\\project\\FilmsAPI\\FilmsAPI\\Controllers\\TinhTrangController.cs",
-              "RelativeToolTip": "FilmsAPI\\Controllers\\TinhTrangController.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAuwBwAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-16T16:00:13.871Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "FilmsAPI.http",
-              "DocumentMoniker": "C:\\project\\FilmsAPI\\FilmsAPI\\FilmsAPI.http",
-              "RelativeDocumentMoniker": "FilmsAPI\\FilmsAPI.http",
-              "ToolTip": "C:\\project\\FilmsAPI\\FilmsAPI\\FilmsAPI.http",
-              "RelativeToolTip": "FilmsAPI\\FilmsAPI.http",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
-              "WhenOpened": "2024-11-16T15:57:55.104Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "FilmsmanageDbContext.cs",
-              "DocumentMoniker": "C:\\project\\FilmsAPI\\FilmsAPI\\Models\\FilmsmanageDbContext.cs",
-              "RelativeDocumentMoniker": "FilmsAPI\\Models\\FilmsmanageDbContext.cs",
-              "ToolTip": "C:\\project\\FilmsAPI\\FilmsAPI\\Models\\FilmsmanageDbContext.cs",
-              "RelativeToolTip": "FilmsAPI\\Models\\FilmsmanageDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADEAAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-16T15:57:34.29Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\project\\FilmsAPI\\FilmsAPI\\appsettings.json",
-              "RelativeDocumentMoniker": "FilmsAPI\\appsettings.json",
-              "ToolTip": "C:\\project\\FilmsAPI\\FilmsAPI\\appsettings.json",
-              "RelativeToolTip": "FilmsAPI\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-11-16T15:57:28.138Z"
             }
           ]
         },
