@@ -1,7 +1,8 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System.Data.Entity;
 using FilmsAPI.Models;
+using Microsoft.EntityFrameworkCore;
+using FilmsAPI.DTO;
 
 namespace FilmsAPI.Controllers
 {
@@ -16,13 +17,13 @@ namespace FilmsAPI.Controllers
         }
 
         [HttpGet("{maPhong}", Name = "GetDanhSachGhe")]
-        public  IActionResult GetDanhSachGhe(int maPhong)
+        public async Task<IActionResult> GetDanhSachGhe(int maPhong)
         {
             try
             {
-                var ds =  _db.Ghes
-                    .Where(d => d.MaPhong == maPhong)
-                    .ToList();
+                var ds = await _db.Ghes
+                .Where(d => d.MaPhong == maPhong)
+                    .ToListAsync();
 
                 if (ds == null || !ds.Any())
                 {
@@ -38,42 +39,55 @@ namespace FilmsAPI.Controllers
 
         }
 
-        [HttpPut("{id}", Name = "UpdateGhe")]
-        public async Task<IActionResult> UpdateGhe(int id, [FromBody] Ghe dto)
+        [HttpPut(Name = "UpdateGhe")]
+        public async Task<IActionResult> UpdateGhe([FromBody] Ghe dto)
         {
+            // Kiểm tra nếu dto là null
+            if (dto == null)
+            {
+                return BadRequest(new { Message = "Dữ liệu không hợp lệ." });
+            }
+
             try
             {
-                var ghe = await _db.Ghes.FindAsync(id);
+                // Tìm ghế theo soGhe từ dto
+                var ghe = await _db.Ghes.FindAsync(dto.SoGhe);
+
+                // Kiểm tra nếu ghế không tồn tại
                 if (ghe == null)
                 {
-                    return NotFound("Không tìm thấy ghế với ID được cung cấp.");
+                    return NotFound(new { Message = "Không tìm thấy ghế với ID được cung cấp." });
                 }
 
-                ghe.SoGhe = dto.SoGhe;
+                // Cập nhật các giá trị của ghế
                 ghe.MaPhong = dto.MaPhong;
                 ghe.TrangThaiGhe = dto.TrangThaiGhe;
                 ghe.MaTinhTrang = dto.MaTinhTrang;
                 ghe.MaLoaiGhe = dto.MaLoaiGhe;
 
+                // Lưu thay đổi vào cơ sở dữ liệu
                 await _db.SaveChangesAsync();
 
-                return Ok(new { Message = "Cập nhật ghế thành công!", UpdatedGhe =  GetDanhSachGhe(ghe.MaPhong) });
+                // Trả về thông tin đã cập nhật
+                return Ok(new { Message = "Cập nhật ghế thành công!", UpdatedGhe = GetDanhSachGhe(ghe.MaPhong) });
             }
             catch (Exception ex)
             {
+                // Xử lý ngoại lệ nếu có
                 return BadRequest(new { Message = "Đã xảy ra lỗi khi cập nhật ghế.", Error = ex.Message });
             }
         }
 
+
         [HttpPost(Name = "AddGhe")]
         public async Task<IActionResult> AddGhe([FromBody] Ghe dto)
         {
+            if (dto == null)
+            {
+                return BadRequest(new { Message = "Dữ liệu không hợp lệ!" });
+            }
             try
             {
-                if (dto == null)
-                {
-                    return BadRequest(new { Message = "Dữ liệu không hợp lệ!" });
-                }
 
                 _db.Ghes.Add(dto);
 

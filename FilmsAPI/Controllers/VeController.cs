@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using FilmsAPI.Models;
+using Microsoft.EntityFrameworkCore;
 using System.Data.Entity;
 
 namespace FilmsAPI.Controllers
@@ -17,11 +18,11 @@ namespace FilmsAPI.Controllers
         }
 
         [HttpGet(Name = "GetVe")]
-        public IActionResult GetVe()
+        public async Task<IActionResult> GetVe()
         {
             try
             {
-                var ve =  _db.Ves.ToList();
+                var ve = await _db.Ves.ToListAsync();
                 return Ok(ve);
             }
             catch (Exception ex)

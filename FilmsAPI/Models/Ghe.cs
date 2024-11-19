@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace FilmsAPI.Models;
 
@@ -15,11 +16,15 @@ public partial class Ghe
 
     public int MaLoaiGhe { get; set; }
 
+
     public virtual LoaiGhe MaLoaiGheNavigation { get; set; } = null!;
+
 
     public virtual PhongChieu MaPhongNavigation { get; set; } = null!;
 
+
     public virtual TinhTrang MaTinhTrangNavigation { get; set; } = null!;
+
 
     public virtual ICollection<Ve> Ves { get; set; } = new List<Ve>();
 }

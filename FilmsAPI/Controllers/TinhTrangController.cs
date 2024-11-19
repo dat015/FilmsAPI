@@ -1,6 +1,7 @@
 ﻿using FilmsAPI.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Data.Entity;
 
 namespace FilmsAPI.Controllers
@@ -17,11 +18,11 @@ namespace FilmsAPI.Controllers
         }
 
         [HttpGet(Name = "GetTinhTrang")]
-        public IActionResult GetTinhTrang()
+        public async Task<IActionResult> GetTinhTrang()
         {
             try
             {
-                var tinhTrang =  _db.TinhTrangs.ToList();
+                var tinhTrang = await _db.TinhTrangs.ToListAsync();
                 return Ok(tinhTrang);
             }
             catch (Exception ex)

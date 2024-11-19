@@ -1,7 +1,7 @@
 ﻿using FilmsAPI.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System.Data.Entity;
+using Microsoft.EntityFrameworkCore;
 
 namespace FilmsAPI.Controllers
 {
