@@ -1,10 +1,5 @@
 [
   {
-<<<<<<< HEAD
-    "ContainingType": "FilmsAPI.Controllers.NhanVienController",
-    "Method": "Get",
-    "RelativePath": "api/NhanVien",
-=======
     "ContainingType": "FilmsAPI.Controllers.DanhSachDatVeOnlineController",
     "Method": "AddDS",
     "RelativePath": "api/DanhSachDatVeOnline",
@@ -134,16 +129,14 @@
     "EndpointName": "GetDanhSachGhe"
   },
   {
-    "ContainingType": "FilmsAPI.Controllers.QuyenController",
-    "Method": "GetQuyen",
-    "RelativePath": "api/Quyen",
->>>>>>> 1c869951a1616141ed403888775c3e70a4a3ad35
+    "ContainingType": "FilmsAPI.Controllers.NhanVienController",
+    "Method": "GetNhanVien",
+    "RelativePath": "api/NhanVien",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": [],
-<<<<<<< HEAD
     "EndpointName": "GetNhanVien"
   },
   {
@@ -240,7 +233,7 @@
     "ContainingType": "FilmsAPI.Controllers.PhongChieuController",
     "Method": "AddPhongChieu",
     "RelativePath": "api/PhongChieu",
-    "HttpMethod": "PUT",
+    "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
@@ -257,7 +250,7 @@
     "ContainingType": "FilmsAPI.Controllers.PhongChieuController",
     "Method": "UpdatePhongChieu",
     "RelativePath": "api/PhongChieu",
-    "HttpMethod": "POST",
+    "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
@@ -324,15 +317,13 @@
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": [],
-=======
->>>>>>> 1c869951a1616141ed403888775c3e70a4a3ad35
     "EndpointName": "GetQuyen"
   },
   {
     "ContainingType": "FilmsAPI.Controllers.QuyenController",
     "Method": "AddQuyen",
     "RelativePath": "api/Quyen",
-    "HttpMethod": "PUT",
+    "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
@@ -349,7 +340,7 @@
     "ContainingType": "FilmsAPI.Controllers.QuyenController",
     "Method": "UpdateQuyen",
     "RelativePath": "api/Quyen",
-    "HttpMethod": "POST",
+    "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
@@ -377,7 +368,7 @@
     "ContainingType": "FilmsAPI.Controllers.TinhTrangController",
     "Method": "AddTinhTrang",
     "RelativePath": "api/TinhTrang",
-    "HttpMethod": "PUT",
+    "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
@@ -394,7 +385,7 @@
     "ContainingType": "FilmsAPI.Controllers.TinhTrangController",
     "Method": "UpdateTinhTrang",
     "RelativePath": "api/TinhTrang",
-    "HttpMethod": "POST",
+    "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
@@ -422,7 +413,7 @@
     "ContainingType": "FilmsAPI.Controllers.VeController",
     "Method": "AddVe",
     "RelativePath": "api/Ve",
-    "HttpMethod": "PUT",
+    "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
@@ -438,13 +429,8 @@
   {
     "ContainingType": "FilmsAPI.Controllers.VeController",
     "Method": "UpdateVe",
-<<<<<<< HEAD
     "RelativePath": "api/Ve",
-    "HttpMethod": "POST",
-=======
-    "RelativePath": "api/Ve/api/Ve",
     "HttpMethod": "PUT",
->>>>>>> 1c869951a1616141ed403888775c3e70a4a3ad35
     "IsController": true,
     "Order": 0,
     "Parameters": [
@@ -455,11 +441,7 @@
       }
     ],
     "ReturnTypes": [],
-<<<<<<< HEAD
-    "EndpointName": "Update"
-=======
     "EndpointName": "UpdateVe"
->>>>>>> 1c869951a1616141ed403888775c3e70a4a3ad35
   },
   {
     "ContainingType": "FilmsAPI.Controllers.XuatChieuController",
@@ -476,7 +458,7 @@
     "ContainingType": "FilmsAPI.Controllers.XuatChieuController",
     "Method": "AddXuatChieu",
     "RelativePath": "api/XuatChieu",
-    "HttpMethod": "PUT",
+    "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
@@ -493,7 +475,7 @@
     "ContainingType": "FilmsAPI.Controllers.XuatChieuController",
     "Method": "UpdateXuatChieu",
     "RelativePath": "api/XuatChieu",
-    "HttpMethod": "POST",
+    "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
@@ -505,8 +487,6 @@
     ],
     "ReturnTypes": [],
     "EndpointName": "UpdateXuatChieu"
-<<<<<<< HEAD
-=======
   },
   {
     "ContainingType": "FilmsAPI.Controllers.DangPhimController",
@@ -523,22 +503,6 @@
     "ContainingType": "FilmsAPI.Controllers.DangPhimController",
     "Method": "Update",
     "RelativePath": "DangPhim",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "dto",
-        "Type": "FilmsAPI.Models.DangPhim",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "FilmsAPI.Controllers.DangPhimController",
-    "Method": "Create",
-    "RelativePath": "DangPhim",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -550,7 +514,23 @@
       }
     ],
     "ReturnTypes": [],
-    "EndpointName": "Create"
->>>>>>> 1c869951a1616141ed403888775c3e70a4a3ad35
+    "EndpointName": "UpdateDangPhim"
+  },
+  {
+    "ContainingType": "FilmsAPI.Controllers.DangPhimController",
+    "Method": "Create",
+    "RelativePath": "DangPhim",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "FilmsAPI.Models.DangPhim",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [],
+    "EndpointName": "CreateDangPhim"
   }
 ]

@@ -18,9 +18,9 @@ namespace FilmsAPI.Controllers
 
         // GET: api/NhanVien
         [HttpGet(Name = "GetNhanVien")]
-        public IActionResult Get()
+        public async Task<IActionResult> GetNhanVien()
         { 
-            var nhanvien = _db.NhanViens.ToList();
+            var nhanvien =await _db.NhanViens.ToListAsync();
             return Ok(nhanvien);
         }
 

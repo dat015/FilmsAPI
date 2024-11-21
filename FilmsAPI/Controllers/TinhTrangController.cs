@@ -1,7 +1,6 @@
 ﻿using FilmsAPI.Models;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System.Data.Entity;
+using Microsoft.EntityFrameworkCore;
 
 namespace FilmsAPI.Controllers
 {
@@ -11,39 +10,49 @@ namespace FilmsAPI.Controllers
     {
         private readonly FilmsmanageDbContext _db;
 
-        public TinhTrangController()
+        public TinhTrangController(FilmsmanageDbContext db)
         {
-            _db = new FilmsmanageDbContext();
+            _db = db;
         }
 
+        // Lấy danh sách tình trạng
         [HttpGet(Name = "GetTinhTrang")]
-<<<<<<< HEAD
-        public  IActionResult GetTinhTrang()
-=======
-        public IActionResult GetTinhTrang()
->>>>>>> 1c869951a1616141ed403888775c3e70a4a3ad35
+        public async Task<IActionResult> GetTinhTrang()
         {
             try
             {
-                var tinhTrang =  _db.TinhTrangs.ToList();
+                var tinhTrang = await _db.TinhTrangs.ToListAsync();
+                if (tinhTrang == null || tinhTrang.Count == 0)
+                {
+                    return NotFound("Không có dữ liệu tình trạng nào.");
+                }
                 return Ok(tinhTrang);
             }
             catch (Exception ex)
             {
-                return NotFound();
+                return StatusCode(StatusCodes.Status500InternalServerError, $"Lỗi hệ thống: {ex.Message}");
             }
         }
 
-        [HttpPut(Name = "AddTinhTrang")]
+        // Thêm tình trạng mới
+        [HttpPost(Name = "AddTinhTrang")]
         public async Task<IActionResult> AddTinhTrang([FromBody] TinhTrang dto)
         {
             if (dto == null)
             {
-                return BadRequest("Cung cấp đủ dữ liệu");
+                return BadRequest("Cung cấp đủ dữ liệu.");
             }
 
             try
             {
+                // Kiểm tra nếu tình trạng đã tồn tại (nếu cần)
+                var existingTinhTrang = await _db.TinhTrangs
+                    .FirstOrDefaultAsync(t => t.TenTinhTrang == dto.TenTinhTrang);
+                if (existingTinhTrang != null)
+                {
+                    return Conflict("Tình trạng này đã tồn tại.");
+                }
+
                 var tinhTrang = new TinhTrang
                 {
                     TenTinhTrang = dto.TenTinhTrang
@@ -51,20 +60,21 @@ namespace FilmsAPI.Controllers
 
                 _db.TinhTrangs.Add(tinhTrang);
                 await _db.SaveChangesAsync();
-                return Ok("Thêm thành công");
+                return CreatedAtAction("GetTinhTrang", new { id = tinhTrang.MaTinhTrang }, tinhTrang);
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return StatusCode(StatusCodes.Status500InternalServerError, $"Lỗi khi thêm tình trạng: {ex.Message}");
             }
         }
 
-        [HttpPost(Name = "UpdateTinhTrang")]
+        // Cập nhật tình trạng
+        [HttpPut(Name = "UpdateTinhTrang")]
         public async Task<IActionResult> UpdateTinhTrang([FromBody] TinhTrang dto)
         {
             if (string.IsNullOrWhiteSpace(dto.TenTinhTrang))
             {
-                return BadRequest("Tên tình trạng không được để trống");
+                return BadRequest("Tên tình trạng không được để trống.");
             }
 
             try
@@ -73,17 +83,17 @@ namespace FilmsAPI.Controllers
 
                 if (tinhTrang == null)
                 {
-                    return NotFound("Không tìm thấy bản ghi cần cập nhật");
+                    return NotFound($"Không tìm thấy tình trạng với mã {dto.MaTinhTrang}.");
                 }
 
                 tinhTrang.TenTinhTrang = dto.TenTinhTrang;
 
                 await _db.SaveChangesAsync();
-                return Ok("Cập nhật thành công");
+                return Ok("Cập nhật tình trạng thành công.");
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return StatusCode(StatusCodes.Status500InternalServerError, $"Lỗi khi cập nhật tình trạng: {ex.Message}");
             }
         }
     }

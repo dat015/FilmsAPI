@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using FilmsAPI.Models;
-using System.Data.Entity;
+using Microsoft.EntityFrameworkCore;
 
 namespace FilmsAPI.Controllers
 {
@@ -11,26 +11,28 @@ namespace FilmsAPI.Controllers
     {
         private readonly FilmsmanageDbContext _db;
 
-        public VeController()
+        public VeController(FilmsmanageDbContext db)
         {
-            _db = new FilmsmanageDbContext();
+            _db = db;
         }
 
+        // Lấy danh sách tất cả vé
         [HttpGet(Name = "GetVe")]
-        public IActionResult GetVe()
+        public async Task<IActionResult> GetVe()
         {
             try
             {
-                var ve =  _db.Ves.ToList();
+                var ve = await _db.Ves.ToListAsync();
                 return Ok(ve);
             }
             catch (Exception ex)
             {
-                return NotFound();
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
         }
 
-        [HttpPut(Name = "ThemVe")]
+        // Thêm vé mới
+        [HttpPost(Name = "ThemVe")]
         public async Task<IActionResult> AddVe([FromBody] Ve dto)
         {
             if (dto == null)
@@ -40,18 +42,26 @@ namespace FilmsAPI.Controllers
 
             try
             {
-                var ve = await _db.Ves.FindAsync(dto.IdVe);
-                ve = dto;
+                var ve = new Ve
+                {
+                    SoGhe = dto.SoGhe,
+                    DonGia = dto.DonGia,
+                    MaXuatChieu = dto.MaXuatChieu,
+                    // Thêm các thuộc tính khác nếu cần
+                };
+
+                _db.Ves.Add(ve);
                 await _db.SaveChangesAsync();
-                return Ok("Thêm thành công");
+                return Ok("Thêm vé thành công");
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
         }
 
-        [HttpPut("api/Ve", Name = "UpdateVe")]
+        // Cập nhật vé
+        [HttpPut(Name = "UpdateVe")]
         public async Task<IActionResult> UpdateVe([FromBody] Ve dto)
         {
             if (dto == null)
@@ -68,14 +78,17 @@ namespace FilmsAPI.Controllers
                     return NotFound("Không tìm thấy bản ghi cần cập nhật");
                 }
 
-                ve = dto;
+                // Chỉ cập nhật các thuộc tính cụ thể
+                ve.SoGhe = dto.SoGhe;
+                ve.DonGia = dto.DonGia;
+                ve.MaXuatChieu = dto.MaXuatChieu;
 
                 await _db.SaveChangesAsync();
-                return Ok("Cập nhật thành công");
+                return Ok("Cập nhật vé thành công");
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
         }
     }
