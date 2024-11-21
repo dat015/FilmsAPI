@@ -9,11 +9,11 @@ namespace FilmsAPI.Controllers
     [ApiController]
     public class XuatChieuController : ControllerBase
     {
-        private readonly FilmsmanageDbContext _db;
+        private readonly FilmsDbContext _db;
 
         public XuatChieuController()
         {
-            _db = new FilmsmanageDbContext();
+            _db = new FilmsDbContext();
         }
 
         [HttpGet(Name = "GetXuatChieu")]

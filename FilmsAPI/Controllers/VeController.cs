@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Mvc;
 using FilmsAPI.Models;
 using Microsoft.EntityFrameworkCore;
-using System.Data.Entity;
 
 namespace FilmsAPI.Controllers
 {
@@ -10,11 +9,11 @@ namespace FilmsAPI.Controllers
     [ApiController]
     public class VeController : ControllerBase
     {
-        private readonly FilmsmanageDbContext _db;
+        private readonly FilmsDbContext _db;
 
         public VeController()
         {
-            _db = new FilmsmanageDbContext();
+            _db = new FilmsDbContext();
         }
 
         [HttpGet(Name = "GetVe")]
@@ -41,7 +40,7 @@ namespace FilmsAPI.Controllers
 
             try
             {
-                var ve = await _db.Ves.FindAsync(dto.IdVe);
+                var ve = await _db.Ves.FindAsync(dto.MaVe);
                 ve = dto;
                 await _db.SaveChangesAsync();
                 return Ok("Thêm thành công");
@@ -62,7 +61,7 @@ namespace FilmsAPI.Controllers
 
             try
             {
-                var ve = await _db.Ves.FirstOrDefaultAsync(v => v.IdVe == dto.IdVe);
+                var ve = await _db.Ves.FirstOrDefaultAsync(v => v.MaVe == dto.MaVe);
 
                 if (ve == null)
                 {

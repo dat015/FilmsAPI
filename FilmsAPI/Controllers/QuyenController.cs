@@ -9,11 +9,11 @@ namespace FilmsAPI.Controllers
     [ApiController]
     public class QuyenController : ControllerBase
     {
-        private readonly FilmsmanageDbContext _db;
+        private readonly FilmsDbContext _db;
 
         public QuyenController()
         {
-            _db = new FilmsmanageDbContext();
+            _db = new FilmsDbContext();
         }
 
         [HttpGet(Name = "GetQuyen")]
@@ -82,7 +82,7 @@ namespace FilmsAPI.Controllers
                 quyen.TenQuyen = dto.TenQuyen;
                 await _db.SaveChangesAsync();
 
-                return NoContent(); 
+                return NoContent();
             }
             catch (Exception ex)
             {
