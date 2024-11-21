@@ -23,6 +23,7 @@ namespace FilmsAPI.Controllers
         {
             try
             {
+                //day la cmt
                 var dangPhims = await _db.DangPhims
                     .Include(d => d.Phims)
                     .Include(d => d.MaManHinhNavigation)
