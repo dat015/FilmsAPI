@@ -7,39 +7,31 @@ public partial class Phim
 {
     public int MaPhim { get; set; }
 
+    public string TenPhim { get; set; } = null!;
+
     public string GhiChu { get; set; } = null!;
 
-    public int DoDaiGio { get; set; }
+    public string Mota { get; set; } = null!;
 
-    public int DoDaiPhut { get; set; }
+    public string NoiDung { get; set; } = null!;
 
-    public DateTime NgayBatDau { get; set; }
+    public int ThoiLuong { get; set; }
 
-    public string AnhDaiDien { get; set; } = null!;
+    public DateOnly NgayKc { get; set; }
 
-    public string MoTaPhim { get; set; } = null!;
-
-    public DateTime NgayKetThuc { get; set; }
-
-    public int MaLoaiPhim { get; set; }
-
-    public int MaDangPhim { get; set; }
-
-    public int MaXuatChieu { get; set; }
-
-    public string NoiDungPhim { get; set; } = null!;
+    public DateOnly NgayKt { get; set; }
 
     public int DoTuoi { get; set; }
 
-    public int IdQuocGia { get; set; }
+    public string AnhBia { get; set; } = null!;
 
-    public virtual ICollection<DanhSachDatVeOnline> DanhSachDatVeOnlines { get; set; } = new List<DanhSachDatVeOnline>();
+    public string TenDaoDien { get; set; } = null!;
 
-    public virtual QuocGia IdQuocGiaNavigation { get; set; } = null!;
+    public int MaDangPhim { get; set; }
 
-    public virtual DangPhim MaDangPhimNavigation { get; set; } = null!;
+    public virtual DangPhim? MaDangPhimNavigation { get; set; } = null!;
 
-    public virtual LoaiPhim MaLoaiPhimNavigation { get; set; } = null!;
+    public virtual ICollection<TheLoaiCuaPhim>? TheLoaiCuaPhims { get; set; } = new List<TheLoaiCuaPhim>();
 
-    public virtual XuatChieu MaXuatChieuNavigation { get; set; } = null!;
+    public virtual ICollection<XuatChieu>? XuatChieus { get; set; } = new List<XuatChieu>();
 }

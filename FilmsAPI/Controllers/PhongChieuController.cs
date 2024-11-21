@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System.Data.Entity;
+using Microsoft.EntityFrameworkCore;
 using FilmsAPI.Models;
 
 namespace FilmsAPI.Controllers
@@ -9,10 +9,10 @@ namespace FilmsAPI.Controllers
     [ApiController]
     public class PhongChieuController : ControllerBase
     {
-        private readonly FilmsmanageDbContext _db;  
+        private readonly FilmsDbContext _db;
         public PhongChieuController()
         {
-            _db = new FilmsmanageDbContext();
+            _db = new FilmsDbContext();
         }
         [HttpGet(Name = "GetPhongChieu")]
         public async Task<IActionResult> GetPhongChieu()
@@ -39,6 +39,8 @@ namespace FilmsAPI.Controllers
                 var phongChieu = new PhongChieu
                 {
                     TenPhongChieu = dto.TenPhongChieu,
+                    SoGhe = dto.SoGhe,
+                    SoGheMotHang = dto.SoGheMotHang,
                 };
                 _db.PhongChieus.Add(phongChieu);
                 await _db.SaveChangesAsync();
@@ -58,7 +60,7 @@ namespace FilmsAPI.Controllers
             }
             try
             {
-                var phongChieu = await _db.PhongChieus.FindAsync(dto.IdPhongChieu);
+                var phongChieu = await _db.PhongChieus.FindAsync(dto.MaPhongChieu);
                 if (phongChieu == null)
                 {
                     return NotFound("Không tìm thấy phòng chiếu");

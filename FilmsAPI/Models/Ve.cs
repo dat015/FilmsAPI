@@ -5,27 +5,31 @@ namespace FilmsAPI.Models;
 
 public partial class Ve
 {
-    public int IdVe { get; set; }
+    public int MaVe { get; set; }
 
-    public int MaPhong { get; set; }
+    public decimal GiaVe { get; set; }
 
-    public int MaGia { get; set; }
+    public bool TrangThai { get; set; }
 
-    public decimal DonGia { get; set; }
+    public int MaLoaiVe { get; set; }
+
+    public int MaGhe { get; set; }
 
     public int MaXuatChieu { get; set; }
 
-    public int IdNhanVien { get; set; }
+    public int MaKh { get; set; }
 
-    public int SoGhe { get; set; }
+    public int MaNv { get; set; }
 
-    public int MaLichChieu { get; set; }
+    public virtual ICollection<ChiTietHoaDon> ChiTietHoaDons { get; set; } = new List<ChiTietHoaDon>();
 
-    public virtual NhanVien IdNhanVienNavigation { get; set; } = null!;
+    public virtual Ghe? MaGheNavigation { get; set; } = null!;
 
-    public virtual PhongChieu MaPhongNavigation { get; set; } = null!;
+    public virtual KhachHang? MaKhNavigation { get; set; } = null!;
 
-    public virtual XuatChieu MaXuatChieuNavigation { get; set; } = null!;
+    public virtual LoaiVe? MaLoaiVeNavigation { get; set; } = null!;
 
-    public virtual Ghe SoGheNavigation { get; set; } = null!;
+    public virtual NhanVien? MaNvNavigation { get; set; } = null!;
+
+    public virtual XuatChieu? MaXuatChieuNavigation { get; set; } = null!;
 }
