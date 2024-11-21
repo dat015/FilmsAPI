@@ -7,19 +7,17 @@ public partial class XuatChieu
 {
     public int MaXuatChieu { get; set; }
 
+    public DateOnly ThoiGianBatDau { get; set; }
+
+    public DateOnly ThoiGianKetThuc { get; set; }
+
+    public int MaPhong { get; set; }
+
     public int MaPhim { get; set; }
 
-    public int GioChieu { get; set; }
+    public virtual Phim? MaPhimNavigation { get; set; } = null!;
 
-    public int PhutChieu { get; set; }
+    public virtual PhongChieu? MaPhongNavigation { get; set; } = null!;
 
-    public int IdPhongChieu { get; set; }
-
-    public virtual ICollection<DanhSachDatVeOnline> DanhSachDatVeOnlines { get; set; } = new List<DanhSachDatVeOnline>();
-
-    public virtual PhongChieu IdPhongChieuNavigation { get; set; } = null!;
-
-    public virtual ICollection<Phim> Phims { get; set; } = new List<Phim>();
-
-    public virtual ICollection<Ve> Ves { get; set; } = new List<Ve>();
+    public virtual ICollection<Ve>? Ves { get; set; } = new List<Ve>();
 }

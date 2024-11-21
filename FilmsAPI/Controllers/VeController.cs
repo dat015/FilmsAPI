@@ -9,11 +9,15 @@ namespace FilmsAPI.Controllers
     [ApiController]
     public class VeController : ControllerBase
     {
-        private readonly FilmsmanageDbContext _db;
+        private readonly FilmsDbContext _db;
 
         public VeController(FilmsmanageDbContext db)
         {
+<<<<<<< HEAD
             _db = db;
+=======
+            _db = new FilmsDbContext();
+>>>>>>> 8c6313c3468e6612e8e53f2a8df1383eb68b3410
         }
 
         // Lấy danh sách tất cả vé
@@ -42,6 +46,7 @@ namespace FilmsAPI.Controllers
 
             try
             {
+<<<<<<< HEAD
                 var ve = new Ve
                 {
                     SoGhe = dto.SoGhe,
@@ -51,6 +56,10 @@ namespace FilmsAPI.Controllers
                 };
 
                 _db.Ves.Add(ve);
+=======
+                var ve = await _db.Ves.FindAsync(dto.MaVe);
+                ve = dto;
+>>>>>>> 8c6313c3468e6612e8e53f2a8df1383eb68b3410
                 await _db.SaveChangesAsync();
                 return Ok("Thêm vé thành công");
             }
@@ -71,7 +80,7 @@ namespace FilmsAPI.Controllers
 
             try
             {
-                var ve = await _db.Ves.FirstOrDefaultAsync(v => v.IdVe == dto.IdVe);
+                var ve = await _db.Ves.FirstOrDefaultAsync(v => v.MaVe == dto.MaVe);
 
                 if (ve == null)
                 {

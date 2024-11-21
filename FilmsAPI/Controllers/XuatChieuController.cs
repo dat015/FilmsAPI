@@ -8,11 +8,15 @@ namespace FilmsAPI.Controllers
     [ApiController]
     public class XuatChieuController : ControllerBase
     {
-        private readonly FilmsmanageDbContext _db;
+        private readonly FilmsDbContext _db;
 
         public XuatChieuController(FilmsmanageDbContext db)
         {
+<<<<<<< HEAD
             _db = db;
+=======
+            _db = new FilmsDbContext();
+>>>>>>> 8c6313c3468e6612e8e53f2a8df1383eb68b3410
         }
 
         [HttpGet(Name = "GetXuatChieu")]
