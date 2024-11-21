@@ -10,13 +10,9 @@ namespace FilmsAPI.Controllers
     {
         private readonly FilmsDbContext _db;
 
-        public XuatChieuController(FilmsmanageDbContext db)
+        public XuatChieuController()
         {
-<<<<<<< HEAD
-            _db = db;
-=======
             _db = new FilmsDbContext();
->>>>>>> 8c6313c3468e6612e8e53f2a8df1383eb68b3410
         }
 
         [HttpGet(Name = "GetXuatChieu")]
@@ -63,18 +59,8 @@ namespace FilmsAPI.Controllers
 
             try
             {
-                var xuatChieu = await _db.XuatChieus.FirstOrDefaultAsync(v => v.MaXuatChieu == dto.MaXuatChieu);
-
-                if (xuatChieu == null)
-                {
-                    return NotFound("Không tìm thấy bản ghi cần cập nhật");
-                }
-
-                xuatChieu.MaPhim = dto.MaPhim;
-                xuatChieu.GioChieu = dto.GioChieu;
-                xuatChieu.PhutChieu = dto.PhutChieu;
-                // Các thuộc tính khác nếu cần...
-
+                var xuatChieu = await _db.XuatChieus.FindAsync(dto.MaXuatChieu);
+                xuatChieu = dto;
                 await _db.SaveChangesAsync();
                 return Ok("Cập nhật thành công");
             }

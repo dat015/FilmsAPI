@@ -17,12 +17,6 @@ namespace FilmsAPI.Controllers
 
         // GET: api/NhanVien
         [HttpGet(Name = "GetNhanVien")]
-<<<<<<< HEAD
-        public async Task<IActionResult> GetNhanVien()
-        { 
-            var nhanvien =await _db.NhanViens.ToListAsync();
-            return Ok(nhanvien);
-=======
         public IActionResult Get()
         {
             try
@@ -37,7 +31,6 @@ namespace FilmsAPI.Controllers
             {
                 return BadRequest($"Lỗi: {ex.Message}");
             }
->>>>>>> 8c6313c3468e6612e8e53f2a8df1383eb68b3410
         }
 
         // POST: api/NhanVien (Sử dụng POST thay vì PUT cho thêm mới)

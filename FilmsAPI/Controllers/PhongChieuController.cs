@@ -1,9 +1,6 @@
-<<<<<<< HEAD
-﻿using Microsoft.AspNetCore.Mvc;
-=======
+
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
->>>>>>> 8c6313c3468e6612e8e53f2a8df1383eb68b3410
 using Microsoft.EntityFrameworkCore;
 using FilmsAPI.Models;
 
@@ -13,18 +10,11 @@ namespace FilmsAPI.Controllers
     [ApiController]
     public class PhongChieuController : ControllerBase
     {
-<<<<<<< HEAD
-        private readonly FilmsmanageDbContext _db;
 
-        public PhongChieuController(FilmsmanageDbContext db)
-        {
-            _db = db;
-=======
         private readonly FilmsDbContext _db;
         public PhongChieuController()
         {
             _db = new FilmsDbContext();
->>>>>>> 8c6313c3468e6612e8e53f2a8df1383eb68b3410
         }
 
         [HttpGet(Name = "GetPhongChieu")]
