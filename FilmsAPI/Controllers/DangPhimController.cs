@@ -37,12 +37,16 @@ namespace FilmsAPI.Controllers
             try
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 var dangPhims = await _db.DangPhims.ToListAsync();
                 if (dangPhims == null || dangPhims.Count == 0)
                 {
                     return NotFound(new { message = "Không có dữ liệu dạng phim nào." });
                 }
 =======
+=======
+                //day la cmt
+>>>>>>> 929d576b2d3e51fdab03da8214fa51ca1cd8d022
                 var dangPhims = await _db.DangPhims
                     .Include(d => d.Phims)
                     .Include(d => d.MaManHinhNavigation)
