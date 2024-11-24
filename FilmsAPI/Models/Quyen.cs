@@ -9,5 +9,5 @@ public partial class Quyen
 
     public string TenQuyen { get; set; } = null!;
 
-    public virtual ICollection<NhanVien> NhanViens { get; set; } = new List<NhanVien>();
+    public virtual ICollection<NhanVien>? NhanViens { get; set; } = new List<NhanVien>();
 }

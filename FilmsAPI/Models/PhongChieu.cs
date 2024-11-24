@@ -5,13 +5,21 @@ namespace FilmsAPI.Models;
 
 public partial class PhongChieu
 {
-    public int IdPhongChieu { get; set; }
+    public int MaPhongChieu { get; set; }
+
+    public int SoGhe { get; set; }
+
+    public int SoGheMotHang { get; set; }
+
+    public int SoHangGhe { get; set; }
+
+    public int MaManHinh { get; set; }
 
     public string TenPhongChieu { get; set; } = null!;
 
-    public virtual ICollection<Ghe> Ghes { get; set; } = new List<Ghe>();
+    public virtual ICollection<Ghe>? Ghes { get; set; } = new List<Ghe>();
 
-    public virtual ICollection<Ve> Ves { get; set; } = new List<Ve>();
+    public virtual ManHinh? MaManHinhNavigation { get; set; } = null!;
 
-    public virtual ICollection<XuatChieu> XuatChieus { get; set; } = new List<XuatChieu>();
+    public virtual ICollection<XuatChieu>? XuatChieus { get; set; } = new List<XuatChieu>();
 }

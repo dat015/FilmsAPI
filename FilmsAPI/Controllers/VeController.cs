@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using FilmsAPI.Models;
-using System.Data.Entity;
+using Microsoft.EntityFrameworkCore;
 
 namespace FilmsAPI.Controllers
 {
@@ -9,19 +9,19 @@ namespace FilmsAPI.Controllers
     [ApiController]
     public class VeController : ControllerBase
     {
-        private readonly FilmsmanageDbContext _db;
+        private readonly FilmsDbContext _db;
 
         public VeController()
         {
-            _db = new FilmsmanageDbContext();
+            _db = new FilmsDbContext();
         }
 
         [HttpGet(Name = "GetVe")]
-        public IActionResult GetVe()
+        public async Task<IActionResult> GetVe()
         {
             try
             {
-                var ve =  _db.Ves.ToList();
+                var ve = await _db.Ves.ToListAsync();
                 return Ok(ve);
             }
             catch (Exception ex)
@@ -40,7 +40,7 @@ namespace FilmsAPI.Controllers
 
             try
             {
-                var ve = await _db.Ves.FindAsync(dto.IdVe);
+                var ve = await _db.Ves.FindAsync(dto.MaVe);
                 ve = dto;
                 await _db.SaveChangesAsync();
                 return Ok("Thêm thành công");
@@ -61,7 +61,7 @@ namespace FilmsAPI.Controllers
 
             try
             {
-                var ve = await _db.Ves.FirstOrDefaultAsync(v => v.IdVe == dto.IdVe);
+                var ve = await _db.Ves.FirstOrDefaultAsync(v => v.MaVe == dto.MaVe);
 
                 if (ve == null)
                 {

@@ -5,21 +5,15 @@ namespace FilmsAPI.Models;
 
 public partial class KhachHang
 {
-    public int MaKhachHang { get; set; }
+    public int MaKh { get; set; }
 
-    public string TenDangNhap { get; set; } = null!;
+    public string? TenKh { get; set; }
 
-    public DateTime NgaySinh { get; set; }
-
-    public string DiaChi { get; set; } = null!;
-
-    public string SoDienThoai { get; set; } = null!;
+    public string? Sdt { get; set; }
 
     public string? Email { get; set; }
 
-    public bool GioiTinh { get; set; }
+    public virtual ICollection<TaiKhoan>? TaiKhoans { get; set; } = new List<TaiKhoan>();
 
-    public string MatKhau { get; set; } = null!;
-
-    public virtual ICollection<DanhSachDatVeOnline> DanhSachDatVeOnlines { get; set; } = new List<DanhSachDatVeOnline>();
+    public virtual ICollection<Ve>? Ves { get; set; } = new List<Ve>();
 }

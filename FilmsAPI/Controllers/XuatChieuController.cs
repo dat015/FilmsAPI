@@ -1,7 +1,7 @@
 ﻿using FilmsAPI.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System.Data.Entity;
+using Microsoft.EntityFrameworkCore;
 
 namespace FilmsAPI.Controllers
 {
@@ -9,11 +9,11 @@ namespace FilmsAPI.Controllers
     [ApiController]
     public class XuatChieuController : ControllerBase
     {
-        private readonly FilmsmanageDbContext _db;
+        private readonly FilmsDbContext _db;
 
         public XuatChieuController()
         {
-            _db = new FilmsmanageDbContext();
+            _db = new FilmsDbContext();
         }
 
         [HttpGet(Name = "GetXuatChieu")]
