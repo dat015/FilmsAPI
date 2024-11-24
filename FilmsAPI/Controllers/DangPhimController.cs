@@ -25,21 +25,30 @@ namespace FilmsAPI.Controllers
         {
             try
             {
+<<<<<<< HEAD
                 //day la cmt
                 var dangPhims = await _db.DangPhims
                     .Include(d => d.Phims)
                     .Include(d => d.MaManHinhNavigation)
+=======
+                var dangPhim = await _db.DangPhims.
+                    Include(p => p.MaManHinhNavigation)
+>>>>>>> DucQuy
                     .ToListAsync();
+<<<<<<< HEAD
 
                 if (dangPhims == null || !dangPhims.Any())
                 {
                     return NotFound(new { message = "Không có dữ liệu dạng phim." });
                 }
                 return Ok(dangPhims);
+=======
+                return Ok(dangPhim);
+>>>>>>> dd8fd136c5fa2df690d53a99ce83d01fe90cbf32
             }
             catch(Exception ex)
             {
-                return BadRequest(new { message = "Lỗi khi truy vấn cơ sở dữ liệu.", error = ex.Message });
+                return NotFound();
             }
         }
 
@@ -67,8 +76,19 @@ namespace FilmsAPI.Controllers
                     return NotFound(new { message = "Không tìm thấy bản ghi cần cập nhật." });
                 }
 
+                // Kiểm tra xem tên dạng phim mới đã tồn tại trong cơ sở dữ liệu chưa
+                var existingDangPhim = await _db.DangPhims
+                    .FirstOrDefaultAsync(dp => dp.TenDangPhim == dto.TenDangPhim && dp.MaDangPhim != dto.MaDangPhim);
+
+                if (existingDangPhim != null)
+                {
+                    return BadRequest(new { message = "Tên dạng phim đã tồn tại." });
+                }
+
                 // Cập nhật các trường dữ liệu
+                dangPhim.MaManHinh = dto.MaManHinh;
                 dangPhim.TenDangPhim = dto.TenDangPhim;
+
                 await _db.SaveChangesAsync();
 
                 return Ok(new { message = "Cập nhật thành công." });
@@ -95,19 +115,19 @@ namespace FilmsAPI.Controllers
 
             try
             {
+                // Kiểm tra xem tên dạng phim đã tồn tại chưa
                 var existingDangPhim = await _db.DangPhims
-                    .Where(d => d.TenDangPhim.ToLower() == dto.TenDangPhim.ToLower())
-                    .FirstOrDefaultAsync();
+                    .FirstOrDefaultAsync(dp => dp.TenDangPhim == dto.TenDangPhim);
 
                 if (existingDangPhim != null)
                 {
-                    return BadRequest(new { message = "Dạng phim này đã tồn tại." });
+                    return BadRequest(new { message = "Tên dạng phim đã tồn tại." });
                 }
 
                 var dangPhim = new DangPhim
                 {
                     TenDangPhim = dto.TenDangPhim,
-                    MaManHinh = dto.MaManHinh // Thiết lập ManHinh cho DangPhim
+                    MaManHinh = dto.MaManHinh
                 };
 
                 _db.DangPhims.Add(dangPhim);
@@ -115,6 +135,10 @@ namespace FilmsAPI.Controllers
 
 
                 return CreatedAtAction("GetDangPhim", new { id = dangPhim.MaDangPhim }, dangPhim);
+            }
+            catch (DbUpdateException dbEx)
+            {
+                return BadRequest(new { message = "Lỗi khi thêm mới dạng phim.", error = dbEx.InnerException?.Message ?? dbEx.Message });
             }
             catch (Exception ex)
             {

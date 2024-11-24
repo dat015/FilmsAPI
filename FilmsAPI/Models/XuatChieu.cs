@@ -7,9 +7,9 @@ public partial class XuatChieu
 {
     public int MaXuatChieu { get; set; }
 
-    public DateOnly ThoiGianBatDau { get; set; }
+    public DateTime ThoiGianBatDau { get; set; }
 
-    public DateOnly ThoiGianKetThuc { get; set; }
+    public DateTime ThoiGianKetThuc { get; set; }
 
     public int MaPhong { get; set; }
 

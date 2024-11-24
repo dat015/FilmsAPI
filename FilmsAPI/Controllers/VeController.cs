@@ -18,11 +18,19 @@ namespace FilmsAPI.Controllers
 
         // Lấy danh sách tất cả vé
         [HttpGet(Name = "GetVe")]
+<<<<<<< HEAD
+        public ActionResult GetVe()
+        {
+            try
+            {
+                var ve = _db.Ves.ToListAsync();
+=======
         public async Task<IActionResult> GetVe()
         {
             try
             {
                 var ve = await _db.Ves.ToListAsync();
+>>>>>>> 929d576b2d3e51fdab03da8214fa51ca1cd8d022
                 return Ok(ve);
             }
             catch (Exception ex)
@@ -31,7 +39,10 @@ namespace FilmsAPI.Controllers
             }
         }
 
+<<<<<<< HEAD
         // Thêm vé mới
+=======
+>>>>>>> dd8fd136c5fa2df690d53a99ce83d01fe90cbf32
         [HttpPost(Name = "ThemVe")]
         public async Task<IActionResult> AddVe([FromBody] Ve dto)
         {
@@ -53,8 +64,12 @@ namespace FilmsAPI.Controllers
             }
         }
 
+<<<<<<< HEAD
         // Cập nhật vé
         [HttpPut(Name = "UpdateVe")]
+=======
+        [HttpPut(Name = "Update")]
+>>>>>>> dd8fd136c5fa2df690d53a99ce83d01fe90cbf32
         public async Task<IActionResult> UpdateVe([FromBody] Ve dto)
         {
             if (dto == null)

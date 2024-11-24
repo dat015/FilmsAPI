@@ -22,7 +22,9 @@ namespace FilmsAPI.Controllers
         {
             try
             {
-                var phongChieu = await _db.PhongChieus.ToListAsync();
+                var phongChieu = await _db.PhongChieus.
+                    Include(p => p.MaManHinhNavigation)
+                    .ToListAsync();
                 return Ok(phongChieu);
             }
             catch (Exception ex)
@@ -31,7 +33,11 @@ namespace FilmsAPI.Controllers
             }
         }
 
+<<<<<<< HEAD
         [HttpPost(Name = "AddPhongChieu")]
+=======
+        [HttpPut(Name = "AddPhongChieu")]
+>>>>>>> dd8fd136c5fa2df690d53a99ce83d01fe90cbf32
         public async Task<IActionResult> AddPhongChieu([FromBody] PhongChieu dto)
         {
             if (dto == null || string.IsNullOrWhiteSpace(dto.TenPhongChieu))
