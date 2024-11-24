@@ -21,8 +21,6 @@ namespace FilmsAPI.Controllers
         public async Task<ActionResult<IEnumerable<ManHinh>>> GetManHinh()
         {
             var manHinhs = await _context.ManHinhs
-                .Include(mh => mh.DangPhims)  // Nếu bạn muốn bao gồm các DangPhim liên quan
-                .Include(mh => mh.PhongChieus) // Nếu bạn muốn bao gồm các PhongChieu liên quan
                 .ToListAsync();
 
             return Ok(manHinhs);
@@ -49,40 +47,44 @@ namespace FilmsAPI.Controllers
         [HttpPost]
         public async Task<ActionResult<ManHinh>> PostManHinh(ManHinh manHinh)
         {
-            _context.ManHinhs.Add(manHinh);
-            await _context.SaveChangesAsync();
+            try
+            {
+                _context.ManHinhs.Add(manHinh);
+                await _context.SaveChangesAsync();
 
-            return CreatedAtAction(nameof(GetManHinh), new { mamanhinh = manHinh.MaManHinh }, manHinh);
+                // Trả về thông báo thành công
+                return CreatedAtAction(nameof(GetManHinh), new { mamanhinh = manHinh.MaManHinh }, new { IsSuccess = true, Message = "Màn hình đã được thêm thành công." });
+            }
+            catch (Exception ex)
+            {
+                // Trả về thông báo thất bại
+                return BadRequest(new { IsSuccess = false, Message = $"Lỗi khi thêm màn hình: {ex.Message}" });
+            }
         }
 
         // Cập nhật màn hình
         [HttpPut("{mamanhinh}")]
-        public async Task<IActionResult> PutManHinh(int mamanhinh, ManHinh manHinh)
+        public async Task<IActionResult> PutManHinh(int mamanhinh, [FromBody] ManHinh manHinh)
         {
-            if (mamanhinh != manHinh.MaManHinh)
+            // Lấy đối tượng màn hình hiện tại từ cơ sở dữ liệu
+            var manHinhDb = await _context.ManHinhs.FindAsync(mamanhinh);
+            if (manHinhDb == null)
             {
-                return BadRequest();
+                return NotFound(new { message = "Mã màn hình không tồn tại." });
             }
 
-            _context.Entry(manHinh).State = EntityState.Modified;
+            // Cập nhật tên màn hình
+            manHinhDb.TenManHinh = manHinh.TenManHinh;
 
             try
             {
                 await _context.SaveChangesAsync();
+                return Ok(new { message = "Cập nhật thành công." });
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!ManHinhExists(mamanhinh))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
+                throw;
             }
-
-            return NoContent();
         }
 
         // Xóa màn hình

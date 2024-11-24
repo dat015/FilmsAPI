@@ -14,12 +14,15 @@ namespace FilmsAPI.Controllers
         {
             _db = new FilmsDbContext();
         }
+
         [HttpGet(Name = "GetPhongChieu")]
         public async Task<IActionResult> GetPhongChieu()
         {
             try
             {
-                var phongChieu = await _db.PhongChieus.ToListAsync();
+                var phongChieu = await _db.PhongChieus.
+                    Include(p => p.MaManHinhNavigation)
+                    .ToListAsync();
                 return Ok(phongChieu);
             }
             catch (Exception ex)
@@ -27,6 +30,7 @@ namespace FilmsAPI.Controllers
                 return NotFound();
             }
         }
+
         [HttpPut(Name = "AddPhongChieu")]
         public async Task<IActionResult> AddPhongChieu([FromBody] PhongChieu dto)
         {
