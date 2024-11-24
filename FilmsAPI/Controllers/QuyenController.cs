@@ -1,7 +1,7 @@
 ﻿using FilmsAPI.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System.Data.Entity;
+using Microsoft.EntityFrameworkCore;
 
 namespace FilmsAPI.Controllers
 {
@@ -9,19 +9,23 @@ namespace FilmsAPI.Controllers
     [ApiController]
     public class QuyenController : ControllerBase
     {
-        private readonly FilmsmanageDbContext _db;
+        private readonly FilmsDbContext _db;
 
         public QuyenController()
         {
-            _db = new FilmsmanageDbContext();
+            _db = new FilmsDbContext();
         }
 
         [HttpGet(Name = "GetQuyen")]
+<<<<<<< HEAD
         public ActionResult GetQuyen()
+=======
+        public async Task<IActionResult> GetQuyen()
+>>>>>>> 929d576b2d3e51fdab03da8214fa51ca1cd8d022
         {
             try
             {
-                var quyen = _db.Quyens.ToList();
+                var quyen = await _db.Quyens.ToListAsync();
                 return Ok(quyen);
             }
             catch (Exception ex)
@@ -33,9 +37,9 @@ namespace FilmsAPI.Controllers
         [HttpPost(Name = "AddQuyen")]
         public async Task<IActionResult> AddQuyen([FromBody] Quyen dto)
         {
-            if (dto == null)
+            if (dto == null || string.IsNullOrWhiteSpace(dto.TenQuyen))
             {
-                return BadRequest("Cung cấp đủ dữ liệu");
+                return BadRequest("Dữ liệu không hợp lệ");
             }
 
             try
@@ -47,17 +51,27 @@ namespace FilmsAPI.Controllers
 
                 _db.Quyens.Add(quyen);
                 await _db.SaveChangesAsync();
-                return Ok("Thêm thành công");
+
+                return CreatedAtAction(nameof(AddQuyen), new { id = quyen.MaQuyen }, quyen);
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return StatusCode(500, "Đã xảy ra lỗi: " + ex.Message);
             }
         }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 929d576b2d3e51fdab03da8214fa51ca1cd8d022
         [HttpPut(Name = "UpdateQuyen")]
         public async Task<IActionResult> UpdateQuyen([FromBody] Quyen dto)
         {
+            if (dto == null || dto.MaQuyen <= 0)
+            {
+                return BadRequest("ID quyền không hợp lệ");
+            }
+
             if (string.IsNullOrWhiteSpace(dto.TenQuyen))
             {
                 return BadRequest("Tên quyền không được để trống");
@@ -69,18 +83,19 @@ namespace FilmsAPI.Controllers
 
                 if (quyen == null)
                 {
-                    return NotFound("Không tìm thấy bản ghi cần cập nhật");
+                    return NotFound("Không tìm thấy quyền cần cập nhật");
                 }
 
                 quyen.TenQuyen = dto.TenQuyen;
-
                 await _db.SaveChangesAsync();
-                return Ok("Cập nhật thành công");
+
+                return NoContent();
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return StatusCode(500, "Đã xảy ra lỗi: " + ex.Message);
             }
         }
+
     }
 }

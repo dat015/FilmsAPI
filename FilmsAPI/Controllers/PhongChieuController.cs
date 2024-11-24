@@ -1,55 +1,48 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using FilmsAPI.Models;
 using Microsoft.EntityFrameworkCore;
+using FilmsAPI.Models;
 
 namespace FilmsAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class VeController : ControllerBase
+    public class PhongChieuController : ControllerBase
     {
         private readonly FilmsDbContext _db;
-
-        public VeController()
+        public PhongChieuController()
         {
             _db = new FilmsDbContext();
         }
-
-        [HttpGet(Name = "GetVe")]
-<<<<<<< HEAD
-        public ActionResult GetVe()
+        [HttpGet(Name = "GetPhongChieu")]
+        public async Task<IActionResult> GetPhongChieu()
         {
             try
             {
-                var ve = _db.Ves.ToListAsync();
-=======
-        public async Task<IActionResult> GetVe()
-        {
-            try
-            {
-                var ve = await _db.Ves.ToListAsync();
->>>>>>> 929d576b2d3e51fdab03da8214fa51ca1cd8d022
-                return Ok(ve);
+                var phongChieu = await _db.PhongChieus.ToListAsync();
+                return Ok(phongChieu);
             }
             catch (Exception ex)
             {
                 return NotFound();
             }
         }
-
-        [HttpPost(Name = "ThemVe")]
-        public async Task<IActionResult> AddVe([FromBody] Ve dto)
+        [HttpPut(Name = "AddPhongChieu")]
+        public async Task<IActionResult> AddPhongChieu([FromBody] PhongChieu dto)
         {
             if (dto == null)
             {
                 return BadRequest("Cung cấp đủ dữ liệu");
             }
-
             try
             {
-                var ve = await _db.Ves.FindAsync(dto.MaVe);
-                ve = dto;
+                var phongChieu = new PhongChieu
+                {
+                    TenPhongChieu = dto.TenPhongChieu,
+                    SoGhe = dto.SoGhe,
+                    SoGheMotHang = dto.SoGheMotHang,
+                };
+                _db.PhongChieus.Add(phongChieu);
                 await _db.SaveChangesAsync();
                 return Ok("Thêm thành công");
             }
@@ -58,26 +51,21 @@ namespace FilmsAPI.Controllers
                 return BadRequest(ex.Message);
             }
         }
-
-        [HttpPut(Name = "Update")]
-        public async Task<IActionResult> UpdateVe([FromBody] Ve dto)
+        [HttpPost(Name = "UpdatePhongChieu")]
+        public async Task<IActionResult> UpdatePhongChieu([FromBody] PhongChieu dto)
         {
             if (dto == null)
             {
                 return BadRequest("Cung cấp đủ dữ liệu");
             }
-
             try
             {
-                var ve = await _db.Ves.FirstOrDefaultAsync(v => v.MaVe == dto.MaVe);
-
-                if (ve == null)
+                var phongChieu = await _db.PhongChieus.FindAsync(dto.MaPhongChieu);
+                if (phongChieu == null)
                 {
-                    return NotFound("Không tìm thấy bản ghi cần cập nhật");
+                    return NotFound("Không tìm thấy phòng chiếu");
                 }
-
-                ve = dto;
-
+                phongChieu.TenPhongChieu = dto.TenPhongChieu;
                 await _db.SaveChangesAsync();
                 return Ok("Cập nhật thành công");
             }
@@ -86,5 +74,6 @@ namespace FilmsAPI.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
     }
 }

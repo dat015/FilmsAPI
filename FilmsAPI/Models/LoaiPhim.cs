@@ -5,9 +5,9 @@ namespace FilmsAPI.Models;
 
 public partial class LoaiPhim
 {
-    public int MaLoaiPhim { get; set; }
+    public int MaTheLoai { get; set; }
 
-    public string TenLoaiPhim { get; set; } = null!;
+    public string TenTheLoai { get; set; } = null!;
 
-    public virtual ICollection<Phim> Phims { get; set; } = new List<Phim>();
+    public virtual ICollection<TheLoaiCuaPhim>? TheLoaiCuaPhims { get; set; } = new List<TheLoaiCuaPhim>();
 }

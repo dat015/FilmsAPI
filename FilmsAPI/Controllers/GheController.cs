@@ -1,7 +1,8 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System.Data.Entity;
 using FilmsAPI.Models;
+using Microsoft.EntityFrameworkCore;
+using FilmsAPI.DTO;
 
 namespace FilmsAPI.Controllers
 {
@@ -9,24 +10,28 @@ namespace FilmsAPI.Controllers
     [ApiController]
     public class GheController : ControllerBase
     {
-        private readonly FilmsmanageDbContext _db;
+        private readonly FilmsDbContext _db;
+
         public GheController()
         {
-            _db = new FilmsmanageDbContext();
+            _db = new FilmsDbContext();
         }
 
+        // GET: api/Ghe/{maPhong}
         [HttpGet("{maPhong}", Name = "GetDanhSachGhe")]
-        public  IActionResult GetDanhSachGhe(int maPhong)
+        public async Task<IActionResult> GetDanhSachGhe(int maPhong)
         {
             try
             {
-                var ds =  _db.Ghes
+                var ds = await _db.Ghes
                     .Where(d => d.MaPhong == maPhong)
-                    .ToList();
+                    .Include(g => g.MaLoaiGheNavigation)  // Bao gồm thông tin loại ghế
+                    .Include(g => g.MaPhongNavigation)   // Bao gồm thông tin phòng chiếu
+                    .ToListAsync();
 
                 if (ds == null || !ds.Any())
                 {
-                    return NotFound("Không tìm thấy ghế nào cho mã phòng này.");
+                    return NotFound(new { Message = "Không tìm thấy ghế nào cho mã phòng này." });
                 }
 
                 return Ok(ds);
@@ -35,29 +40,33 @@ namespace FilmsAPI.Controllers
             {
                 return BadRequest(new { Message = "Lỗi khi truy vấn cơ sở dữ liệu", Error = ex.Message });
             }
-
         }
 
-        [HttpPut("{id}", Name = "UpdateGhe")]
-        public async Task<IActionResult> UpdateGhe(int id, [FromBody] Ghe dto)
+        // PUT: api/Ghe
+        [HttpPut(Name = "UpdateGhe")]
+        public async Task<IActionResult> UpdateGhe([FromBody] Ghe dto)
         {
+            if (dto == null)
+            {
+                return BadRequest(new { Message = "Dữ liệu không hợp lệ." });
+            }
+
             try
             {
-                var ghe = await _db.Ghes.FindAsync(id);
+                // Tìm ghế theo MaGhe (để cập nhật)
+                var ghe = await _db.Ghes.FindAsync(dto.MaGhe);
                 if (ghe == null)
                 {
-                    return NotFound("Không tìm thấy ghế với ID được cung cấp.");
+                    return NotFound(new { Message = "Không tìm thấy ghế với ID được cung cấp." });
                 }
 
-                ghe.SoGhe = dto.SoGhe;
                 ghe.MaPhong = dto.MaPhong;
-                ghe.TrangThaiGhe = dto.TrangThaiGhe;
-                ghe.MaTinhTrang = dto.MaTinhTrang;
+                ghe.TrangThai = dto.TrangThai;  // Cập nhật trạng thái ghế
                 ghe.MaLoaiGhe = dto.MaLoaiGhe;
 
                 await _db.SaveChangesAsync();
 
-                return Ok(new { Message = "Cập nhật ghế thành công!", UpdatedGhe =  GetDanhSachGhe(ghe.MaPhong) });
+                return Ok(new { Message = "Cập nhật ghế thành công!", UpdatedGhe = ghe });
             }
             catch (Exception ex)
             {
@@ -65,18 +74,18 @@ namespace FilmsAPI.Controllers
             }
         }
 
+        // POST: api/Ghe
         [HttpPost(Name = "AddGhe")]
         public async Task<IActionResult> AddGhe([FromBody] Ghe dto)
         {
+            if (dto == null)
+            {
+                return BadRequest(new { Message = "Dữ liệu không hợp lệ!" });
+            }
+
             try
             {
-                if (dto == null)
-                {
-                    return BadRequest(new { Message = "Dữ liệu không hợp lệ!" });
-                }
-
                 _db.Ghes.Add(dto);
-
                 await _db.SaveChangesAsync();
 
                 return CreatedAtRoute("GetDanhSachGhe", new { maPhong = dto.MaPhong }, dto);
@@ -86,7 +95,5 @@ namespace FilmsAPI.Controllers
                 return BadRequest(new { Message = "Đã xảy ra lỗi khi thêm ghế.", Error = ex.Message });
             }
         }
-
-
     }
 }
