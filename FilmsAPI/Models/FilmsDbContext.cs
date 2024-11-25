@@ -51,11 +51,9 @@ public partial class FilmsDbContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-<<<<<<< HEAD
+
         => optionsBuilder.UseSqlServer("Server=LAPTOP-98U3CSGC\\MATERMOS;Database=FilmsDb;Trusted_Connection=True;TrustServerCertificate=True;");
-=======
-        => optionsBuilder.UseSqlServer("Server=QUYDEV\\SQLEXPRESS;Database=FilmsDb;Trusted_Connection=True;TrustServerCertificate=True;");
->>>>>>> dd8fd136c5fa2df690d53a99ce83d01fe90cbf32
+
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

@@ -32,12 +32,7 @@ namespace FilmsAPI.Controllers
                 return BadRequest(new { message = ex.Message, stackTrace = ex.StackTrace });
             }
         }
-
-<<<<<<< HEAD
         [HttpPost(Name = "AddPhongChieu")]
-=======
-        [HttpPut(Name = "AddPhongChieu")]
->>>>>>> dd8fd136c5fa2df690d53a99ce83d01fe90cbf32
         public async Task<IActionResult> AddPhongChieu([FromBody] PhongChieu dto)
         {
             if (dto == null || string.IsNullOrWhiteSpace(dto.TenPhongChieu))

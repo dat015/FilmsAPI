@@ -59,40 +59,15 @@ namespace FilmsAPI.Controllers
 
             try
             {
-                var xuatChieu = await _db.XuatChieus.FindAsync(dto.MaXuatChieu);
-                xuatChieu = dto;
-                await _db.SaveChangesAsync();
-<<<<<<< HEAD
-=======
-                return Ok("Thêm thành công");
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
-        }
-
-        [HttpPut(Name = "UpdateXuatChieu")]
-        public async Task<IActionResult> UpdateXuatChieu([FromBody] XuatChieu dto)
-        {
-            if (dto == null)
-            {
-                return BadRequest("Cung cấp đủ dữ liệu");
-            }
-
-            try
-            {
                 var xuatChieu = await _db.XuatChieus.FirstOrDefaultAsync(v => v.MaXuatChieu == dto.MaXuatChieu);
 
                 if (xuatChieu == null)
                 {
                     return NotFound("Không tìm thấy bản ghi cần cập nhật");
                 }
-
                 xuatChieu = dto;
 
                 await _db.SaveChangesAsync();
->>>>>>> dd8fd136c5fa2df690d53a99ce83d01fe90cbf32
                 return Ok("Cập nhật thành công");
             }
             catch (Exception ex)

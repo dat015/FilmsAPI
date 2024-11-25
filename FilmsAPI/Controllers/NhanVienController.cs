@@ -32,9 +32,20 @@ namespace FilmsAPI.Controllers
                 return BadRequest($"Lỗi: {ex.Message}");
             }
         }
+        //Lấy nhân viên theo mã nhân viên
+        [HttpGet("{manhanvien}", Name = "GetNhanVienById")]
+        public async Task<IActionResult> GetNhanVienById(int manhanvien)
+        {
+            var nhanVien = await _db.NhanViens.FindAsync(manhanvien);
+            if (nhanVien == null)
+            {
+                return NotFound("Không tìm thấy nhân viên");
+            }
+            return Ok(nhanVien);
+        }
 
-        // POST: api/NhanVien (Sử dụng POST thay vì PUT cho thêm mới)
-        [HttpPost(Name = "AddNhanVien")]
+            // POST: api/NhanVien (Sử dụng POST thay vì PUT cho thêm mới)
+            [HttpPost(Name = "AddNhanVien")]
         public async Task<IActionResult> AddNhanVien([FromBody] NhanVien dto)
         {
             if (dto == null)
@@ -65,31 +76,43 @@ namespace FilmsAPI.Controllers
         }
 
         // PUT: api/NhanVien (Cập nhật thông tin nhân viên)
-        [HttpPut(Name = "UpdateNhanVien")]
-        public async Task<IActionResult> UpdateNhanVien([FromBody] NhanVien dto)
+        [HttpPut("{manhanvien}", Name = "UpdateNhanVien")]
+        public async Task<IActionResult> UpdateNhanVien(int manhanvien, [FromBody] NhanVien dto)
         {
-            if (dto == null)
+            var nhanVien = await _db.NhanViens.FindAsync(manhanvien);
+            if (nhanVien == null)
             {
-                return BadRequest("Cung cấp đủ dữ liệu");
+                return NotFound("Không tìm thấy nhân viên");
             }
-
+            nhanVien.TenNv = dto.TenNv;
+            nhanVien.Sdt = dto.Sdt;
+            nhanVien.Email = dto.Email;
+            nhanVien.MatKhau = dto.MatKhau;
+            nhanVien.MaQuyen = dto.MaQuyen;
             try
             {
-                // Cập nhật thông tin nhân viên
-                var nhanVien = await _db.NhanViens.FindAsync(dto.MaNv);
+                await _db.SaveChangesAsync();
+                return Ok("Cập nhật nhân viên thành công");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"Lỗi: {ex.Message}");
+            }
+        }
+        [HttpDelete("{manhanvien}", Name = "DeleteNhanVien")]
+        public async Task<IActionResult> DeleteNhanVien(int manhanvien)
+        {
+            try
+            {
+                var nhanVien = await _db.NhanViens.FindAsync(manhanvien);
                 if (nhanVien == null)
                 {
                     return NotFound("Không tìm thấy nhân viên");
                 }
 
-                nhanVien.TenNv = dto.TenNv ?? nhanVien.TenNv;
-                nhanVien.Sdt = dto.Sdt ?? nhanVien.Sdt;
-                nhanVien.Email = dto.Email ?? nhanVien.Email;
-                nhanVien.MatKhau = dto.MatKhau ?? nhanVien.MatKhau;
-                nhanVien.MaQuyen = dto.MaQuyen != 0 ? dto.MaQuyen : nhanVien.MaQuyen;
-
+                _db.NhanViens.Remove(nhanVien);
                 await _db.SaveChangesAsync();
-                return Ok("Cập nhật nhân viên thành công");
+                return Ok("Xóa nhân viên thành công");
             }
             catch (Exception ex)
             {

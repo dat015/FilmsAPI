@@ -25,26 +25,11 @@ namespace FilmsAPI.Controllers
         {
             try
             {
-<<<<<<< HEAD
-                //day la cmt
-                var dangPhims = await _db.DangPhims
-                    .Include(d => d.Phims)
-                    .Include(d => d.MaManHinhNavigation)
-=======
                 var dangPhim = await _db.DangPhims.
                     Include(p => p.MaManHinhNavigation)
->>>>>>> DucQuy
-                    .ToListAsync();
-<<<<<<< HEAD
 
-                if (dangPhims == null || !dangPhims.Any())
-                {
-                    return NotFound(new { message = "Không có dữ liệu dạng phim." });
-                }
-                return Ok(dangPhims);
-=======
+                    .ToListAsync();
                 return Ok(dangPhim);
->>>>>>> dd8fd136c5fa2df690d53a99ce83d01fe90cbf32
             }
             catch(Exception ex)
             {
