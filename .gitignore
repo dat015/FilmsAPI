@@ -1,3 +1,24 @@
+<<<<<<< HEAD
+FilmsManage/.vs/
+FilmsManage/FilmsManage/bin/
+FilmsManage/FilmsManage/obj/
+# Thư mục Visual Studio tạm thời
+.vs/
+
+# Thư mục output build
+bin/
+obj/
+
+# Các tệp DLL, PDB, EXE
+*.dll
+*.pdb
+*.exe
+
+# Tệp metadata tạm thời
+*.cache
+*.v9.bin
+=======
 .vs/
 FilmsAPI/bin/
 FilmsAPI/obj/
+>>>>>>> 929d576b2d3e51fdab03da8214fa51ca1cd8d022

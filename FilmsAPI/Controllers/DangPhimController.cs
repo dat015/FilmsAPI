@@ -9,6 +9,8 @@ namespace FilmsAPI.Controllers
     [Route("[controller]")]
     public class DangPhimController : ControllerBase
     {
+
+     
         private readonly FilmsDbContext _db;
 
         // Dependency Injection cho DbContext
@@ -23,26 +25,18 @@ namespace FilmsAPI.Controllers
         {
             try
             {
-                //day la cmt
-                var dangPhims = await _db.DangPhims
-                    .Include(d => d.Phims)
-                    .Include(d => d.MaManHinhNavigation)
+                var dangPhim = await _db.DangPhims.
+                    Include(p => p.MaManHinhNavigation)
                     .ToListAsync();
-
-                if (dangPhims == null || !dangPhims.Any())
-                {
-                    return NotFound(new { message = "Không có dữ liệu dạng phim." });
-                }
-
-                return Ok(dangPhims);
+                return Ok(dangPhim);
             }
-            catch (Exception ex)
+            catch(Exception ex)
             {
-                return BadRequest(new { message = "Lỗi khi truy vấn cơ sở dữ liệu.", error = ex.Message });
+                return NotFound();
             }
         }
 
-        // PUT: /DangPhim
+        // PUT: /DangPhim   
         [HttpPut(Name = "UpdateDangPhim")]
         public async Task<IActionResult> Update([FromBody] DangPhim dto)
         {
@@ -66,8 +60,19 @@ namespace FilmsAPI.Controllers
                     return NotFound(new { message = "Không tìm thấy bản ghi cần cập nhật." });
                 }
 
+                // Kiểm tra xem tên dạng phim mới đã tồn tại trong cơ sở dữ liệu chưa
+                var existingDangPhim = await _db.DangPhims
+                    .FirstOrDefaultAsync(dp => dp.TenDangPhim == dto.TenDangPhim && dp.MaDangPhim != dto.MaDangPhim);
+
+                if (existingDangPhim != null)
+                {
+                    return BadRequest(new { message = "Tên dạng phim đã tồn tại." });
+                }
+
                 // Cập nhật các trường dữ liệu
+                dangPhim.MaManHinh = dto.MaManHinh;
                 dangPhim.TenDangPhim = dto.TenDangPhim;
+
                 await _db.SaveChangesAsync();
 
                 return Ok(new { message = "Cập nhật thành công." });
@@ -94,30 +99,38 @@ namespace FilmsAPI.Controllers
 
             try
             {
+                // Kiểm tra xem tên dạng phim đã tồn tại chưa
                 var existingDangPhim = await _db.DangPhims
-                    .Where(d => d.TenDangPhim.ToLower() == dto.TenDangPhim.ToLower())
-                    .FirstOrDefaultAsync();
+                    .FirstOrDefaultAsync(dp => dp.TenDangPhim == dto.TenDangPhim);
 
                 if (existingDangPhim != null)
                 {
-                    return BadRequest(new { message = "Dạng phim này đã tồn tại." });
+                    return BadRequest(new { message = "Tên dạng phim đã tồn tại." });
                 }
 
                 var dangPhim = new DangPhim
                 {
                     TenDangPhim = dto.TenDangPhim,
-                    MaManHinh = dto.MaManHinh // Thiết lập ManHinh cho DangPhim
+                    MaManHinh = dto.MaManHinh
                 };
 
                 _db.DangPhims.Add(dangPhim);
                 await _db.SaveChangesAsync();
 
-                return CreatedAtAction("GetDangPhim", new { id = dangPhim.MaDangPhim }, dangPhim);
+
+                // Đảm bảo phản hồi rõ ràng
+                return CreatedAtAction("GetDangPhim", new { id = dangPhim.MaDangPhim }, new { message = "Thêm mới thành công." });
+            }
+            catch (DbUpdateException dbEx)
+            {
+                return BadRequest(new { message = "Lỗi khi thêm mới dạng phim.", error = dbEx.InnerException?.Message ?? dbEx.Message });
             }
             catch (Exception ex)
             {
                 return BadRequest(new { message = "Đã xảy ra lỗi khi thêm mới dạng phim.", error = ex.Message });
+
             }
         }
+
     }
 }

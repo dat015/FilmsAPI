@@ -1,5 +1,4 @@
 ﻿using FilmsAPI.Models;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -17,7 +16,7 @@ namespace FilmsAPI.Controllers
         }
 
         [HttpGet(Name = "GetXuatChieu")]
-        public async Task<IActionResult> GetXuatChieu()
+        public async Task<ActionResult> GetXuatChieu()
         {
             try
             {
@@ -29,7 +28,7 @@ namespace FilmsAPI.Controllers
             }
             catch (Exception ex)
             {
-                return NotFound();
+                return BadRequest(new { message = ex.Message });
             }
         }
 
@@ -221,8 +220,9 @@ namespace FilmsAPI.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return BadRequest(new { message = ex.Message });
             }
         }
     }
 }
+
