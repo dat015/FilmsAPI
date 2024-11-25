@@ -13,23 +13,25 @@ namespace FilmsAPI.Controllers
 
         public QuyenController()
         {
+
             _db = new FilmsDbContext();
         }
 
+        // Lấy danh sách quyền
         [HttpGet(Name = "GetQuyen")]
         public async Task<IActionResult> GetQuyen()
         {
             try
             {
+
                 var quyen = await _db.Quyens.ToListAsync();
                 return Ok(quyen);
             }
             catch (Exception ex)
             {
-                return NotFound();
+                return StatusCode(StatusCodes.Status500InternalServerError, $"Lỗi khi lấy dữ liệu: {ex.Message}");
             }
         }
-
         [HttpPost(Name = "AddQuyen")]
         public async Task<IActionResult> AddQuyen([FromBody] Quyen dto)
         {
@@ -40,6 +42,14 @@ namespace FilmsAPI.Controllers
 
             try
             {
+                // Kiểm tra tên quyền đã tồn tại hay chưa
+                var existingQuyen = await _db.Quyens.FirstOrDefaultAsync(q => q.TenQuyen == dto.TenQuyen);
+                if (existingQuyen != null)
+                {
+                    return BadRequest("Tên quyền đã tồn tại.");
+                }
+
+                // Tạo đối tượng mới
                 var quyen = new Quyen
                 {
                     TenQuyen = dto.TenQuyen
@@ -55,7 +65,6 @@ namespace FilmsAPI.Controllers
                 return StatusCode(500, "Đã xảy ra lỗi: " + ex.Message);
             }
         }
-
         [HttpPut(Name = "UpdateQuyen")]
         public async Task<IActionResult> UpdateQuyen([FromBody] Quyen dto)
         {
@@ -66,21 +75,22 @@ namespace FilmsAPI.Controllers
 
             if (string.IsNullOrWhiteSpace(dto.TenQuyen))
             {
-                return BadRequest("Tên quyền không được để trống");
+                return BadRequest("Cung cấp đủ dữ liệu và tên quyền không được để trống.");
             }
 
             try
             {
-                var quyen = await _db.Quyens.FirstOrDefaultAsync(dp => dp.MaQuyen == dto.MaQuyen);
+                // Tìm kiếm quyền theo mã
+                var quyen = await _db.Quyens.FirstOrDefaultAsync(q => q.MaQuyen == dto.MaQuyen);
 
                 if (quyen == null)
                 {
                     return NotFound("Không tìm thấy quyền cần cập nhật");
                 }
 
+                // Cập nhật thuộc tính
                 quyen.TenQuyen = dto.TenQuyen;
                 await _db.SaveChangesAsync();
-
                 return NoContent();
             }
             catch (Exception ex)

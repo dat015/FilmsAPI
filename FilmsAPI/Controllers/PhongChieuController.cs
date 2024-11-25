@@ -1,3 +1,4 @@
+
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -10,6 +11,7 @@ namespace FilmsAPI.Controllers
     [ApiController]
     public class PhongChieuController : ControllerBase
     {
+
         private readonly FilmsDbContext _db;
         public PhongChieuController()
         {
@@ -28,17 +30,17 @@ namespace FilmsAPI.Controllers
             }
             catch (Exception ex)
             {
-                return NotFound();
+                return BadRequest(new { message = ex.Message, stackTrace = ex.StackTrace });
             }
         }
-
         [HttpPost(Name = "AddPhongChieu")]
         public async Task<IActionResult> AddPhongChieu([FromBody] PhongChieu dto)
         {
-            if (dto == null)
+            if (dto == null || string.IsNullOrWhiteSpace(dto.TenPhongChieu))
             {
-                return BadRequest("Cung cấp đủ dữ liệu");
+                return BadRequest("Cung cấp đủ dữ liệu và tên phòng chiếu không được để trống");
             }
+
             try
             {
                 // Kiểm tra tên phòng chiếu đã tồn tại
@@ -59,23 +61,25 @@ namespace FilmsAPI.Controllers
                         TenManHinh = dto.MaManHinhNavigation.TenManHinh
                     }
                 };
+
                 _db.PhongChieus.Add(phongChieu);
                 await _db.SaveChangesAsync();
                 return CreatedAtAction("GetPhongChieu", new { id = phongChieu.MaPhongChieu }, new { message = "Thêm mới thành công." });
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return BadRequest(new { message = ex.Message, stackTrace = ex.StackTrace });
             }
         }
 
         [HttpPut(Name = "UpdatePhongChieu")]
         public async Task<IActionResult> UpdatePhongChieu([FromBody] PhongChieu dto)
         {
-            if (dto == null)
+            if (dto == null || string.IsNullOrWhiteSpace(dto.TenPhongChieu))
             {
-                return BadRequest("Cung cấp đủ dữ liệu");
+                return BadRequest("Cung cấp đủ dữ liệu và tên phòng chiếu không được để trống");
             }
+
             try
             {
                 var phongChieu = await _db.PhongChieus
@@ -94,6 +98,7 @@ namespace FilmsAPI.Controllers
                     return BadRequest(new { message = "Tên phòng chiếu đã tồn tại." });
                 }
 
+
                 phongChieu.TenPhongChieu = dto.TenPhongChieu;
                 phongChieu.SoGhe = dto.SoGhe;
                 phongChieu.SoGheMotHang = dto.SoGheMotHang;
@@ -106,7 +111,7 @@ namespace FilmsAPI.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return BadRequest(new { message = ex.Message, stackTrace = ex.StackTrace });
             }
         }
     }

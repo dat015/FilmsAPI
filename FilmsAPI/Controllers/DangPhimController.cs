@@ -9,6 +9,8 @@ namespace FilmsAPI.Controllers
     [Route("[controller]")]
     public class DangPhimController : ControllerBase
     {
+
+     
         private readonly FilmsDbContext _db;
 
         // Dependency Injection cho DbContext
@@ -28,13 +30,13 @@ namespace FilmsAPI.Controllers
                     .ToListAsync();
                 return Ok(dangPhim);
             }
-            catch (Exception ex)
+            catch(Exception ex)
             {
                 return NotFound();
             }
         }
 
-        // PUT: /DangPhim
+        // PUT: /DangPhim   
         [HttpPut(Name = "UpdateDangPhim")]
         public async Task<IActionResult> Update([FromBody] DangPhim dto)
         {
@@ -115,6 +117,7 @@ namespace FilmsAPI.Controllers
                 _db.DangPhims.Add(dangPhim);
                 await _db.SaveChangesAsync();
 
+
                 // Đảm bảo phản hồi rõ ràng
                 return CreatedAtAction("GetDangPhim", new { id = dangPhim.MaDangPhim }, new { message = "Thêm mới thành công." });
             }
@@ -125,6 +128,7 @@ namespace FilmsAPI.Controllers
             catch (Exception ex)
             {
                 return BadRequest(new { message = "Đã xảy ra lỗi khi thêm mới dạng phim.", error = ex.Message });
+
             }
         }
 

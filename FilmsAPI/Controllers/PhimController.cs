@@ -37,6 +37,7 @@ namespace FilmsAPI.Controllers
 
         // Thêm phim mới
         [HttpPost(Name = "AddPhim")]
+        [Consumes("application/json")]
         public async Task<IActionResult> AddPhim([FromBody] Phim dto)
         {
             if (dto == null)

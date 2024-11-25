@@ -16,6 +16,7 @@ namespace FilmsAPI.Controllers
             _db = new FilmsDbContext();
         }
 
+        // Lấy danh sách tất cả vé
         [HttpGet(Name = "GetVe")]
         public async Task<IActionResult> GetVe()
         {
@@ -26,7 +27,7 @@ namespace FilmsAPI.Controllers
             }
             catch (Exception ex)
             {
-                return NotFound();
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
         }
 
@@ -43,13 +44,14 @@ namespace FilmsAPI.Controllers
                 var ve = await _db.Ves.FindAsync(dto.MaVe);
                 ve = dto;
                 await _db.SaveChangesAsync();
-                return Ok("Thêm thành công");
+                return Ok("Thêm vé thành công");
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
         }
+
 
         [HttpPut(Name = "Update")]
         public async Task<IActionResult> UpdateVe([FromBody] Ve dto)
@@ -68,14 +70,14 @@ namespace FilmsAPI.Controllers
                     return NotFound("Không tìm thấy bản ghi cần cập nhật");
                 }
 
+                // Chỉ cập nhật các thuộc tính cụ th
                 ve = dto;
-
                 await _db.SaveChangesAsync();
-                return Ok("Cập nhật thành công");
+                return Ok("Cập nhật vé thành công");
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
         }
     }

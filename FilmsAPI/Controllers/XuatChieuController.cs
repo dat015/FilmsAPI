@@ -1,5 +1,4 @@
 ﻿using FilmsAPI.Models;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -26,7 +25,7 @@ namespace FilmsAPI.Controllers
             }
             catch (Exception ex)
             {
-                return NotFound();
+                return BadRequest(new { message = ex.Message });
             }
         }
 
@@ -40,14 +39,13 @@ namespace FilmsAPI.Controllers
 
             try
             {
-                var xuatChieu = await _db.XuatChieus.FindAsync(dto.MaXuatChieu);
-                xuatChieu = dto;
+                _db.XuatChieus.Add(dto);
                 await _db.SaveChangesAsync();
                 return Ok("Thêm thành công");
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return BadRequest(new { message = ex.Message });
             }
         }
 
@@ -67,7 +65,6 @@ namespace FilmsAPI.Controllers
                 {
                     return NotFound("Không tìm thấy bản ghi cần cập nhật");
                 }
-
                 xuatChieu = dto;
 
                 await _db.SaveChangesAsync();
@@ -75,8 +72,9 @@ namespace FilmsAPI.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return BadRequest(new { message = ex.Message });
             }
         }
     }
 }
+
