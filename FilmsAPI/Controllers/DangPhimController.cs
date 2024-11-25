@@ -27,7 +27,6 @@ namespace FilmsAPI.Controllers
             {
                 var dangPhim = await _db.DangPhims.
                     Include(p => p.MaManHinhNavigation)
-
                     .ToListAsync();
                 return Ok(dangPhim);
             }
@@ -119,7 +118,8 @@ namespace FilmsAPI.Controllers
                 await _db.SaveChangesAsync();
 
 
-                return CreatedAtAction("GetDangPhim", new { id = dangPhim.MaDangPhim }, dangPhim);
+                // Đảm bảo phản hồi rõ ràng
+                return CreatedAtAction("GetDangPhim", new { id = dangPhim.MaDangPhim }, new { message = "Thêm mới thành công." });
             }
             catch (DbUpdateException dbEx)
             {
@@ -131,5 +131,6 @@ namespace FilmsAPI.Controllers
 
             }
         }
+
     }
 }
