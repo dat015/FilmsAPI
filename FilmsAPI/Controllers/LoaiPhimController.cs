@@ -24,7 +24,9 @@ namespace FilmsAPI.Controllers
         {
             try
             {
-                var loaiPhims = await _context.LoaiPhims.ToListAsync();
+                var loaiPhims = await _context.LoaiPhims
+                                    .Include(p => p.TheLoaiCuaPhims)
+                                    .ToListAsync();
 
                 if (loaiPhims == null || loaiPhims.Count == 0)
                 {
@@ -75,7 +77,7 @@ namespace FilmsAPI.Controllers
                 _context.LoaiPhims.Add(loaiPhim);
                 await _context.SaveChangesAsync();
 
-                return CreatedAtAction(nameof(GetLoaiPhimById), new { id = loaiPhim.MaTheLoai }, loaiPhim);
+                return Ok(new { Message = "Thêm thể loại thành công"});
             }
             catch (Exception ex)
             {
@@ -85,9 +87,9 @@ namespace FilmsAPI.Controllers
 
         // PUT: api/LoaiPhim/{id}
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateLoaiPhim(int id, [FromBody] LoaiPhim loaiPhim)
+        public async Task<IActionResult> UpdateLoaiPhim([FromBody] LoaiPhim loaiPhim)
         {
-            if (loaiPhim == null || loaiPhim.MaTheLoai != id)
+            if (loaiPhim == null || loaiPhim.MaTheLoai != loaiPhim.MaTheLoai)
             {
                 return BadRequest(new { message = "Dữ liệu không hợp lệ hoặc MaTheLoai không khớp." });
             }
@@ -95,11 +97,11 @@ namespace FilmsAPI.Controllers
             try
             {
                 var existingLoaiPhim = await _context.LoaiPhims
-                    .FirstOrDefaultAsync(lp => lp.MaTheLoai == id);
+                    .FirstOrDefaultAsync(lp => lp.MaTheLoai == loaiPhim.MaTheLoai);
 
                 if (existingLoaiPhim == null)
                 {
-                    return NotFound(new { message = "Không tìm thấy loại phim với MaTheLoai " + id });
+                    return NotFound(new { message = "Không tìm thấy loại phim với MaTheLoai " + loaiPhim.MaTheLoai });
                 }
 
                 // Cập nhật thông tin loại phim
@@ -126,17 +128,17 @@ namespace FilmsAPI.Controllers
 
                 if (loaiPhim == null)
                 {
-                    return NotFound(new { message = "Không tìm thấy loại phim với MaTheLoai " + id });
+                    return NotFound();
                 }
 
                 _context.LoaiPhims.Remove(loaiPhim);
                 await _context.SaveChangesAsync();
 
-                return Ok(new { message = "Xóa loại phim thành công." });
+                return Ok();
             }
             catch (Exception ex)
             {
-                return BadRequest(new { message = ex.Message });
+                return BadRequest();
             }
         }
     }
