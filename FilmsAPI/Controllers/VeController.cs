@@ -17,19 +17,11 @@ namespace FilmsAPI.Controllers
         }
 
         [HttpGet(Name = "GetVe")]
-<<<<<<< HEAD
-        public ActionResult GetVe()
-        {
-            try
-            {
-                var ve = _db.Ves.ToListAsync();
-=======
         public async Task<IActionResult> GetVe()
         {
             try
             {
                 var ve = await _db.Ves.ToListAsync();
->>>>>>> 929d576b2d3e51fdab03da8214fa51ca1cd8d022
                 return Ok(ve);
             }
             catch (Exception ex)

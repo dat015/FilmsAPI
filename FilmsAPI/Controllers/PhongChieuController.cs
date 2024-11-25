@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using FilmsAPI.Models;
+using System.Reflection.PortableExecutable;
 
 namespace FilmsAPI.Controllers
 {
@@ -31,7 +32,7 @@ namespace FilmsAPI.Controllers
             }
         }
 
-        [HttpPut(Name = "AddPhongChieu")]
+        [HttpPost(Name = "AddPhongChieu")]
         public async Task<IActionResult> AddPhongChieu([FromBody] PhongChieu dto)
         {
             if (dto == null)
@@ -40,22 +41,35 @@ namespace FilmsAPI.Controllers
             }
             try
             {
+                // Kiểm tra tên phòng chiếu đã tồn tại
+                var existingPhongChieu = await _db.PhongChieus
+                    .FirstOrDefaultAsync(p => p.TenPhongChieu == dto.TenPhongChieu);
+
+                if (existingPhongChieu != null)
+                {
+                    return BadRequest(new { message = "Tên phòng chiếu đã tồn tại." });
+                }
                 var phongChieu = new PhongChieu
                 {
                     TenPhongChieu = dto.TenPhongChieu,
                     SoGhe = dto.SoGhe,
                     SoGheMotHang = dto.SoGheMotHang,
+                    MaManHinhNavigation = new ManHinh
+                    {
+                        TenManHinh = dto.MaManHinhNavigation.TenManHinh
+                    }
                 };
                 _db.PhongChieus.Add(phongChieu);
                 await _db.SaveChangesAsync();
-                return Ok("Thêm thành công");
+                return CreatedAtAction("GetPhongChieu", new { id = phongChieu.MaPhongChieu }, new { message = "Thêm mới thành công." });
             }
             catch (Exception ex)
             {
                 return BadRequest(ex.Message);
             }
         }
-        [HttpPost(Name = "UpdatePhongChieu")]
+
+        [HttpPut(Name = "UpdatePhongChieu")]
         public async Task<IActionResult> UpdatePhongChieu([FromBody] PhongChieu dto)
         {
             if (dto == null)
@@ -64,20 +78,36 @@ namespace FilmsAPI.Controllers
             }
             try
             {
-                var phongChieu = await _db.PhongChieus.FindAsync(dto.MaPhongChieu);
+                var phongChieu = await _db.PhongChieus
+                    .FirstOrDefaultAsync(dp => dp.MaPhongChieu == dto.MaPhongChieu);
+
                 if (phongChieu == null)
                 {
                     return NotFound("Không tìm thấy phòng chiếu");
                 }
+
+                var existingPhongChieu = await _db.PhongChieus
+                    .FirstOrDefaultAsync(dp => dp.TenPhongChieu == dto.TenPhongChieu && dp.MaPhongChieu != dto.MaPhongChieu);
+
+                if (existingPhongChieu != null)
+                {
+                    return BadRequest(new { message = "Tên phòng chiếu đã tồn tại." });
+                }
+
                 phongChieu.TenPhongChieu = dto.TenPhongChieu;
+                phongChieu.SoGhe = dto.SoGhe;
+                phongChieu.SoGheMotHang = dto.SoGheMotHang;
+                phongChieu.MaManHinhNavigation = new ManHinh
+                {
+                    TenManHinh = dto.MaManHinhNavigation.TenManHinh
+                };
                 await _db.SaveChangesAsync();
-                return Ok("Cập nhật thành công");
+                return Ok(new { message = "Cập nhật thành công." });
             }
             catch (Exception ex)
             {
                 return BadRequest(ex.Message);
             }
         }
-
     }
 }

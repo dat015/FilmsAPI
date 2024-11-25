@@ -11,7 +11,7 @@ public partial class PhongChieu
 
     public int SoGheMotHang { get; set; }
 
-    public int SoHangGhe { get; set; }
+    public int? SoHangGhe { get; set; }
 
     public int MaManHinh { get; set; }
 

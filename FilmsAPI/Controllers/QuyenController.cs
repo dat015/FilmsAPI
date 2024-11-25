@@ -17,11 +17,7 @@ namespace FilmsAPI.Controllers
         }
 
         [HttpGet(Name = "GetQuyen")]
-<<<<<<< HEAD
-        public ActionResult GetQuyen()
-=======
         public async Task<IActionResult> GetQuyen()
->>>>>>> 929d576b2d3e51fdab03da8214fa51ca1cd8d022
         {
             try
             {
@@ -60,10 +56,6 @@ namespace FilmsAPI.Controllers
             }
         }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 929d576b2d3e51fdab03da8214fa51ca1cd8d022
         [HttpPut(Name = "UpdateQuyen")]
         public async Task<IActionResult> UpdateQuyen([FromBody] Quyen dto)
         {
