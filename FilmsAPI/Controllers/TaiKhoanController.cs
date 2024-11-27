@@ -57,30 +57,40 @@ namespace FilmsAPI.Controllers
         [HttpPut("{mataikhoan}")]
         public async Task<IActionResult> PutTaiKhoan(int mataikhoan, TaiKhoan taiKhoan)
         {
+            // Kiểm tra nếu ID không khớp
             if (mataikhoan != taiKhoan.MaTaiKhoan)
             {
-                return BadRequest();
+                return BadRequest("Mã tài khoản không khớp.");
             }
 
+            // Đánh dấu thực thể đã được sửa đổi
             _context.Entry(taiKhoan).State = EntityState.Modified;
 
             try
             {
+                // Lưu thay đổi
                 await _context.SaveChangesAsync();
             }
             catch (DbUpdateConcurrencyException)
             {
+                // Kiểm tra xem tài khoản có tồn tại không
                 if (!TaiKhoanExists(mataikhoan))
                 {
-                    return NotFound();
+                    return NotFound($"Không tìm thấy tài khoản với ID: {mataikhoan}");
                 }
-                else
-                {
-                    throw;
-                }
+
+                // Nếu là lỗi khác, trả về thông báo lỗi
+                return StatusCode(500, "Đã xảy ra lỗi trong khi cập nhật tài khoản.");
+            }
+            catch (Exception ex)
+            {
+                // Bắt lỗi chung và ghi log (nếu cần)
+                Console.WriteLine($"API Error: {ex.Message}");
+                return StatusCode(500, "Đã xảy ra lỗi không xác định.");
             }
 
-            return NoContent();
+            // Trả về phản hồi thành công rõ ràng
+            return Ok("Cập nhật tài khoản thành công.");
         }
 
         // Xóa tài khoản
