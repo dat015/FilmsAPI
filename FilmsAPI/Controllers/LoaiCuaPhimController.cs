@@ -25,6 +25,27 @@ namespace FilmsAPI.Controllers
             return Ok(loaiCuaPhims);
         }
 
+        [HttpGet("{maphim}")]
+        public async Task<ActionResult> GetLoaiCuaPhim(int maphim)
+        {
+            try
+            {
+                var loaiCuaPhim = await _context.TheLoaiCuaPhims
+                                         .Where(l => l.Maphim == maphim)
+                                         .ToListAsync();
+
+                if (!loaiCuaPhim.Any() || loaiCuaPhim == null)
+                {
+                    return NotFound(new { Message = "Không tìm thấy thể loại nào cho mã phim này." });
+                }
+                return Ok(loaiCuaPhim);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { Message = "Đã xảy ra lỗi trong quá trình xử lý.", Details = ex.Message });
+            }
+        }
+
         [HttpGet("{maphim}/{matheloai}")]
         public async Task<ActionResult> GetLoaiCuaPhim(int maphim, int matheloai)
         {
@@ -33,21 +54,33 @@ namespace FilmsAPI.Controllers
 
             if (loaiCuaPhim == null)
             {
-                return NotFound();
+                return NotFound("Không tìm thấy loại của phim" );
             }
 
             return Ok(loaiCuaPhim);
         }
-
-        // Thêm LoaiCuaPhim mới
+        
         [HttpPost]
-        public async Task<ActionResult<TheLoaiCuaPhim>> PostLoaiCuaPhim(TheLoaiCuaPhim loaiCuaPhim)
+        public async Task<ActionResult> PostLoaiCuaPhim(List<TheLoaiCuaPhim> loaiCuaPhim)
         {
-            _context.TheLoaiCuaPhims.Add(loaiCuaPhim);
-            await _context.SaveChangesAsync();
+            if (loaiCuaPhim == null || !loaiCuaPhim.Any())
+            {
+                return BadRequest(new { Message = "Dữ liệu loại phim không hợp lệ." });
+            }
 
-            return CreatedAtAction(nameof(GetLoaiCuaPhim), new { maphim = loaiCuaPhim.Maphim, matheloai = loaiCuaPhim.MaTheLoai }, loaiCuaPhim);
+            try
+            {
+                _context.TheLoaiCuaPhims.AddRange(loaiCuaPhim);
+                await _context.SaveChangesAsync();
+
+                return Ok(new { Message = "Thêm loại phim thành công.", Data = loaiCuaPhim });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { Message = "Lỗi khi thêm loại phim: " + ex.Message });
+            }
         }
+
 
         // Cập nhật LoaiCuaPhim
         [HttpPut("{maphim}/{matheloai}")]
@@ -58,7 +91,7 @@ namespace FilmsAPI.Controllers
                 return BadRequest();
             }
 
-            _context.Entry(loaiCuaPhim).State = EntityState.Modified;
+            _context.Entry(loaiCuaPhim).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
 
             try
             {
@@ -76,7 +109,7 @@ namespace FilmsAPI.Controllers
                 }
             }
 
-            return NoContent();
+            return Ok(new { Message = "Cập nhật thành công" });
         }
 
         // Xóa LoaiCuaPhim
@@ -87,14 +120,43 @@ namespace FilmsAPI.Controllers
 
             if (loaiCuaPhim == null)
             {
-                return NotFound();
+                return BadRequest(new { Message = "Không tìm thấy loại của phim" });
             }
 
             _context.TheLoaiCuaPhims.Remove(loaiCuaPhim);
             await _context.SaveChangesAsync();
 
-            return NoContent();
+            return Ok(new { Message = "Xóa thánh công" });
         }
+
+        [HttpDelete(Name = "XoaLoaiPhim")]
+        public async Task<ActionResult> DeleteTheLoai([FromBody] List<TheLoaiCuaPhim> dto)
+        {
+            try
+            {
+                var ids = dto.Select(t => t.Id).ToList();
+
+                // Tìm các thể loại trong cơ sở dữ liệu
+                var theLoaisToDelete = await _context.TheLoaiCuaPhims.Where(t => ids.Contains(t.Id)).ToListAsync();
+
+                if (!theLoaisToDelete.Any())
+                {
+                    return NotFound(new { Message = "Không tìm thấy thể loại nào để xóa." });
+                }
+
+                _context.TheLoaiCuaPhims.RemoveRange(theLoaisToDelete);
+                await _context.SaveChangesAsync();
+
+                return Ok(new { message = "Đã xóa thành công các thể loại." });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Đã xảy ra lỗi: {ex.Message}");
+
+            }
+        }
+
+
 
         //Kiểm tra sự tồn tại của LoaiCuaPhim
         private bool LoaiCuaPhimExists(int maphim, int matheloai)

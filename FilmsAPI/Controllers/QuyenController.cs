@@ -19,7 +19,6 @@ namespace FilmsAPI.Controllers
 
         // Lấy danh sách quyền
         [HttpGet(Name = "GetQuyen")]
-
         public async Task<IActionResult> GetQuyen()
         {
             try

@@ -23,7 +23,6 @@ namespace FilmsAPI.Controllers
             try
             {
                 var ve = await _db.Ves.ToListAsync();
-
                 return Ok(ve);
             }
             catch (Exception ex)
