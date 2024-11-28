@@ -21,5 +21,4 @@ public partial class NhanVien
 
     public virtual Quyen? MaQuyenNavigation { get; set; } = null!;
 
-    public virtual ICollection<Ve>? Ves { get; set; } = new List<Ve>();
 }

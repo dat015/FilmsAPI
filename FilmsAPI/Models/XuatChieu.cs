@@ -14,6 +14,7 @@ public partial class XuatChieu
     public int MaPhong { get; set; }
 
     public int MaPhim { get; set; }
+    public bool Status { get; set; } = false;
 
     public virtual Phim? MaPhimNavigation { get; set; } = null!;
 
