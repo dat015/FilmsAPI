@@ -88,11 +88,11 @@ namespace FilmsAPI.Controllers
                 _db.Ghes.Add(dto);
                 await _db.SaveChangesAsync();
 
-                return CreatedAtRoute("GetDanhSachGhe", new { maPhong = dto.MaPhong }, dto);
+                return Ok( new { Message = "Thêm thành công"     });
             }
             catch (Exception ex)
             {
-                return BadRequest(new { Message = "Đã xảy ra lỗi khi thêm ghế.", Error = ex.Message });
+                return BadRequest(new { Message = "Đã xảy ra lỗi khi thêm ghế." + ex.Message });
             }
         }
     }
