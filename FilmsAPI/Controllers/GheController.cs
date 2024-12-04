@@ -3,11 +3,14 @@ using Microsoft.AspNetCore.Mvc;
 using FilmsAPI.Models;
 using Microsoft.EntityFrameworkCore;
 using FilmsAPI.DTO;
+using FilmsAPI.Filters;
 
 namespace FilmsAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [RoleAuthorizationFilter("Admin")]
+
     public class GheController : ControllerBase
     {
         private readonly FilmsDbContext _db;

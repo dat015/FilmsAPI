@@ -4,11 +4,14 @@ using Microsoft.EntityFrameworkCore;
 using FilmsAPI.Models;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using FilmsAPI.Filters;
 
 namespace FilmsAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [RoleAuthorizationFilter("Admin")]
+
     public class LoaiGheController : ControllerBase
     {
         private readonly FilmsDbContext _context;

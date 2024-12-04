@@ -1,4 +1,5 @@
-﻿using FilmsAPI.Models;
+﻿using FilmsAPI.Filters;
+using FilmsAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -6,6 +7,8 @@ namespace FilmsAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [RoleAuthorizationFilter("Admin")]
+
     public class XuatChieuController : ControllerBase
     {
         private readonly FilmsDbContext _db;
