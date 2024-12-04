@@ -2,11 +2,14 @@
 using Microsoft.AspNetCore.Mvc;
 using FilmsAPI.Models;
 using Microsoft.EntityFrameworkCore;
+using FilmsAPI.Filters;
 
 namespace FilmsAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [RoleAuthorizationFilter("Admin")]
+
     public class LoaiCuaPhimController : ControllerBase
     {
         private readonly FilmsDbContext _context;

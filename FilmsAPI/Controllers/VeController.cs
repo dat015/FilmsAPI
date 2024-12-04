@@ -2,11 +2,14 @@
 using Microsoft.AspNetCore.Mvc;
 using FilmsAPI.Models;
 using Microsoft.EntityFrameworkCore;
+using FilmsAPI.Filters;
 
 namespace FilmsAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [RoleAuthorizationFilter("Admin")]
+
     public class VeController : ControllerBase
     {
         private readonly FilmsDbContext _db;
@@ -103,6 +106,37 @@ namespace FilmsAPI.Controllers
             {
                 return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
+
         }
+        [HttpDelete("DeleteRangeAsync")]
+        public async Task<ActionResult> DeleteRangeAsync([FromBody] List<Ve> listVe)
+        {
+            if (listVe == null || !listVe.Any())
+            {
+                return BadRequest(new { Message = "Danh sách vé cần xóa không hợp lệ hoặc rỗng." });
+            }
+
+            try
+            {
+                var veIds = listVe.Select(v => v.MaVe).ToList();
+                var existingVe = _db.Ves.Where(v => veIds.Contains(v.MaVe)).ToList();
+
+                if (!existingVe.Any())
+                {
+                    return NotFound(new { Message = "Không tìm thấy vé nào để xóa." });
+                }
+      
+
+                _db.RemoveRange(existingVe);
+                await _db.SaveChangesAsync();
+
+                return Ok(new { Message = $"{existingVe.Count} vé đã được xóa thành công." });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { Message = ex.Message});
+            }
+        }
+
     }
 }

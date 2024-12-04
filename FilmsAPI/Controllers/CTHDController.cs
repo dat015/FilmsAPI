@@ -1,4 +1,5 @@
-﻿using FilmsAPI.Models;
+﻿using FilmsAPI.Filters;
+using FilmsAPI.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -7,6 +8,8 @@ namespace FilmsAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [RoleAuthorizationFilter("Admin")]
+
     public class CTHDController : ControllerBase
     {
         private readonly FilmsDbContext _db;
