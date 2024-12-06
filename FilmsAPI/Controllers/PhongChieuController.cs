@@ -1,14 +1,17 @@
 
-﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using FilmsAPI.Models;
 using System.Reflection.PortableExecutable;
+using FilmsAPI.Filters;
 
 namespace FilmsAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [RoleAuthorizationFilter("Admin")]
+
     public class PhongChieuController : ControllerBase
     {
 
@@ -33,6 +36,7 @@ namespace FilmsAPI.Controllers
                 return BadRequest(new { message = ex.Message, stackTrace = ex.StackTrace });
             }
         }
+
         [HttpPost(Name = "AddPhongChieu")]
         public async Task<IActionResult> AddPhongChieu([FromBody] PhongChieu dto)
         {
@@ -56,10 +60,7 @@ namespace FilmsAPI.Controllers
                     TenPhongChieu = dto.TenPhongChieu,
                     SoGhe = dto.SoGhe,
                     SoGheMotHang = dto.SoGheMotHang,
-                    MaManHinhNavigation = new ManHinh
-                    {
-                        TenManHinh = dto.MaManHinhNavigation.TenManHinh
-                    }
+                    MaManHinh = dto.MaManHinh
                 };
 
                 _db.PhongChieus.Add(phongChieu);

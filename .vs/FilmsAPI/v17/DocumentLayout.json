@@ -185,7 +185,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 250,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -198,18 +198,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "LoaiPhimController.cs",
-              "DocumentMoniker": "D:\\H\u1ECCC K\u1EF2 1 2024-2025\\L\u1EADp tr\u00ECnh tr\u1EF1c quan\\FilmsAPI\\FilmsAPI\\Controllers\\LoaiPhimController.cs",
-              "RelativeDocumentMoniker": "FilmsAPI\\Controllers\\LoaiPhimController.cs",
-              "ToolTip": "D:\\H\u1ECCC K\u1EF2 1 2024-2025\\L\u1EADp tr\u00ECnh tr\u1EF1c quan\\FilmsAPI\\FilmsAPI\\Controllers\\LoaiPhimController.cs",
-              "RelativeToolTip": "FilmsAPI\\Controllers\\LoaiPhimController.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-30T06:21:47.861Z"
             },
             {
               "$type": "Document",
@@ -231,10 +219,22 @@
               "RelativeDocumentMoniker": "FilmsAPI\\Models\\FilmsDbContext.cs",
               "ToolTip": "D:\\H\u1ECCC K\u1EF2 1 2024-2025\\L\u1EADp tr\u00ECnh tr\u1EF1c quan\\FilmsAPI\\FilmsAPI\\Models\\FilmsDbContext.cs",
               "RelativeToolTip": "FilmsAPI\\Models\\FilmsDbContext.cs",
-              "ViewState": "AgIAAC4AAAAAAAAAAAAQwDcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAC4AAAAAAAAAAADwvzgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-21T14:45:27.372Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "LoaiPhimController.cs",
+              "DocumentMoniker": "D:\\H\u1ECCC K\u1EF2 1 2024-2025\\L\u1EADp tr\u00ECnh tr\u1EF1c quan\\FilmsAPI\\FilmsAPI\\Controllers\\LoaiPhimController.cs",
+              "RelativeDocumentMoniker": "FilmsAPI\\Controllers\\LoaiPhimController.cs",
+              "ToolTip": "D:\\H\u1ECCC K\u1EF2 1 2024-2025\\L\u1EADp tr\u00ECnh tr\u1EF1c quan\\FilmsAPI\\FilmsAPI\\Controllers\\LoaiPhimController.cs",
+              "RelativeToolTip": "FilmsAPI\\Controllers\\LoaiPhimController.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-30T06:21:47.861Z"
             },
             {
               "$type": "Document",
@@ -270,8 +270,7 @@
               "RelativeToolTip": "FilmsAPI\\Models\\DangPhim.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-21T13:15:49.69Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-21T13:15:49.69Z"
             },
             {
               "$type": "Document",

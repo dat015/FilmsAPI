@@ -3,11 +3,14 @@ using Microsoft.AspNetCore.Mvc;
 using FilmsAPI.Models;
 using Microsoft.EntityFrameworkCore;
 using FilmsAPI.DTO;
+using FilmsAPI.Filters;
 
 namespace FilmsAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [RoleAuthorizationFilter("Admin")]
+
     public class GheController : ControllerBase
     {
         private readonly FilmsDbContext _db;
@@ -88,11 +91,11 @@ namespace FilmsAPI.Controllers
                 _db.Ghes.Add(dto);
                 await _db.SaveChangesAsync();
 
-                return CreatedAtRoute("GetDanhSachGhe", new { maPhong = dto.MaPhong }, dto);
+                return Ok( new { Message = "Thêm thành công"     });
             }
             catch (Exception ex)
             {
-                return BadRequest(new { Message = "Đã xảy ra lỗi khi thêm ghế.", Error = ex.Message });
+                return BadRequest(new { Message = "Đã xảy ra lỗi khi thêm ghế." + ex.Message });
             }
         }
     }

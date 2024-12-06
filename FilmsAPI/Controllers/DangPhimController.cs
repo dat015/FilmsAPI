@@ -1,4 +1,5 @@
-﻿using FilmsAPI.Models;
+﻿using FilmsAPI.Filters;
+using FilmsAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
@@ -7,6 +8,8 @@ namespace FilmsAPI.Controllers
 {
     [ApiController]
     [Route("[controller]")]
+    [RoleAuthorizationFilter("Admin")]
+
     public class DangPhimController : ControllerBase
     {
 

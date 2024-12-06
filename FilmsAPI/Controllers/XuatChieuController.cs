@@ -1,4 +1,5 @@
-﻿using FilmsAPI.Models;
+﻿using FilmsAPI.Filters;
+using FilmsAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -6,6 +7,8 @@ namespace FilmsAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [RoleAuthorizationFilter("Admin")]
+
     public class XuatChieuController : ControllerBase
     {
         private readonly FilmsDbContext _db;
@@ -24,6 +27,28 @@ namespace FilmsAPI.Controllers
                     .Include(x => x.MaPhimNavigation)
                     .Include(x => x.MaPhongNavigation)
                     .ToListAsync();
+                return Ok(xuatChieu);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+        }
+        [HttpGet("{id}")]
+        public async Task<ActionResult> GetXuatChieu(int id)
+        {
+            try
+            {
+                var xuatChieu = await _db.XuatChieus
+                 .Include(x => x.MaPhimNavigation)
+                 .Include(x => x.MaPhongNavigation)
+                 .FirstOrDefaultAsync(x => x.MaXuatChieu == id);
+
+                if (xuatChieu == null)
+                {
+                    return NotFound(new { message = "Không tìm thấy xuất chiếu." });
+                }
+
                 return Ok(xuatChieu);
             }
             catch (Exception ex)
@@ -166,6 +191,7 @@ namespace FilmsAPI.Controllers
                 // Cập nhật bản ghi suất chiếu
                 xuatChieu.MaPhim = dto.MaPhim;
                 xuatChieu.MaPhong = dto.MaPhong;
+                xuatChieu.Status = dto.Status;
                 xuatChieu.ThoiGianBatDau = dto.ThoiGianBatDau;
                 xuatChieu.ThoiGianKetThuc = dto.ThoiGianKetThuc;
 

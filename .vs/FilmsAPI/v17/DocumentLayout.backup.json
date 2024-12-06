@@ -7,6 +7,10 @@
       "RelativeMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|solutionrelative:filmsapi\\models\\filmsdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|d:\\h\u1ECDc k\u1EF3 1 2024-2025\\l\u1EADp tr\u00ECnh tr\u1EF1c quan\\filmsapi\\filmsapi\\models\\dangphim.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|solutionrelative:filmsapi\\models\\dangphim.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|d:\\h\u1ECDc k\u1EF3 1 2024-2025\\l\u1EADp tr\u00ECnh tr\u1EF1c quan\\filmsapi\\filmsapi\\models\\khachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|solutionrelative:filmsapi\\models\\khachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -115,10 +119,6 @@
       "RelativeMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|solutionrelative:filmsapi\\models\\hoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|d:\\h\u1ECDc k\u1EF3 1 2024-2025\\l\u1EADp tr\u00ECnh tr\u1EF1c quan\\filmsapi\\filmsapi\\models\\dangphim.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|solutionrelative:filmsapi\\models\\dangphim.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|d:\\h\u1ECDc k\u1EF3 1 2024-2025\\l\u1EADp tr\u00ECnh tr\u1EF1c quan\\filmsapi\\filmsapi\\controllers\\cthdcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|solutionrelative:filmsapi\\controllers\\cthdcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -185,7 +185,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 250,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -201,19 +201,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "LoaiPhimController.cs",
-              "DocumentMoniker": "D:\\H\u1ECCC K\u1EF2 1 2024-2025\\L\u1EADp tr\u00ECnh tr\u1EF1c quan\\FilmsAPI\\FilmsAPI\\Controllers\\LoaiPhimController.cs",
-              "RelativeDocumentMoniker": "FilmsAPI\\Controllers\\LoaiPhimController.cs",
-              "ToolTip": "D:\\H\u1ECCC K\u1EF2 1 2024-2025\\L\u1EADp tr\u00ECnh tr\u1EF1c quan\\FilmsAPI\\FilmsAPI\\Controllers\\LoaiPhimController.cs",
-              "RelativeToolTip": "FilmsAPI\\Controllers\\LoaiPhimController.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-30T06:21:47.861Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "ManHinhController.cs",
               "DocumentMoniker": "D:\\H\u1ECCC K\u1EF2 1 2024-2025\\L\u1EADp tr\u00ECnh tr\u1EF1c quan\\FilmsAPI\\FilmsAPI\\Controllers\\ManHinhController.cs",
               "RelativeDocumentMoniker": "FilmsAPI\\Controllers\\ManHinhController.cs",
@@ -229,16 +217,28 @@
               "Title": "FilmsDbContext.cs",
               "DocumentMoniker": "D:\\H\u1ECCC K\u1EF2 1 2024-2025\\L\u1EADp tr\u00ECnh tr\u1EF1c quan\\FilmsAPI\\FilmsAPI\\Models\\FilmsDbContext.cs",
               "RelativeDocumentMoniker": "FilmsAPI\\Models\\FilmsDbContext.cs",
-              "ToolTip": "D:\\H\u1ECCC K\u1EF2 1 2024-2025\\L\u1EADp tr\u00ECnh tr\u1EF1c quan\\FilmsAPI\\FilmsAPI\\Models\\FilmsDbContext.cs",
-              "RelativeToolTip": "FilmsAPI\\Models\\FilmsDbContext.cs",
-              "ViewState": "AgIAAC0AAAAAAAAAAAA1wDYAAABIAAAAAAAAAA==",
+              "ToolTip": "D:\\H\u1ECCC K\u1EF2 1 2024-2025\\L\u1EADp tr\u00ECnh tr\u1EF1c quan\\FilmsAPI\\FilmsAPI\\Models\\FilmsDbContext.cs*",
+              "RelativeToolTip": "FilmsAPI\\Models\\FilmsDbContext.cs*",
+              "ViewState": "AgIAACcAAAAAAAAAAAA+wDgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-21T14:45:27.372Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
+              "Title": "LoaiPhimController.cs",
+              "DocumentMoniker": "D:\\H\u1ECCC K\u1EF2 1 2024-2025\\L\u1EADp tr\u00ECnh tr\u1EF1c quan\\FilmsAPI\\FilmsAPI\\Controllers\\LoaiPhimController.cs",
+              "RelativeDocumentMoniker": "FilmsAPI\\Controllers\\LoaiPhimController.cs",
+              "ToolTip": "D:\\H\u1ECCC K\u1EF2 1 2024-2025\\L\u1EADp tr\u00ECnh tr\u1EF1c quan\\FilmsAPI\\FilmsAPI\\Controllers\\LoaiPhimController.cs",
+              "RelativeToolTip": "FilmsAPI\\Controllers\\LoaiPhimController.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-30T06:21:47.861Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "TheLoaiCuaPhim.cs",
               "DocumentMoniker": "D:\\H\u1ECCC K\u1EF2 1 2024-2025\\L\u1EADp tr\u00ECnh tr\u1EF1c quan\\FilmsAPI\\FilmsAPI\\Models\\TheLoaiCuaPhim.cs",
               "RelativeDocumentMoniker": "FilmsAPI\\Models\\TheLoaiCuaPhim.cs",
@@ -250,7 +250,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "KhachHang.cs",
               "DocumentMoniker": "D:\\H\u1ECCC K\u1EF2 1 2024-2025\\L\u1EADp tr\u00ECnh tr\u1EF1c quan\\FilmsAPI\\FilmsAPI\\Models\\KhachHang.cs",
               "RelativeDocumentMoniker": "FilmsAPI\\Models\\KhachHang.cs",
@@ -258,12 +258,23 @@
               "RelativeToolTip": "FilmsAPI\\Models\\KhachHang.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAuwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-21T13:15:49.702Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-21T13:15:49.702Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 1,
+              "Title": "DangPhim.cs",
+              "DocumentMoniker": "D:\\H\u1ECCC K\u1EF2 1 2024-2025\\L\u1EADp tr\u00ECnh tr\u1EF1c quan\\FilmsAPI\\FilmsAPI\\Models\\DangPhim.cs",
+              "RelativeDocumentMoniker": "FilmsAPI\\Models\\DangPhim.cs",
+              "ToolTip": "D:\\H\u1ECCC K\u1EF2 1 2024-2025\\L\u1EADp tr\u00ECnh tr\u1EF1c quan\\FilmsAPI\\FilmsAPI\\Models\\DangPhim.cs",
+              "RelativeToolTip": "FilmsAPI\\Models\\DangPhim.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-21T13:15:49.69Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "XuatChieuController.cs",
               "DocumentMoniker": "D:\\H\u1ECCC K\u1EF2 1 2024-2025\\L\u1EADp tr\u00ECnh tr\u1EF1c quan\\FilmsAPI\\FilmsAPI\\Controllers\\XuatChieuController.cs",
               "RelativeDocumentMoniker": "FilmsAPI\\Controllers\\XuatChieuController.cs",
@@ -275,7 +286,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "VeController.cs",
               "DocumentMoniker": "D:\\H\u1ECCC K\u1EF2 1 2024-2025\\L\u1EADp tr\u00ECnh tr\u1EF1c quan\\FilmsAPI\\FilmsAPI\\Controllers\\VeController.cs",
               "RelativeDocumentMoniker": "FilmsAPI\\Controllers\\VeController.cs",
@@ -287,7 +298,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "TaiKhoan.cs",
               "DocumentMoniker": "D:\\H\u1ECCC K\u1EF2 1 2024-2025\\L\u1EADp tr\u00ECnh tr\u1EF1c quan\\FilmsAPI\\FilmsAPI\\Models\\TaiKhoan.cs",
               "RelativeDocumentMoniker": "FilmsAPI\\Models\\TaiKhoan.cs",
@@ -299,7 +310,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "NhanVienController.cs",
               "DocumentMoniker": "D:\\H\u1ECCC K\u1EF2 1 2024-2025\\L\u1EADp tr\u00ECnh tr\u1EF1c quan\\FilmsAPI\\FilmsAPI\\Controllers\\NhanVienController.cs",
               "RelativeDocumentMoniker": "FilmsAPI\\Controllers\\NhanVienController.cs",
@@ -311,7 +322,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "TaiKhoanController.cs",
               "DocumentMoniker": "D:\\H\u1ECCC K\u1EF2 1 2024-2025\\L\u1EADp tr\u00ECnh tr\u1EF1c quan\\FilmsAPI\\FilmsAPI\\Controllers\\TaiKhoanController.cs",
               "RelativeDocumentMoniker": "FilmsAPI\\Controllers\\TaiKhoanController.cs",
@@ -323,7 +334,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "PhimController.cs",
               "DocumentMoniker": "D:\\H\u1ECCC K\u1EF2 1 2024-2025\\L\u1EADp tr\u00ECnh tr\u1EF1c quan\\FilmsAPI\\FilmsAPI\\Controllers\\PhimController.cs",
               "RelativeDocumentMoniker": "FilmsAPI\\Controllers\\PhimController.cs",
@@ -335,7 +346,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "HoaDonController.cs",
               "DocumentMoniker": "D:\\H\u1ECCC K\u1EF2 1 2024-2025\\L\u1EADp tr\u00ECnh tr\u1EF1c quan\\FilmsAPI\\FilmsAPI\\Controllers\\HoaDonController.cs",
               "RelativeDocumentMoniker": "FilmsAPI\\Controllers\\HoaDonController.cs",
@@ -347,7 +358,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "PhongChieuController.cs",
               "DocumentMoniker": "D:\\H\u1ECCC K\u1EF2 1 2024-2025\\L\u1EADp tr\u00ECnh tr\u1EF1c quan\\FilmsAPI\\FilmsAPI\\Controllers\\PhongChieuController.cs",
               "RelativeDocumentMoniker": "FilmsAPI\\Controllers\\PhongChieuController.cs",
@@ -359,7 +370,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "DangPhimController.cs",
               "DocumentMoniker": "D:\\H\u1ECCC K\u1EF2 1 2024-2025\\L\u1EADp tr\u00ECnh tr\u1EF1c quan\\FilmsAPI\\FilmsAPI\\Controllers\\DangPhimController.cs",
               "RelativeDocumentMoniker": "FilmsAPI\\Controllers\\DangPhimController.cs",
@@ -371,7 +382,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "GheController.cs",
               "DocumentMoniker": "D:\\H\u1ECCC K\u1EF2 1 2024-2025\\L\u1EADp tr\u00ECnh tr\u1EF1c quan\\FilmsAPI\\FilmsAPI\\Controllers\\GheController.cs",
               "RelativeDocumentMoniker": "FilmsAPI\\Controllers\\GheController.cs",
@@ -383,7 +394,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "NhanVien.cs",
               "DocumentMoniker": "D:\\H\u1ECCC K\u1EF2 1 2024-2025\\L\u1EADp tr\u00ECnh tr\u1EF1c quan\\FilmsAPI\\FilmsAPI\\Models\\NhanVien.cs",
               "RelativeDocumentMoniker": "FilmsAPI\\Models\\NhanVien.cs",
@@ -395,7 +406,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\H\u1ECCC K\u1EF2 1 2024-2025\\L\u1EADp tr\u00ECnh tr\u1EF1c quan\\FilmsAPI\\FilmsAPI\\Program.cs",
               "RelativeDocumentMoniker": "FilmsAPI\\Program.cs",
@@ -407,7 +418,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "Ve.cs",
               "DocumentMoniker": "D:\\H\u1ECCC K\u1EF2 1 2024-2025\\L\u1EADp tr\u00ECnh tr\u1EF1c quan\\FilmsAPI\\FilmsAPI\\Models\\Ve.cs",
               "RelativeDocumentMoniker": "FilmsAPI\\Models\\Ve.cs",
@@ -419,7 +430,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "XuatChieu.cs",
               "DocumentMoniker": "D:\\H\u1ECCC K\u1EF2 1 2024-2025\\L\u1EADp tr\u00ECnh tr\u1EF1c quan\\FilmsAPI\\FilmsAPI\\Models\\XuatChieu.cs",
               "RelativeDocumentMoniker": "FilmsAPI\\Models\\XuatChieu.cs",
@@ -431,7 +442,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "Phim.cs",
               "DocumentMoniker": "D:\\H\u1ECCC K\u1EF2 1 2024-2025\\L\u1EADp tr\u00ECnh tr\u1EF1c quan\\FilmsAPI\\FilmsAPI\\Models\\Phim.cs",
               "RelativeDocumentMoniker": "FilmsAPI\\Models\\Phim.cs",
@@ -443,7 +454,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "ManHinh.cs",
               "DocumentMoniker": "D:\\H\u1ECCC K\u1EF2 1 2024-2025\\L\u1EADp tr\u00ECnh tr\u1EF1c quan\\FilmsAPI\\FilmsAPI\\Models\\ManHinh.cs",
               "RelativeDocumentMoniker": "FilmsAPI\\Models\\ManHinh.cs",
@@ -455,7 +466,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "QuyenController.cs",
               "DocumentMoniker": "D:\\H\u1ECCC K\u1EF2 1 2024-2025\\L\u1EADp tr\u00ECnh tr\u1EF1c quan\\FilmsAPI\\FilmsAPI\\Controllers\\QuyenController.cs",
               "RelativeDocumentMoniker": "FilmsAPI\\Controllers\\QuyenController.cs",
@@ -467,7 +478,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "GheDTO.cs",
               "DocumentMoniker": "D:\\H\u1ECCC K\u1EF2 1 2024-2025\\L\u1EADp tr\u00ECnh tr\u1EF1c quan\\FilmsAPI\\FilmsAPI\\DTO\\GheDTO.cs",
               "RelativeDocumentMoniker": "FilmsAPI\\DTO\\GheDTO.cs",
@@ -479,7 +490,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "Quyen.cs",
               "DocumentMoniker": "D:\\H\u1ECCC K\u1EF2 1 2024-2025\\L\u1EADp tr\u00ECnh tr\u1EF1c quan\\FilmsAPI\\FilmsAPI\\Models\\Quyen.cs",
               "RelativeDocumentMoniker": "FilmsAPI\\Models\\Quyen.cs",
@@ -491,7 +502,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 26,
               "Title": "FilmsAPI.http",
               "DocumentMoniker": "D:\\H\u1ECCC K\u1EF2 1 2024-2025\\L\u1EADp tr\u00ECnh tr\u1EF1c quan\\FilmsAPI\\FilmsAPI\\FilmsAPI.http",
               "RelativeDocumentMoniker": "FilmsAPI\\FilmsAPI.http",
@@ -503,7 +514,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 25,
               "Title": "WeatherForecast.cs",
               "DocumentMoniker": "D:\\H\u1ECCC K\u1EF2 1 2024-2025\\L\u1EADp tr\u00ECnh tr\u1EF1c quan\\FilmsAPI\\FilmsAPI\\WeatherForecast.cs",
               "RelativeDocumentMoniker": "FilmsAPI\\WeatherForecast.cs",
@@ -515,7 +526,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 27,
               "Title": "PhongChieu.cs",
               "DocumentMoniker": "D:\\H\u1ECCC K\u1EF2 1 2024-2025\\L\u1EADp tr\u00ECnh tr\u1EF1c quan\\FilmsAPI\\FilmsAPI\\Models\\PhongChieu.cs",
               "RelativeDocumentMoniker": "FilmsAPI\\Models\\PhongChieu.cs",
@@ -527,7 +538,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 28,
               "Title": "HoaDon.cs",
               "DocumentMoniker": "D:\\H\u1ECCC K\u1EF2 1 2024-2025\\L\u1EADp tr\u00ECnh tr\u1EF1c quan\\FilmsAPI\\FilmsAPI\\Models\\HoaDon.cs",
               "RelativeDocumentMoniker": "FilmsAPI\\Models\\HoaDon.cs",
@@ -536,18 +547,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-21T13:19:44.842Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "DangPhim.cs",
-              "DocumentMoniker": "D:\\H\u1ECCC K\u1EF2 1 2024-2025\\L\u1EADp tr\u00ECnh tr\u1EF1c quan\\FilmsAPI\\FilmsAPI\\Models\\DangPhim.cs",
-              "RelativeDocumentMoniker": "FilmsAPI\\Models\\DangPhim.cs",
-              "ToolTip": "D:\\H\u1ECCC K\u1EF2 1 2024-2025\\L\u1EADp tr\u00ECnh tr\u1EF1c quan\\FilmsAPI\\FilmsAPI\\Models\\DangPhim.cs",
-              "RelativeToolTip": "FilmsAPI\\Models\\DangPhim.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-21T13:15:49.69Z"
             },
             {
               "$type": "Document",

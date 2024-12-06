@@ -2,18 +2,21 @@
 using Microsoft.AspNetCore.Mvc;
 using FilmsAPI.Models;
 using Microsoft.EntityFrameworkCore;
+using FilmsAPI.Filters;
 
 namespace FilmsAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [RoleAuthorizationFilter("Admin")]
+
     public class VeController : ControllerBase
     {
         private readonly FilmsDbContext _db;
 
         public VeController()
         {
-            _db = new FilmsDbContext();
+            _db = new FilmsDbContext();                
         }
 
         // Lấy danh sách tất cả vé
@@ -22,7 +25,28 @@ namespace FilmsAPI.Controllers
         {
             try
             {
-                var ve = await _db.Ves.ToListAsync();
+                var ve = await _db.Ves
+                    .Include(v => v.MaLoaiVeNavigation)
+                    .Include(v => v.MaGheNavigation)
+                    .Include(v => v.MaXuatChieuNavigation)
+                    .ToListAsync();
+                return Ok(ve);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            }
+        }
+
+        [HttpGet("GetVeTheoXuatChieu/{id}")]
+        public async Task<IActionResult> GetVe(int id)
+        {
+            try
+            {
+                var ve = await _db.Ves.Where(v => v.MaXuatChieu == id)
+                    .Include(v => v.MaGheNavigation)
+                    .ThenInclude(g => g.MaLoaiGheNavigation)
+                    .ToListAsync();
                 return Ok(ve);
             }
             catch (Exception ex)
@@ -41,10 +65,9 @@ namespace FilmsAPI.Controllers
 
             try
             {
-                var ve = await _db.Ves.FindAsync(dto.MaVe);
-                ve = dto;
+                _db.Ves.Add(dto);
                 await _db.SaveChangesAsync();
-                return Ok("Thêm vé thành công");
+                return Ok(new { Message = "Thêm vé thành công" });
             }
             catch (Exception ex)
             {
@@ -58,7 +81,7 @@ namespace FilmsAPI.Controllers
         {
             if (dto == null)
             {
-                return BadRequest("Cung cấp đủ dữ liệu");
+                return BadRequest(new { Message = "Cung cấp đủ dữ liệu" });
             }
 
             try
@@ -67,18 +90,53 @@ namespace FilmsAPI.Controllers
 
                 if (ve == null)
                 {
-                    return NotFound("Không tìm thấy bản ghi cần cập nhật");
+                    return NotFound(new { Message = "Không tìm thấy bản ghi cần cập nhật" });
                 }
 
                 // Chỉ cập nhật các thuộc tính cụ th
-                ve = dto;
+                ve.MaLoaiVe = dto.MaLoaiVe;
+                ve.GiaVe = dto.GiaVe;
+                ve.TrangThai = dto.TrangThai;
+                ve.MaGhe = dto.MaGhe;
+                ve.MaXuatChieu = dto.MaXuatChieu;
                 await _db.SaveChangesAsync();
-                return Ok("Cập nhật vé thành công");
+                return Ok(new { Message = "Cập nhật vé thành công" });
             }
             catch (Exception ex)
             {
                 return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
+
         }
+        [HttpDelete("DeleteRangeAsync")]
+        public async Task<ActionResult> DeleteRangeAsync([FromBody] List<Ve> listVe)
+        {
+            if (listVe == null || !listVe.Any())
+            {
+                return BadRequest(new { Message = "Danh sách vé cần xóa không hợp lệ hoặc rỗng." });
+            }
+
+            try
+            {
+                var veIds = listVe.Select(v => v.MaVe).ToList();
+                var existingVe = _db.Ves.Where(v => veIds.Contains(v.MaVe)).ToList();
+
+                if (!existingVe.Any())
+                {
+                    return NotFound(new { Message = "Không tìm thấy vé nào để xóa." });
+                }
+      
+
+                _db.RemoveRange(existingVe);
+                await _db.SaveChangesAsync();
+
+                return Ok(new { Message = $"{existingVe.Count} vé đã được xóa thành công." });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { Message = ex.Message});
+            }
+        }
+
     }
 }

@@ -3,11 +3,14 @@ using Microsoft.EntityFrameworkCore;
 using FilmsAPI.Models;
 using System.Linq;
 using System.Threading.Tasks;
+using FilmsAPI.Filters;
 
 namespace FilmsAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [RoleAuthorizationFilter("Admin")]
+
     public class HoaDonController : ControllerBase
     {
         private readonly FilmsDbContext _db;
