@@ -8,6 +8,9 @@ using Microsoft.IdentityModel.Tokens;
 using System.Diagnostics;
 using System.Text;
 using Newtonsoft.Json;
+using FilmsAPI.Services.BanVeService;
+using System.Configuration;
+using System;
 internal class Program
 {
     private static void Main(string[] args)
@@ -23,6 +26,12 @@ internal class Program
             {
                 options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
             });
+
+        builder.Services.AddDbContext<FilmsDbContext>(options =>
+        {
+            options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+        });
+
 
         builder.Services.AddEndpointsApiExplorer();
         builder.Configuration.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
@@ -48,6 +57,8 @@ internal class Program
         builder.Services.AddAuthorization();
 
         builder.Services.AddScoped<IAuthService, AuthService>();
+        builder.Services.AddScoped<IBanVeService, BanVeService>();
+
 
         var app = builder.Build();
 

@@ -3,12 +3,36 @@
   "WorkspaceRootPath": "D:\\CSharp\\Winforms\\FilmsAPI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|d:\\csharp\\winforms\\filmsapi\\filmsapi\\dto\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|solutionrelative:filmsapi\\dto\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|d:\\csharp\\winforms\\filmsapi\\filmsapi\\services\\banveservice\\banveservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|solutionrelative:filmsapi\\services\\banveservice\\banveservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|d:\\csharp\\winforms\\filmsapi\\filmsapi\\controllers\\banvecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|solutionrelative:filmsapi\\controllers\\banvecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|d:\\csharp\\winforms\\filmsapi\\filmsapi\\services\\banveservice\\ibanveservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|solutionrelative:filmsapi\\services\\banveservice\\ibanveservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|d:\\csharp\\winforms\\filmsapi\\filmsapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|solutionrelative:filmsapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|d:\\csharp\\winforms\\filmsapi\\filmsapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|solutionrelative:filmsapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|d:\\csharp\\winforms\\filmsapi\\filmsapi\\services\\authservice\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|solutionrelative:filmsapi\\services\\authservice\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|d:\\csharp\\winforms\\filmsapi\\filmsapi\\controllers\\ghecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|solutionrelative:filmsapi\\controllers\\ghecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|d:\\csharp\\winforms\\filmsapi\\filmsapi\\dto\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|solutionrelative:filmsapi\\dto\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|d:\\csharp\\winforms\\filmsapi\\filmsapi\\services\\authservice\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -25,10 +49,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|d:\\csharp\\winforms\\filmsapi\\filmsapi\\controllers\\dangphimcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|solutionrelative:filmsapi\\controllers\\dangphimcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|d:\\csharp\\winforms\\filmsapi\\filmsapi\\controllers\\ghecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|solutionrelative:filmsapi\\controllers\\ghecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -40,6 +60,20 @@
           "DockedWidth": 200,
           "SelectedChildIndex": 7,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "D:\\CSharp\\Winforms\\FilmsAPI\\FilmsAPI\\Services\\AuthService\\AuthService.cs",
+              "RelativeDocumentMoniker": "FilmsAPI\\Services\\AuthService\\AuthService.cs",
+              "ToolTip": "D:\\CSharp\\Winforms\\FilmsAPI\\FilmsAPI\\Services\\AuthService\\AuthService.cs",
+              "RelativeToolTip": "FilmsAPI\\Services\\AuthService\\AuthService.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAEwD8AAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-02T10:11:25.402Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
@@ -59,19 +93,71 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "AuthService.cs",
-              "DocumentMoniker": "D:\\CSharp\\Winforms\\FilmsAPI\\FilmsAPI\\Services\\AuthService\\AuthService.cs",
-              "RelativeDocumentMoniker": "FilmsAPI\\Services\\AuthService\\AuthService.cs",
-              "ToolTip": "D:\\CSharp\\Winforms\\FilmsAPI\\FilmsAPI\\Services\\AuthService\\AuthService.cs",
-              "RelativeToolTip": "FilmsAPI\\Services\\AuthService\\AuthService.cs",
-              "ViewState": "AgIAADUAAAAAAAAAAAAlwD8AAAANAAAAAAAAAA==",
+              "Title": "BanVeController.cs",
+              "DocumentMoniker": "D:\\CSharp\\Winforms\\FilmsAPI\\FilmsAPI\\Controllers\\BanVeController.cs",
+              "RelativeDocumentMoniker": "FilmsAPI\\Controllers\\BanVeController.cs",
+              "ToolTip": "D:\\CSharp\\Winforms\\FilmsAPI\\FilmsAPI\\Controllers\\BanVeController.cs",
+              "RelativeToolTip": "FilmsAPI\\Controllers\\BanVeController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABsAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-02T10:11:25.402Z",
-              "IsPinned": true
+              "WhenOpened": "2024-12-07T03:05:33.176Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\CSharp\\Winforms\\FilmsAPI\\FilmsAPI\\Program.cs",
+              "RelativeDocumentMoniker": "FilmsAPI\\Program.cs",
+              "ToolTip": "D:\\CSharp\\Winforms\\FilmsAPI\\FilmsAPI\\Program.cs",
+              "RelativeToolTip": "FilmsAPI\\Program.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAuwB0AAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-07T02:43:33.091Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BanVeService.cs",
+              "DocumentMoniker": "D:\\CSharp\\Winforms\\FilmsAPI\\FilmsAPI\\Services\\BanVeService\\BanVeService.cs",
+              "RelativeDocumentMoniker": "FilmsAPI\\Services\\BanVeService\\BanVeService.cs",
+              "ToolTip": "D:\\CSharp\\Winforms\\FilmsAPI\\FilmsAPI\\Services\\BanVeService\\BanVeService.cs",
+              "RelativeToolTip": "FilmsAPI\\Services\\BanVeService\\BanVeService.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAABgAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-07T02:42:30.151Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "IBanVeService.cs",
+              "DocumentMoniker": "D:\\CSharp\\Winforms\\FilmsAPI\\FilmsAPI\\Services\\BanVeService\\IBanVeService.cs",
+              "RelativeDocumentMoniker": "FilmsAPI\\Services\\BanVeService\\IBanVeService.cs",
+              "ToolTip": "D:\\CSharp\\Winforms\\FilmsAPI\\FilmsAPI\\Services\\BanVeService\\IBanVeService.cs",
+              "RelativeToolTip": "FilmsAPI\\Services\\BanVeService\\IBanVeService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-07T02:38:40.43Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "D:\\CSharp\\Winforms\\FilmsAPI\\FilmsAPI\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "FilmsAPI\\Controllers\\AuthController.cs",
+              "ToolTip": "D:\\CSharp\\Winforms\\FilmsAPI\\FilmsAPI\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "FilmsAPI\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAuwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-07T02:35:13.908Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "RegisterResponse.cs",
               "DocumentMoniker": "D:\\CSharp\\Winforms\\FilmsAPI\\FilmsAPI\\DTO\\RegisterResponse.cs",
               "RelativeDocumentMoniker": "FilmsAPI\\DTO\\RegisterResponse.cs",
@@ -83,7 +169,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 8,
               "Title": "IAuthService.cs",
               "DocumentMoniker": "D:\\CSharp\\Winforms\\FilmsAPI\\FilmsAPI\\Services\\AuthService\\IAuthService.cs",
               "RelativeDocumentMoniker": "FilmsAPI\\Services\\AuthService\\IAuthService.cs",
@@ -95,7 +181,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 7,
               "Title": "RegisterDTO.cs",
               "DocumentMoniker": "D:\\CSharp\\Winforms\\FilmsAPI\\FilmsAPI\\DTO\\RegisterDTO.cs",
               "RelativeDocumentMoniker": "FilmsAPI\\DTO\\RegisterDTO.cs",
@@ -116,11 +202,12 @@
               "RelativeToolTip": "FilmsAPI\\Controllers\\GheController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-02T09:56:32.402Z"
+              "WhenOpened": "2024-12-02T09:56:32.402Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 11,
               "Title": "DangPhimController.cs",
               "DocumentMoniker": "D:\\CSharp\\Winforms\\FilmsAPI\\FilmsAPI\\Controllers\\DangPhimController.cs",
               "RelativeDocumentMoniker": "FilmsAPI\\Controllers\\DangPhimController.cs",
@@ -132,7 +219,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 10,
               "Title": "PhimController.cs",
               "DocumentMoniker": "D:\\CSharp\\Winforms\\FilmsAPI\\FilmsAPI\\Controllers\\PhimController.cs",
               "RelativeDocumentMoniker": "FilmsAPI\\Controllers\\PhimController.cs",
