@@ -23,21 +23,10 @@ namespace FilmsAPI.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAllLoaiGhe()
         {
-            try
-            {
-                var loaiGhes = await _context.LoaiGhes.ToListAsync();
+            var loaiGhe = await _context.LoaiGhes
+                .ToListAsync();
 
-                if (loaiGhes == null || loaiGhes.Count == 0)
-                {
-                    return NotFound(new { message = "Không tìm thấy loại ghế nào." });
-                }
-
-                return Ok(loaiGhes);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(new { message = ex.Message });
-            }
+            return Ok(loaiGhe);
         }
 
         // GET: api/LoaiGhe/{id}
