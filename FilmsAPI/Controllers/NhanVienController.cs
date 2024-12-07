@@ -1,11 +1,14 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using FilmsAPI.Models;
+using FilmsAPI.Filters;
 
 namespace FilmsAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [RoleAuthorizationFilter("Admin")]
+
     public class NhanVienController : ControllerBase
     {
         private readonly FilmsDbContext _db;
