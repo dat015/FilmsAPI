@@ -44,7 +44,7 @@ internal class Program
                };
            });
 
-        // Thêm Authorization
+        // Thï¿½m Authorization
         builder.Services.AddAuthorization();
 
         builder.Services.AddScoped<IAuthService, AuthService>();
