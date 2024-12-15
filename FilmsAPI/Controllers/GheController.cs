@@ -26,24 +26,35 @@ namespace FilmsAPI.Controllers
         {
             try
             {
+                // Lấy danh sách ghế từ phòng chiếu và chỉ lấy những thuộc tính cần thiết
                 var ds = await _db.Ghes
                     .Where(d => d.MaPhong == maPhong)
-                    .Include(g => g.MaLoaiGheNavigation)  // Bao gồm thông tin loại ghế
-                    .Include(g => g.MaPhongNavigation)   // Bao gồm thông tin phòng chiếu
+                    .Select(g => new
+                    {
+                        g.MaGhe,              // Mã ghế
+                        g.MaLoaiGhe,          // Mã loại ghế    
+                        g.MaPhong,            // Mã phòng chiếu
+                        TenLoaiGhe = g.MaLoaiGheNavigation.TenLoaiGhe, // Tên loại ghế
+                        SoGheMotHang = g.MaPhongNavigation.SoGheMotHang
+                    })
                     .ToListAsync();
 
+                // Kiểm tra nếu không có ghế nào trong phòng chiếu
                 if (ds == null || !ds.Any())
                 {
                     return NotFound(new { Message = "Không tìm thấy ghế nào cho mã phòng này." });
                 }
 
+                // Trả về danh sách ghế nếu có dữ liệu
                 return Ok(ds);
             }
             catch (Exception ex)
             {
+                // Xử lý lỗi khi có vấn đề trong quá trình truy vấn
                 return BadRequest(new { Message = "Lỗi khi truy vấn cơ sở dữ liệu", Error = ex.Message });
             }
         }
+
 
         // PUT: api/Ghe
         [HttpPut(Name = "UpdateGhe")]
@@ -91,7 +102,7 @@ namespace FilmsAPI.Controllers
                 _db.Ghes.Add(dto);
                 await _db.SaveChangesAsync();
 
-                return Ok( new { Message = "Thêm thành công"     });
+                return Ok(new { Message = "Thêm thành công" });
             }
             catch (Exception ex)
             {
