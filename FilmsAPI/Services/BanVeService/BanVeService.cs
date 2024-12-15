@@ -11,6 +11,59 @@ namespace FilmsAPI.Services.BanVeService
         {
             _db = db;
         }
+        public async Task<List<Ve>> GetVeTheoSuatChieu(int maXC)
+        {
+            try
+            {
+                var result = await _db.Ves.Where(ve => ve.MaXuatChieu == maXC).ToListAsync();
+                return result;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+        public async Task<bool> UpdateStatusVe(List<Ve> ve)
+        {
+            try
+            {
+                if (ve == null || !ve.Any()) return false;
+
+                var idVe = ve.Select(p => p.MaVe).ToList();
+                var veInDb = await _db.Ves
+                    .Where(v => idVe.Contains(v.MaVe))
+                    .ToListAsync();
+
+                if (!veInDb.Any())
+                {
+                    Console.WriteLine("Không tìm thấy vé nào trong DB.");
+                    return false;
+                }
+
+                foreach (var item in veInDb)
+                {
+                    var veToUpdate = ve.FirstOrDefault(v => v.MaVe == item.MaVe);
+                    if (veToUpdate != null)
+                    {
+                        item.TrangThai = veToUpdate.TrangThai;
+                        _db.Entry(item).Property(v => v.TrangThai).IsModified = true;
+                    }
+                }
+
+                Console.WriteLine("Bắt đầu lưu thay đổi vào DB.");
+                var result = await _db.SaveChangesAsync();
+                Console.WriteLine($"Số bản ghi được cập nhật: {result}");
+
+                return result > 0;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Lỗi: {ex.Message}");
+                Console.WriteLine($"StackTrace: {ex.StackTrace}");
+                return false;
+            }
+        }
+
 
         public async Task<XuatChieu> GetXuatChieuAsync(int id)
         {
@@ -34,6 +87,84 @@ namespace FilmsAPI.Services.BanVeService
             }
             catch (Exception ex)
             {
+                return null;
+            }
+        }
+
+        public async Task<HoaDon> SaveBill(HoaDon hoaDon)
+        {
+            try
+            {
+                if (hoaDon == null)
+                {
+                    return null;
+                }
+                _db.HoaDons.Add(hoaDon);
+                await _db.SaveChangesAsync();
+                return hoaDon;
+            }
+            catch (Exception ex)
+            {
+
+                return null;
+            }
+        }
+        public async Task<bool> AddDetailBillRangeAsync(List<ChiTietHoaDon> chiTiet)
+        {
+            try
+            {
+                if (chiTiet == null)
+                {
+                    return false;
+                }
+                await _db.ChiTietHoaDons.AddRangeAsync(chiTiet);
+                await _db.SaveChangesAsync();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+        public async Task<KhachHang> GetKhachHangBySdt(string sdt)
+        {
+            try
+            {
+                var KH = await _db.KhachHangs.Where(kh => kh.Sdt == sdt).FirstOrDefaultAsync();
+                return KH;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+        public async Task<List<Ve>> GetVeTheoGhe(List<Ghe> listGhe, int maXuatChieu)
+        {
+            try
+            {
+                if (listGhe == null || !listGhe.Any())
+                {
+                    return null; // Trả về null nếu danh sách ghế rỗng
+                }
+
+                // Lấy danh sách ID ghế từ listGhe
+                var idGhe = listGhe.Select(i => i.MaGhe).ToList();
+
+                // Lấy danh sách vé theo điều kiện
+                var listVe = await _db.Ves
+                    .Where(ve => idGhe.Contains(ve.MaGhe) && ve.MaXuatChieu == maXuatChieu && ve.TrangThai == false)
+                    .ToListAsync();
+                if (listVe == null)
+                {
+                    return null;
+                }
+                return listVe; // Trả về danh sách vé
+            }
+            catch (Exception ex)
+            {
+                // Xử lý ngoại lệ và ghi log nếu cần
+                Console.WriteLine($"Error: {ex.Message}");
                 return null;
             }
         }
