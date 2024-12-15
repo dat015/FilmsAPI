@@ -99,6 +99,12 @@ namespace FilmsAPI.Controllers
 
             try
             {
+                // Kiểm tra các trường dữ liệu cần thiết trước khi thêm
+                if (dto.MaPhong == 0 || dto.MaLoaiGhe == 0)
+                {
+                    return BadRequest(new { Message = "Thiếu thông tin cần thiết như MaPhong hoặc MaLoaiGhe." });
+                }
+
                 _db.Ghes.Add(dto);
                 await _db.SaveChangesAsync();
 
@@ -106,8 +112,10 @@ namespace FilmsAPI.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(new { Message = "Đã xảy ra lỗi khi thêm ghế." + ex.Message });
+                // Thêm thông tin chi tiết về lỗi
+                return BadRequest(new { Message = "Đã xảy ra lỗi khi thêm ghế.", Error = ex.ToString() });
             }
         }
+
     }
 }
