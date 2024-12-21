@@ -12,6 +12,9 @@ namespace FilmsAPI.Services.BanVeService
         Task<bool> UpdateStatusVe(List<Ve> ve);
         Task<List<Ve>> GetVeTheoSuatChieu(int maXC);
         Task<KhachHang> GetKhachHangBySdt(string sdt);
+        Task<List<Food>> GetFoodByCate(int cateId);
+        Task<List<Category>> GetFoodCates();
+        Task<bool> AddDetailBillForFoodRangeAsync(List<DetailFood> detailFoods);
 
     }
 }

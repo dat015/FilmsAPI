@@ -15,9 +15,19 @@ public partial class FilmsDbContext : DbContext
     {
     }
 
+    public virtual DbSet<Category> Categories { get; set; }
+
     public virtual DbSet<ChiTietHoaDon> ChiTietHoaDons { get; set; }
 
+    public virtual DbSet<Combo> Combos { get; set; }
+
+    public virtual DbSet<ComboDetail> ComboDetails { get; set; }
+
     public virtual DbSet<DangPhim> DangPhims { get; set; }
+
+    public virtual DbSet<DetailFood> DetailFoods { get; set; }
+
+    public virtual DbSet<Food> Foods { get; set; }
 
     public virtual DbSet<Ghe> Ghes { get; set; }
 
@@ -51,12 +61,19 @@ public partial class FilmsDbContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-
-        => optionsBuilder.UseSqlServer("Server=DESKTOP-CCD18C2\\SQLEXPRESS;Database=FilmsDb;Trusted_Connection=True;TrustServerCertificate=True;");
-
+        => optionsBuilder.UseSqlServer("Server=DESKTOP-CCD18C2\\SQLEXPRESS; Database=FilmsDb; Trusted_Connection=True; TrustServerCertificate=True;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.Entity<Category>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__Category__3214EC07F30148B4");
+
+            entity.ToTable("Category");
+
+            entity.Property(e => e.Name).HasMaxLength(100);
+        });
+
         modelBuilder.Entity<ChiTietHoaDon>(entity =>
         {
             entity.HasKey(e => new { e.MaHd, e.MaVe }).HasName("PK__ChiTietH__C557F7E0730F06C3");
@@ -77,6 +94,32 @@ public partial class FilmsDbContext : DbContext
                 .HasConstraintName("FK__ChiTietHoa__MaVe__1CBC4616");
         });
 
+        modelBuilder.Entity<Combo>(entity =>
+        {
+            entity.HasKey(e => e.ComboId).HasName("PK__Combos__DD42582E0BA320BA");
+
+            entity.Property(e => e.Description).HasMaxLength(255);
+            entity.Property(e => e.Discount).HasColumnType("decimal(10, 2)");
+            entity.Property(e => e.ImageUrl).HasMaxLength(255);
+            entity.Property(e => e.Name).HasMaxLength(100);
+            entity.Property(e => e.Price).HasColumnType("decimal(10, 2)");
+        });
+
+        modelBuilder.Entity<ComboDetail>(entity =>
+        {
+            entity.HasKey(e => e.ComboDetailsId).HasName("PK__ComboDet__B86205F27D1A2877");
+
+            entity.HasOne(d => d.Combo).WithMany(p => p.ComboDetails)
+                .HasForeignKey(d => d.ComboId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__ComboDeta__Combo__29E1370A");
+
+            entity.HasOne(d => d.Food).WithMany(p => p.ComboDetails)
+                .HasForeignKey(d => d.FoodId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__ComboDeta__FoodI__2AD55B43");
+        });
+
         modelBuilder.Entity<DangPhim>(entity =>
         {
             entity.HasKey(e => e.MaDangPhim).HasName("PK__DangPhim__D957C0F503EE7BAD");
@@ -91,11 +134,49 @@ public partial class FilmsDbContext : DbContext
                 .HasConstraintName("FK__DangPhim__MaManH__534D60F1");
         });
 
+        modelBuilder.Entity<DetailFood>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__DetailFo__3214EC07FAEDC8A3");
+
+            entity.ToTable("DetailFood");
+
+            entity.HasOne(d => d.Food).WithMany(p => p.DetailFoods)
+                .HasForeignKey(d => d.FoodId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__DetailFoo__FoodI__3552E9B6");
+
+            entity.HasOne(d => d.Order).WithMany(p => p.DetailFoods)
+                .HasForeignKey(d => d.OrderId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__DetailFoo__Order__36470DEF");
+        });
+
+        modelBuilder.Entity<Food>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__Food__3214EC073271B733");
+
+            entity.ToTable("Food");
+
+            entity.Property(e => e.Description).HasMaxLength(255);
+            entity.Property(e => e.ImageUrl).HasMaxLength(255);
+            entity.Property(e => e.Name).HasMaxLength(100);
+            entity.Property(e => e.Price).HasColumnType("decimal(10, 2)");
+
+            entity.HasOne(d => d.Cate).WithMany(p => p.Foods)
+                .HasForeignKey(d => d.CateId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__Food__CateId__1F63A897");
+        });
+
         modelBuilder.Entity<Ghe>(entity =>
         {
             entity.HasKey(e => e.MaGhe).HasName("PK__Ghe__3CD3C67B1C4F2A47");
 
             entity.ToTable("Ghe");
+
+            entity.Property(e => e.TenGhe)
+                .HasMaxLength(255)
+                .HasDefaultValue("Không xác d?nh");
 
             entity.HasOne(d => d.MaLoaiGheNavigation).WithMany(p => p.Ghes)
                 .HasForeignKey(d => d.MaLoaiGhe)
@@ -115,8 +196,14 @@ public partial class FilmsDbContext : DbContext
             entity.ToTable("HoaDon");
 
             entity.Property(e => e.MaHd).HasColumnName("MaHD");
+            entity.Property(e => e.MaKh).HasColumnName("MaKH");
             entity.Property(e => e.MaNv).HasColumnName("MaNV");
             entity.Property(e => e.TongTien).HasColumnType("decimal(18, 0)");
+
+            entity.HasOne(d => d.MaKhNavigation).WithMany(p => p.HoaDons)
+                .HasForeignKey(d => d.MaKh)
+                .OnDelete(DeleteBehavior.SetNull)
+                .HasConstraintName("FK_HoaDon_KhachHang");
 
             entity.HasOne(d => d.MaNvNavigation).WithMany(p => p.HoaDons)
                 .HasForeignKey(d => d.MaNv)
@@ -152,6 +239,7 @@ public partial class FilmsDbContext : DbContext
             entity.Property(e => e.TenLoaiGhe)
                 .HasMaxLength(20)
                 .IsUnicode(false);
+            entity.Property(e => e.TrongSo).HasDefaultValue(1.0);
         });
 
         modelBuilder.Entity<LoaiPhim>(entity =>
@@ -300,21 +388,16 @@ public partial class FilmsDbContext : DbContext
             entity.ToTable("Ve");
 
             entity.Property(e => e.GiaVe).HasColumnType("decimal(18, 0)");
-           
 
             entity.HasOne(d => d.MaGheNavigation).WithMany(p => p.Ves)
                 .HasForeignKey(d => d.MaGhe)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK__Ve__MaGhe__00200768");
 
-        
-
             entity.HasOne(d => d.MaLoaiVeNavigation).WithMany(p => p.Ves)
                 .HasForeignKey(d => d.MaLoaiVe)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK__Ve__MaLoaiVe__7F2BE32F");
-
-            
 
             entity.HasOne(d => d.MaXuatChieuNavigation).WithMany(p => p.Ves)
                 .HasForeignKey(d => d.MaXuatChieu)
@@ -327,6 +410,9 @@ public partial class FilmsDbContext : DbContext
             entity.HasKey(e => e.MaXuatChieu).HasName("PK__XuatChie__46080F55B873C3E2");
 
             entity.ToTable("XuatChieu");
+
+            entity.Property(e => e.ThoiGianBatDau).HasColumnType("datetime");
+            entity.Property(e => e.ThoiGianKetThuc).HasColumnType("datetime");
 
             entity.HasOne(d => d.MaPhimNavigation).WithMany(p => p.XuatChieus)
                 .HasForeignKey(d => d.MaPhim)

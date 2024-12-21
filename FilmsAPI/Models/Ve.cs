@@ -14,18 +14,14 @@ public partial class Ve
     public int MaLoaiVe { get; set; }
 
     public int MaGhe { get; set; }
-
+     
     public int MaXuatChieu { get; set; }
 
-
-
-    public virtual ICollection<ChiTietHoaDon> ChiTietHoaDons { get; set; } = new List<ChiTietHoaDon>();
+    public virtual ICollection<ChiTietHoaDon>? ChiTietHoaDons { get; set; } = new List<ChiTietHoaDon>();
 
     public virtual Ghe? MaGheNavigation { get; set; } = null!;
 
-
     public virtual LoaiVe? MaLoaiVeNavigation { get; set; } = null!;
-
 
     public virtual XuatChieu? MaXuatChieuNavigation { get; set; } = null!;
 }
