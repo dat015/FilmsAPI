@@ -57,7 +57,7 @@ namespace FilmsAPI.Controllers
             }
         }
 
-        [HttpPost(Name = "AddXuatChieu")]
+        [HttpPost]
         public async Task<IActionResult> AddXuatChieu([FromBody] XuatChieu dto)
         {
             if (dto == null)
@@ -104,9 +104,11 @@ namespace FilmsAPI.Controllers
 
                 // Giới hạn số suất chiếu trong một ngày cho phòng
                 var showtimesCount = await _db.XuatChieus
-                    .Where(x => x.MaPhong == dto.MaPhong
-                                && x.ThoiGianBatDau.Date == dto.ThoiGianBatDau.Date)
-                    .CountAsync();
+                 .Where(x => x.MaPhong == dto.MaPhong
+                             && x.ThoiGianBatDau.HasValue
+                             && x.ThoiGianBatDau.Value.Date == dto.ThoiGianBatDau.Value.Date)
+                 .CountAsync();
+
                 if (showtimesCount >= 10)
                 {
                     return BadRequest(new { Message = "Phòng chiếu đã đạt giới hạn số suất chiếu trong ngày." });
@@ -181,7 +183,7 @@ namespace FilmsAPI.Controllers
                 // Giới hạn số suất chiếu trong một ngày cho phòng
                 var showtimesCount = await _db.XuatChieus
                     .Where(x => x.MaPhong == dto.MaPhong
-                                && x.ThoiGianBatDau.Date == dto.ThoiGianBatDau.Date)
+                                && x.ThoiGianBatDau.Value.Date == dto.ThoiGianBatDau.Value.Date)
                     .CountAsync();
                 if (showtimesCount >= 10)
                 {
