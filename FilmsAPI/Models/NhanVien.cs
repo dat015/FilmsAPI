@@ -20,5 +20,4 @@ public partial class NhanVien
     public virtual ICollection<HoaDon>? HoaDons { get; set; } = new List<HoaDon>();
 
     public virtual Quyen? MaQuyenNavigation { get; set; } = null!;
-
 }

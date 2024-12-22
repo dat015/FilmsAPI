@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using System.Diagnostics;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace FilmsAPI.Controllers
 {
@@ -19,6 +20,31 @@ namespace FilmsAPI.Controllers
             _db = new FilmsDbContext();
             banVeService = service;
         }
+
+        [HttpPost("AddDetailBillForFoodRangeAsync")]
+        public async Task<ActionResult> AddDetailBillForFoodRangeAsync([FromBody] List<DetailFood> detailFoods)
+        {
+            if (detailFoods == null)
+            {
+                return BadRequest(new { Message = "DetailFoods cannot be null or empty." });
+            }
+
+            try
+            {
+                var result = await banVeService.AddDetailBillForFoodRangeAsync(detailFoods);
+                if (!result)
+                {
+                    return StatusCode(500, new { Message = "An error occurred while processing your request." });
+                }
+
+                return Ok(new { Message = "Success for save foods" });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { Message = ex.Message });
+            }
+        }
+
         [HttpGet("GetKhachHangBySDT/{sdt}")]
         public async Task<ActionResult> GetKhachHang(string sdt)
         {
@@ -83,6 +109,50 @@ namespace FilmsAPI.Controllers
                 return BadRequest(ex);
             }
         }
+        [HttpGet("Doan")]
+        public async Task<ActionResult> GetDoAn()
+        {
+            var result = await _db.Foods.ToListAsync();
+            return Ok(result);
+        }
+
+        [HttpGet("GetFoodByCategory/{cateId}")]
+        public async Task<ActionResult> GetFoodByCategory(int cateId)
+        {
+            try
+            {
+                if (cateId == 0)
+                {
+                    return BadRequest("Id không tìm thấy");
+                }
+
+                var result = await banVeService.GetFoodByCate(cateId);
+                if (result == null) return BadRequest("Sản phẩm không tìm thấy");
+
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+
+            }
+        }
+
+        [HttpGet("GetCateFood")]
+        public async Task<ActionResult> GetCateFood()
+        {
+            try
+            {
+                var result = await banVeService.GetFoodCates();
+
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
 
 
 

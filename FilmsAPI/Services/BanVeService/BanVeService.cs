@@ -11,6 +11,49 @@ namespace FilmsAPI.Services.BanVeService
         {
             _db = db;
         }
+
+        public async Task<bool> AddDetailBillForFoodRangeAsync(List<DetailFood> detailFoods)
+        {
+            if (detailFoods == null) return false;
+
+            try
+            {
+                await _db.DetailFoods.AddRangeAsync(detailFoods);
+                await _db.SaveChangesAsync();
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        public async Task<List<Category>> GetFoodCates()
+        {
+            try
+            {
+               var cates =await _db.Categories.ToListAsync();
+                return (cates == null) ? new List<Category>() : cates;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error fetching categories: {ex.Message}");
+                return new List<Category>(); 
+            }
+        }
+
+        public async Task<List<Food>> GetFoodByCate(int cateId)
+        {
+            try
+            {
+                var foods = await _db.Foods.Where(fd => fd.CateId == cateId).ToListAsync();
+                return foods;
+            }
+            catch 
+            {
+                return null;
+            }
+        }
         public async Task<List<Ve>> GetVeTheoSuatChieu(int maXC)
         {
             try
@@ -168,6 +211,8 @@ namespace FilmsAPI.Services.BanVeService
                 return null;
             }
         }
+
+    
 
         //public async Task<XuatChieu> VebanAsync(List<Ghe> ghe)
         //{

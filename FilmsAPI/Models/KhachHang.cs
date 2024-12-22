@@ -12,8 +12,10 @@ public partial class KhachHang
     public string? Sdt { get; set; }
 
     public string? Email { get; set; }
-    public int? DiemTichLuy { get; set;                          }
+
+    public int? DiemTichLuy { get; set; }
+
+    public virtual ICollection<HoaDon>? HoaDons { get; set; } = new List<HoaDon>();
 
     public virtual ICollection<TaiKhoan>? TaiKhoans { get; set; } = new List<TaiKhoan>();
-
 }
