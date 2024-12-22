@@ -8,7 +8,6 @@ namespace FilmsAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [RoleAuthorizationFilter("Admin")]
 
     public class KhachHangController : ControllerBase
     {
