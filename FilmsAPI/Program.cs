@@ -11,6 +11,7 @@ using Newtonsoft.Json;
 using FilmsAPI.Services.BanVeService;
 using System.Configuration;
 using System;
+using FilmsAPI.Services.FoodService;
 internal class Program
 {
     private static void Main(string[] args)
@@ -58,6 +59,7 @@ internal class Program
 
         builder.Services.AddScoped<IAuthService, AuthService>();
         builder.Services.AddScoped<IBanVeService, BanVeService>();
+        builder.Services.AddScoped<IFoodService, FoodService>();
 
 
         var app = builder.Build();

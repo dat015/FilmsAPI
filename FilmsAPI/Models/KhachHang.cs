@@ -12,10 +12,13 @@ public partial class KhachHang
     public string? Sdt { get; set; }
 
     public string? Email { get; set; }
-
-    public int? DiemTichLuy { get; set; }
-
-    public virtual ICollection<HoaDon>? HoaDons { get; set; } = new List<HoaDon>();
+    public DateTime? NgaySinh { get; set; }
+    public int? DiemTichluy { get; set; }
+    public string CCCD { get; set; }
+    public string? DiaChi { get; set; }
 
     public virtual ICollection<TaiKhoan>? TaiKhoans { get; set; } = new List<TaiKhoan>();
+
+    public virtual ICollection<Ve>? Ves { get; set; } = new List<Ve>();
+    public virtual ICollection<HoaDon>? HoaDons { get; set; } = new List<HoaDon>();
 }
