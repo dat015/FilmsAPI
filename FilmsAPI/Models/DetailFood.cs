@@ -13,7 +13,7 @@ public partial class DetailFood
 
     public int Quantity { get; set; }
 
-    public decimal ThanhTien { get; set; }
+    public decimal? ThanhTien { get; set; }
 
     public virtual Food? Food { get; set; } = null!;
 

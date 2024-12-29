@@ -17,6 +17,10 @@ public partial class NhanVien
 
     public int MaQuyen { get; set; }
 
+    public string? RandomKey { get; set; }
+
+    public string? TenAlias { get; set; }
+
     public virtual ICollection<HoaDon>? HoaDons { get; set; } = new List<HoaDon>();
 
     public virtual Quyen? MaQuyenNavigation { get; set; } = null!;

@@ -1,4 +1,4 @@
-﻿using FilmsAPI.Models;
+﻿    using FilmsAPI.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace FilmsAPI.Services.FoodService
@@ -42,7 +42,7 @@ namespace FilmsAPI.Services.FoodService
             {
                 return false; 
             }
-
+            
             try
             {
                 var food = await _db.Foods.FindAsync(id);

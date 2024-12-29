@@ -178,7 +178,7 @@ namespace FilmsAPI.Controllers
         }
 
         [HttpPost("GetVeTheoGhe/{maXuatChieu}")]
-        public async Task<ActionResult> GetVe([FromBody] List<Ghe> listGhe, int maXuatChieu)
+        public async Task<ActionResult> GetVe(int maXuatChieu, [FromBody] List<Ghe> listGhe)
         {
             try
             {
