@@ -10,7 +10,7 @@ namespace FilmsAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [RoleAuthorizationFilter("Admin")]
+    //[RoleAuthorizationFilter("Admin")]
 
     public class PhongChieuController : ControllerBase
     {

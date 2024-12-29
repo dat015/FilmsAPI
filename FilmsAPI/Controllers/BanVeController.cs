@@ -33,7 +33,8 @@ namespace FilmsAPI.Controllers
 
                 if (result == null)
                 {
-                    return NotFound("Không tìm thấy khách hàng này"); // Dùng NotFound thay vì BadRequest khi không tìm thấy
+                    //return NotFound("Không tìm thấy khách hàng này"); // Dùng NotFound thay vì BadRequest khi không tìm thấy
+                    return Ok(result);
                 }
 
                 return Ok(result); // Trả về kết quả nếu tìm thấy khách hàng

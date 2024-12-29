@@ -19,6 +19,24 @@ namespace FilmsAPI.Controllers
             _db = new FilmsDbContext();
         }
 
+
+        //Get : api/CTHD
+        [HttpGet]
+        public async Task<IActionResult> GetCTHD()
+        {
+            try
+            {
+                var cthd = await _db.ChiTietHoaDons.
+                    Include(p => p.MaHdNavigation).Include(p => p.MaVeNavigation)
+                    .ToListAsync();
+                return Ok(cthd);
+            }
+            catch (Exception ex)
+            {
+                return NotFound();
+            }
+        }
+
         // GET: api/CTHD/{maHd}
         [HttpGet("{maHd}")]
         public async Task<IActionResult> GetChiTietHoaDonById(int maHd)

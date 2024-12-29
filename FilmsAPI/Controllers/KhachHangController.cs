@@ -8,7 +8,7 @@ namespace FilmsAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [RoleAuthorizationFilter("Admin")]
+    //[RoleAuthorizationFilter("Admin")]
 
     public class KhachHangController : ControllerBase
     {
@@ -106,6 +106,10 @@ namespace FilmsAPI.Controllers
                 existingKhachHang.TenKh = dto.TenKh;
                 existingKhachHang.Sdt = dto.Sdt;
                 existingKhachHang.Email = dto.Email;
+                existingKhachHang.CCCD = dto.CCCD;
+                existingKhachHang.NgaySinh = dto.NgaySinh;
+                existingKhachHang.DiaChi = dto.DiaChi;
+                existingKhachHang.DiemTichluy = dto.DiemTichluy;   
 
                 await _db.SaveChangesAsync();
 

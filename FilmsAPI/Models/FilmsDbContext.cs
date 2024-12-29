@@ -6,13 +6,15 @@ namespace FilmsAPI.Models;
 
 public partial class FilmsDbContext : DbContext
 {
+    private readonly IConfiguration _configuration;
     public FilmsDbContext()
     {
     }
 
-    public FilmsDbContext(DbContextOptions<FilmsDbContext> options)
+    public FilmsDbContext(DbContextOptions<FilmsDbContext> options, IConfiguration configuration)
         : base(options)
     {
+        _configuration = configuration;
     }
 
     public virtual DbSet<ChiTietHoaDon> ChiTietHoaDons { get; set; }
@@ -52,8 +54,15 @@ public partial class FilmsDbContext : DbContext
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
 
-        => optionsBuilder.UseSqlServer("Server=DESKTOP-CCD18C2\\SQLEXPRESS;Database=FilmsDb;Trusted_Connection=True;TrustServerCertificate=True;");
+    //=> optionsBuilder.UseSqlServer("Data Source=HAIDANG\\SQLEXPRESS;Initial Catalog=FilmsDb;Integrated Security=True;Trust Server Certificate=True");
+    => optionsBuilder.UseSqlServer("workstation id=QLBanXeGanMayHaiDang.mssql.somee.com;packet size=4096;user id=dangd408_SQLLogin_2;pwd=us8lmj49az;data source=QLBanXeGanMayHaiDang.mssql.somee.com;persist security info=False;initial catalog=QLBanXeGanMayHaiDang;TrustServerCertificate=True");
 
+
+    //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    //{
+    //	var connectionString = _configuration.GetConnectionString("DefaultConnection");
+    //	optionsBuilder.UseSqlServer(connectionString);
+    //}
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
