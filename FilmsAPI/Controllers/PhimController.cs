@@ -1,4 +1,4 @@
-﻿using FilmsAPI.Filters;
+using FilmsAPI.Filters;
 using FilmsAPI.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -9,8 +9,6 @@ namespace FilmsAPI.Controllers
     [Route("api/[controller]")]
     [ApiController]
     [RoleAuthorizationFilter("Admin")]
-    
-
     public class PhimController : ControllerBase
     {
         private readonly FilmsDbContext _db;
@@ -26,39 +24,48 @@ namespace FilmsAPI.Controllers
         {
             try
             {
+                Console.WriteLine("Bắt đầu lấy danh sách phim...");
                 var phim = _db.Phims
                     .Include(p => p.MaDangPhimNavigation) // Lấy thông tin dạng phim
                     .Include(p => p.TheLoaiCuaPhims)
                     .Include(p => p.XuatChieus)           // Lấy thông tin xuất chiếu
                     .ToList();
+                Console.WriteLine("Lấy danh sách phim thành công.");
 
                 return Ok(phim);
             }
             catch (Exception ex)
             {
+                Console.WriteLine($"Lỗi khi lấy danh sách phim: {ex.Message}");
                 return BadRequest($"Lỗi: {ex.Message}");
             }
         }
 
-        // Action to get phim by id
+        // Lấy phim theo id
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(int id)
         {
             try
             {
+                Console.WriteLine($"Bắt đầu tìm phim với ID: {id}");
                 var phim = await _db.Phims
-                    .Include(p => p.MaDangPhimNavigation) // Lấy thông tin dạng phim
+                    .Include(p => p.MaDangPhimNavigation)
                     .Include(p => p.TheLoaiCuaPhims)
-                    .Include(p => p.XuatChieus)           // Lấy thông tin xuất chiếu
-                    .FirstOrDefaultAsync(p => p.MaPhim == id); // Ensure to specify the filter by id
+                    .Include(p => p.XuatChieus)
+                    .FirstOrDefaultAsync(p => p.MaPhim == id);
 
                 if (phim == null)
-                    return NotFound();
+                {
+                    Console.WriteLine("Không tìm thấy phim.");
+                    return NotFound(new { Message = "Không tìm thấy phim!" });
+                }
 
+                Console.WriteLine("Tìm thấy phim.");
                 return Ok(phim);
             }
             catch (Exception ex)
             {
+                Console.WriteLine($"Lỗi khi tìm phim: {ex.Message}");
                 return BadRequest($"Lỗi: {ex.Message}");
             }
         }
@@ -70,11 +77,13 @@ namespace FilmsAPI.Controllers
         {
             if (dto == null)
             {
+                Console.WriteLine("Dữ liệu không hợp lệ.");
                 return BadRequest("Cung cấp đủ dữ liệu");
             }
 
             try
             {
+                Console.WriteLine("Bắt đầu thêm phim mới...");
                 var phim = new Phim
                 {
                     TenPhim = dto.TenPhim,
@@ -92,11 +101,13 @@ namespace FilmsAPI.Controllers
 
                 await _db.Phims.AddAsync(phim);
                 await _db.SaveChangesAsync();
+                Console.WriteLine("Thêm phim mới thành công.");
 
                 return Ok(new { Message = "Thêm phim thành công", phim = phim });
             }
             catch (Exception ex)
             {
+                Console.WriteLine($"Lỗi khi thêm phim: {ex.Message}");
                 return BadRequest($"Lỗi: {ex.Message}");
             }
         }
@@ -107,15 +118,18 @@ namespace FilmsAPI.Controllers
         {
             if (dto == null)
             {
+                Console.WriteLine("Dữ liệu cập nhật không hợp lệ.");
                 return BadRequest(new { Message = "Cung cấp đủ dữ liệu!" });
             }
 
             try
             {
+                Console.WriteLine($"Bắt đầu cập nhật phim với ID: {dto.MaPhim}");
                 var phim = await _db.Phims.FindAsync(dto.MaPhim);
 
                 if (phim == null)
                 {
+                    Console.WriteLine("Không tìm thấy phim để cập nhật.");
                     return NotFound(new { Message = "Phim không tồn tại" });
                 }
 
@@ -132,34 +146,41 @@ namespace FilmsAPI.Controllers
                 phim.DoTuoi = dto.DoTuoi != 0 ? dto.DoTuoi : phim.DoTuoi;
 
                 await _db.SaveChangesAsync();
+                Console.WriteLine("Cập nhật phim thành công.");
 
                 return Ok(new { Message = "Cập nhật phim thành công" });
             }
             catch (Exception ex)
             {
+                Console.WriteLine($"Lỗi khi cập nhật phim: {ex.Message}");
                 return BadRequest(new { Message = $"Lỗi: {ex.Message}" });
             }
         }
 
+        // Xóa phim
         [HttpDelete("{id}")]
         public async Task<ActionResult> DeletePhim(int id)
         {
             try
             {
+                Console.WriteLine($"Bắt đầu xóa phim với ID: {id}");
                 var film = await _db.Phims.FindAsync(id);
-                if(film == null)
+                if (film == null)
                 {
-                    return BadRequest();
+                    Console.WriteLine("Không tìm thấy phim để xóa.");
+                    return BadRequest(new { Message = "Không tìm thấy phim!" });
                 }
 
                 _db.Remove(film);
                 await _db.SaveChangesAsync();
+                Console.WriteLine("Xóa phim thành công.");
 
-                return Ok();
+                return Ok(new { Message = "Xóa phim thành công" });
             }
             catch (Exception ex)
             {
-                return BadRequest();
+                Console.WriteLine($"Lỗi khi xóa phim: {ex.Message}");
+                return BadRequest($"Lỗi: {ex.Message}");
             }
         }
     }
