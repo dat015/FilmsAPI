@@ -35,7 +35,8 @@ namespace FilmsAPI.Controllers
             }
             catch(Exception ex)
             {
-                return NotFound();
+                return NotFound(new { message = "Không tìm thấy dữ liệu dạng phim." });
+
             }
         }
 
