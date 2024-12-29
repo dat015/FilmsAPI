@@ -15,6 +15,12 @@ public partial class KhachHang
 
     public int? DiemTichLuy { get; set; }
 
+    public string? DiaChi { get; set; }
+
+    public DateTime? NgaySinh { get; set; }
+
+    public string Cccd { get; set; } = null!;
+
     public virtual ICollection<HoaDon>? HoaDons { get; set; } = new List<HoaDon>();
 
     public virtual ICollection<TaiKhoan>? TaiKhoans { get; set; } = new List<TaiKhoan>();

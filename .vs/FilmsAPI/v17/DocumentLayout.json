@@ -3,20 +3,112 @@
   "WorkspaceRootPath": "D:\\CSharp\\Winforms\\FilmsAPI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|d:\\csharp\\winforms\\filmsapi\\filmsapi\\controllers\\khachhangcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|solutionrelative:filmsapi\\controllers\\khachhangcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|d:\\csharp\\winforms\\filmsapi\\filmsapi\\services\\foodservice\\foodservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|solutionrelative:filmsapi\\services\\foodservice\\foodservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|d:\\csharp\\winforms\\filmsapi\\filmsapi\\controllers\\foodcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|solutionrelative:filmsapi\\controllers\\foodcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|d:\\csharp\\winforms\\filmsapi\\filmsapi\\models\\hoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|solutionrelative:filmsapi\\models\\hoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|d:\\csharp\\winforms\\filmsapi\\filmsapi\\controllers\\banvecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|solutionrelative:filmsapi\\controllers\\banvecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|d:\\csharp\\winforms\\filmsapi\\filmsapi\\services\\banveservice\\banveservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|solutionrelative:filmsapi\\services\\banveservice\\banveservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|d:\\csharp\\winforms\\filmsapi\\filmsapi\\models\\xuatchieu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|solutionrelative:filmsapi\\models\\xuatchieu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|d:\\csharp\\winforms\\filmsapi\\filmsapi\\services\\banveservice\\ibanveservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|solutionrelative:filmsapi\\services\\banveservice\\ibanveservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|d:\\csharp\\winforms\\filmsapi\\filmsapi\\models\\ve.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|solutionrelative:filmsapi\\models\\ve.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|d:\\csharp\\winforms\\filmsapi\\filmsapi\\models\\theloaicuaphim.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|solutionrelative:filmsapi\\models\\theloaicuaphim.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|d:\\csharp\\winforms\\filmsapi\\filmsapi\\models\\taikhoan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|solutionrelative:filmsapi\\models\\taikhoan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|d:\\csharp\\winforms\\filmsapi\\filmsapi\\models\\quyen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|solutionrelative:filmsapi\\models\\quyen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|d:\\csharp\\winforms\\filmsapi\\filmsapi\\models\\phongchieu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|solutionrelative:filmsapi\\models\\phongchieu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|d:\\csharp\\winforms\\filmsapi\\filmsapi\\models\\phim.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|solutionrelative:filmsapi\\models\\phim.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|d:\\csharp\\winforms\\filmsapi\\filmsapi\\models\\nhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|solutionrelative:filmsapi\\models\\nhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|d:\\csharp\\winforms\\filmsapi\\filmsapi\\models\\manhinh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|solutionrelative:filmsapi\\models\\manhinh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|d:\\csharp\\winforms\\filmsapi\\filmsapi\\models\\loaive.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|solutionrelative:filmsapi\\models\\loaive.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|d:\\csharp\\winforms\\filmsapi\\filmsapi\\models\\loaiphim.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|solutionrelative:filmsapi\\models\\loaiphim.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|d:\\csharp\\winforms\\filmsapi\\filmsapi\\models\\loaighe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|solutionrelative:filmsapi\\models\\loaighe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|d:\\csharp\\winforms\\filmsapi\\filmsapi\\models\\khachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|solutionrelative:filmsapi\\models\\khachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|d:\\csharp\\winforms\\filmsapi\\filmsapi\\models\\ghe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|solutionrelative:filmsapi\\models\\ghe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|d:\\csharp\\winforms\\filmsapi\\filmsapi\\models\\food.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|solutionrelative:filmsapi\\models\\food.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|d:\\csharp\\winforms\\filmsapi\\filmsapi\\models\\filmsdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|solutionrelative:filmsapi\\models\\filmsdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|d:\\csharp\\winforms\\filmsapi\\filmsapi\\models\\detailfood.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|solutionrelative:filmsapi\\models\\detailfood.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|d:\\csharp\\winforms\\filmsapi\\filmsapi\\models\\dangphim.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|solutionrelative:filmsapi\\models\\dangphim.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|d:\\csharp\\winforms\\filmsapi\\filmsapi\\models\\combodetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|solutionrelative:filmsapi\\models\\combodetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|d:\\csharp\\winforms\\filmsapi\\filmsapi\\models\\combo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|solutionrelative:filmsapi\\models\\combo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|d:\\csharp\\winforms\\filmsapi\\filmsapi\\models\\chitiethoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|solutionrelative:filmsapi\\models\\chitiethoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|d:\\csharp\\winforms\\filmsapi\\filmsapi\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|solutionrelative:filmsapi\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|d:\\csharp\\winforms\\filmsapi\\filmsapi\\services\\banveservice\\banveservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25049B60-8ED4-4ACB-8C56-45FCA33578C8}|FilmsAPI\\FilmsAPI.csproj|solutionrelative:filmsapi\\services\\banveservice\\banveservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +118,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -41,54 +133,359 @@
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "KhachHangController.cs",
-              "DocumentMoniker": "D:\\CSharp\\Winforms\\FilmsAPI\\FilmsAPI\\Controllers\\KhachHangController.cs",
-              "RelativeDocumentMoniker": "FilmsAPI\\Controllers\\KhachHangController.cs",
-              "ToolTip": "D:\\CSharp\\Winforms\\FilmsAPI\\FilmsAPI\\Controllers\\KhachHangController.cs",
-              "RelativeToolTip": "FilmsAPI\\Controllers\\KhachHangController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Title": "FoodService.cs",
+              "DocumentMoniker": "D:\\CSharp\\Winforms\\FilmsAPI\\FilmsAPI\\Services\\FoodService\\FoodService.cs",
+              "RelativeDocumentMoniker": "FilmsAPI\\Services\\FoodService\\FoodService.cs",
+              "ToolTip": "D:\\CSharp\\Winforms\\FilmsAPI\\FilmsAPI\\Services\\FoodService\\FoodService.cs",
+              "RelativeToolTip": "FilmsAPI\\Services\\FoodService\\FoodService.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAAAADwAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-22T07:39:30.907Z",
+              "WhenOpened": "2024-12-29T04:11:31.918Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "BanVeController.cs",
-              "DocumentMoniker": "D:\\CSharp\\Winforms\\FilmsAPI\\FilmsAPI\\Controllers\\BanVeController.cs",
-              "RelativeDocumentMoniker": "FilmsAPI\\Controllers\\BanVeController.cs",
-              "ToolTip": "D:\\CSharp\\Winforms\\FilmsAPI\\FilmsAPI\\Controllers\\BanVeController.cs",
-              "RelativeToolTip": "FilmsAPI\\Controllers\\BanVeController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAANAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "TheLoaiCuaPhim.cs",
+              "DocumentMoniker": "D:\\CSharp\\Winforms\\FilmsAPI\\FilmsAPI\\Models\\TheLoaiCuaPhim.cs",
+              "RelativeDocumentMoniker": "FilmsAPI\\Models\\TheLoaiCuaPhim.cs",
+              "ToolTip": "D:\\CSharp\\Winforms\\FilmsAPI\\FilmsAPI\\Models\\TheLoaiCuaPhim.cs",
+              "RelativeToolTip": "FilmsAPI\\Models\\TheLoaiCuaPhim.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-21T02:48:12.29Z",
+              "WhenOpened": "2024-12-29T03:55:01.91Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "TaiKhoan.cs",
+              "DocumentMoniker": "D:\\CSharp\\Winforms\\FilmsAPI\\FilmsAPI\\Models\\TaiKhoan.cs",
+              "RelativeDocumentMoniker": "FilmsAPI\\Models\\TaiKhoan.cs",
+              "ToolTip": "D:\\CSharp\\Winforms\\FilmsAPI\\FilmsAPI\\Models\\TaiKhoan.cs",
+              "RelativeToolTip": "FilmsAPI\\Models\\TaiKhoan.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-29T03:54:57.781Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Quyen.cs",
+              "DocumentMoniker": "D:\\CSharp\\Winforms\\FilmsAPI\\FilmsAPI\\Models\\Quyen.cs",
+              "RelativeDocumentMoniker": "FilmsAPI\\Models\\Quyen.cs",
+              "ToolTip": "D:\\CSharp\\Winforms\\FilmsAPI\\FilmsAPI\\Models\\Quyen.cs",
+              "RelativeToolTip": "FilmsAPI\\Models\\Quyen.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-29T03:54:52.483Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Phim.cs",
+              "DocumentMoniker": "D:\\CSharp\\Winforms\\FilmsAPI\\FilmsAPI\\Models\\Phim.cs",
+              "RelativeDocumentMoniker": "FilmsAPI\\Models\\Phim.cs",
+              "ToolTip": "D:\\CSharp\\Winforms\\FilmsAPI\\FilmsAPI\\Models\\Phim.cs",
+              "RelativeToolTip": "FilmsAPI\\Models\\Phim.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAA/wCMAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-29T03:54:35.259Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "NhanVien.cs",
+              "DocumentMoniker": "D:\\CSharp\\Winforms\\FilmsAPI\\FilmsAPI\\Models\\NhanVien.cs",
+              "RelativeDocumentMoniker": "FilmsAPI\\Models\\NhanVien.cs",
+              "ToolTip": "D:\\CSharp\\Winforms\\FilmsAPI\\FilmsAPI\\Models\\NhanVien.cs",
+              "RelativeToolTip": "FilmsAPI\\Models\\NhanVien.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAzwAsAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-29T03:54:27.195Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ManHinh.cs",
+              "DocumentMoniker": "D:\\CSharp\\Winforms\\FilmsAPI\\FilmsAPI\\Models\\ManHinh.cs",
+              "RelativeDocumentMoniker": "FilmsAPI\\Models\\ManHinh.cs",
+              "ToolTip": "D:\\CSharp\\Winforms\\FilmsAPI\\FilmsAPI\\Models\\ManHinh.cs",
+              "RelativeToolTip": "FilmsAPI\\Models\\ManHinh.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-29T03:54:22.617Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "HoaDon.cs",
+              "DocumentMoniker": "D:\\CSharp\\Winforms\\FilmsAPI\\FilmsAPI\\Models\\HoaDon.cs",
+              "RelativeDocumentMoniker": "FilmsAPI\\Models\\HoaDon.cs",
+              "ToolTip": "D:\\CSharp\\Winforms\\FilmsAPI\\FilmsAPI\\Models\\HoaDon.cs",
+              "RelativeToolTip": "FilmsAPI\\Models\\HoaDon.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAzwAoAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-29T03:53:56.965Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Food.cs",
+              "DocumentMoniker": "D:\\CSharp\\Winforms\\FilmsAPI\\FilmsAPI\\Models\\Food.cs",
+              "RelativeDocumentMoniker": "FilmsAPI\\Models\\Food.cs",
+              "ToolTip": "D:\\CSharp\\Winforms\\FilmsAPI\\FilmsAPI\\Models\\Food.cs",
+              "RelativeToolTip": "FilmsAPI\\Models\\Food.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwBcAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-29T03:53:42.643Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "DetailFood.cs",
+              "DocumentMoniker": "D:\\CSharp\\Winforms\\FilmsAPI\\FilmsAPI\\Models\\DetailFood.cs",
+              "RelativeDocumentMoniker": "FilmsAPI\\Models\\DetailFood.cs",
+              "ToolTip": "D:\\CSharp\\Winforms\\FilmsAPI\\FilmsAPI\\Models\\DetailFood.cs",
+              "RelativeToolTip": "FilmsAPI\\Models\\DetailFood.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-29T03:53:34.823Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "DangPhim.cs",
+              "DocumentMoniker": "D:\\CSharp\\Winforms\\FilmsAPI\\FilmsAPI\\Models\\DangPhim.cs",
+              "RelativeDocumentMoniker": "FilmsAPI\\Models\\DangPhim.cs",
+              "ToolTip": "D:\\CSharp\\Winforms\\FilmsAPI\\FilmsAPI\\Models\\DangPhim.cs",
+              "RelativeToolTip": "FilmsAPI\\Models\\DangPhim.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-29T03:53:30.444Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "ComboDetail.cs",
+              "DocumentMoniker": "D:\\CSharp\\Winforms\\FilmsAPI\\FilmsAPI\\Models\\ComboDetail.cs",
+              "RelativeDocumentMoniker": "FilmsAPI\\Models\\ComboDetail.cs",
+              "ToolTip": "D:\\CSharp\\Winforms\\FilmsAPI\\FilmsAPI\\Models\\ComboDetail.cs",
+              "RelativeToolTip": "FilmsAPI\\Models\\ComboDetail.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-29T03:53:25.958Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Combo.cs",
+              "DocumentMoniker": "D:\\CSharp\\Winforms\\FilmsAPI\\FilmsAPI\\Models\\Combo.cs",
+              "RelativeDocumentMoniker": "FilmsAPI\\Models\\Combo.cs",
+              "ToolTip": "D:\\CSharp\\Winforms\\FilmsAPI\\FilmsAPI\\Models\\Combo.cs",
+              "RelativeToolTip": "FilmsAPI\\Models\\Combo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-29T03:53:22.005Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "ChiTietHoaDon.cs",
+              "DocumentMoniker": "D:\\CSharp\\Winforms\\FilmsAPI\\FilmsAPI\\Models\\ChiTietHoaDon.cs",
+              "RelativeDocumentMoniker": "FilmsAPI\\Models\\ChiTietHoaDon.cs",
+              "ToolTip": "D:\\CSharp\\Winforms\\FilmsAPI\\FilmsAPI\\Models\\ChiTietHoaDon.cs",
+              "RelativeToolTip": "FilmsAPI\\Models\\ChiTietHoaDon.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-29T03:53:17.595Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Category.cs",
+              "DocumentMoniker": "D:\\CSharp\\Winforms\\FilmsAPI\\FilmsAPI\\Models\\Category.cs",
+              "RelativeDocumentMoniker": "FilmsAPI\\Models\\Category.cs",
+              "ToolTip": "D:\\CSharp\\Winforms\\FilmsAPI\\FilmsAPI\\Models\\Category.cs",
+              "RelativeToolTip": "FilmsAPI\\Models\\Category.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-29T03:53:06.492Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FoodController.cs",
+              "DocumentMoniker": "D:\\CSharp\\Winforms\\FilmsAPI\\FilmsAPI\\Controllers\\FoodController.cs",
+              "RelativeDocumentMoniker": "FilmsAPI\\Controllers\\FoodController.cs",
+              "ToolTip": "D:\\CSharp\\Winforms\\FilmsAPI\\FilmsAPI\\Controllers\\FoodController.cs",
+              "RelativeToolTip": "FilmsAPI\\Controllers\\FoodController.cs",
+              "ViewState": "AgIAADIAAAAAAAAAAAAAAFYAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-29T03:21:09.68Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "LoaiPhim.cs",
+              "DocumentMoniker": "D:\\CSharp\\Winforms\\FilmsAPI\\FilmsAPI\\Models\\LoaiPhim.cs",
+              "RelativeDocumentMoniker": "FilmsAPI\\Models\\LoaiPhim.cs",
+              "ToolTip": "D:\\CSharp\\Winforms\\FilmsAPI\\FilmsAPI\\Models\\LoaiPhim.cs",
+              "RelativeToolTip": "FilmsAPI\\Models\\LoaiPhim.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAuwAsAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-29T03:20:59.627Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "LoaiGhe.cs",
+              "DocumentMoniker": "D:\\CSharp\\Winforms\\FilmsAPI\\FilmsAPI\\Models\\LoaiGhe.cs",
+              "RelativeDocumentMoniker": "FilmsAPI\\Models\\LoaiGhe.cs",
+              "ToolTip": "D:\\CSharp\\Winforms\\FilmsAPI\\FilmsAPI\\Models\\LoaiGhe.cs",
+              "RelativeToolTip": "FilmsAPI\\Models\\LoaiGhe.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-29T03:10:11.992Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Ghe.cs",
+              "DocumentMoniker": "D:\\CSharp\\Winforms\\FilmsAPI\\FilmsAPI\\Models\\Ghe.cs",
+              "RelativeDocumentMoniker": "FilmsAPI\\Models\\Ghe.cs",
+              "ToolTip": "D:\\CSharp\\Winforms\\FilmsAPI\\FilmsAPI\\Models\\Ghe.cs",
+              "RelativeToolTip": "FilmsAPI\\Models\\Ghe.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABUAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-29T03:09:55.42Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "LoaiVe.cs",
+              "DocumentMoniker": "D:\\CSharp\\Winforms\\FilmsAPI\\FilmsAPI\\Models\\LoaiVe.cs",
+              "RelativeDocumentMoniker": "FilmsAPI\\Models\\LoaiVe.cs",
+              "ToolTip": "D:\\CSharp\\Winforms\\FilmsAPI\\FilmsAPI\\Models\\LoaiVe.cs",
+              "RelativeToolTip": "FilmsAPI\\Models\\LoaiVe.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-29T03:09:43.272Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "XuatChieu.cs",
+              "DocumentMoniker": "D:\\CSharp\\Winforms\\FilmsAPI\\FilmsAPI\\Models\\XuatChieu.cs",
+              "RelativeDocumentMoniker": "FilmsAPI\\Models\\XuatChieu.cs",
+              "ToolTip": "D:\\CSharp\\Winforms\\FilmsAPI\\FilmsAPI\\Models\\XuatChieu.cs",
+              "RelativeToolTip": "FilmsAPI\\Models\\XuatChieu.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwBcAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-29T03:09:35.472Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "FilmsDbContext.cs",
+              "DocumentMoniker": "D:\\CSharp\\Winforms\\FilmsAPI\\FilmsAPI\\Models\\FilmsDbContext.cs",
+              "RelativeDocumentMoniker": "FilmsAPI\\Models\\FilmsDbContext.cs",
+              "ToolTip": "D:\\CSharp\\Winforms\\FilmsAPI\\FilmsAPI\\Models\\FilmsDbContext.cs",
+              "RelativeToolTip": "FilmsAPI\\Models\\FilmsDbContext.cs",
+              "ViewState": "AgIAADcAAAAAAAAAAAAAAD8AAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-29T03:02:42.66Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "KhachHang.cs",
+              "DocumentMoniker": "D:\\CSharp\\Winforms\\FilmsAPI\\FilmsAPI\\Models\\KhachHang.cs",
+              "RelativeDocumentMoniker": "FilmsAPI\\Models\\KhachHang.cs",
+              "ToolTip": "D:\\CSharp\\Winforms\\FilmsAPI\\FilmsAPI\\Models\\KhachHang.cs",
+              "RelativeToolTip": "FilmsAPI\\Models\\KhachHang.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAQwBkAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-29T03:00:17.904Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "PhongChieu.cs",
+              "DocumentMoniker": "D:\\CSharp\\Winforms\\FilmsAPI\\FilmsAPI\\Models\\PhongChieu.cs",
+              "RelativeDocumentMoniker": "FilmsAPI\\Models\\PhongChieu.cs",
+              "ToolTip": "D:\\CSharp\\Winforms\\FilmsAPI\\FilmsAPI\\Models\\PhongChieu.cs",
+              "RelativeToolTip": "FilmsAPI\\Models\\PhongChieu.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwBcAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-29T03:00:12.589Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Ve.cs",
+              "DocumentMoniker": "D:\\CSharp\\Winforms\\FilmsAPI\\FilmsAPI\\Models\\Ve.cs",
+              "RelativeDocumentMoniker": "FilmsAPI\\Models\\Ve.cs",
+              "ToolTip": "D:\\CSharp\\Winforms\\FilmsAPI\\FilmsAPI\\Models\\Ve.cs",
+              "RelativeToolTip": "FilmsAPI\\Models\\Ve.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAYwBkAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-29T02:59:22.645Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
               "Title": "BanVeService.cs",
               "DocumentMoniker": "D:\\CSharp\\Winforms\\FilmsAPI\\FilmsAPI\\Services\\BanVeService\\BanVeService.cs",
               "RelativeDocumentMoniker": "FilmsAPI\\Services\\BanVeService\\BanVeService.cs",
               "ToolTip": "D:\\CSharp\\Winforms\\FilmsAPI\\FilmsAPI\\Services\\BanVeService\\BanVeService.cs",
               "RelativeToolTip": "FilmsAPI\\Services\\BanVeService\\BanVeService.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABcAAAAcAAAAAAAAAA==",
+              "ViewState": "AgIAADAAAAAAAAAAAAAhwEEAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-21T02:46:40.325Z"
+              "WhenOpened": "2024-12-29T02:54:33.128Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "IBanVeService.cs",
-              "DocumentMoniker": "D:\\CSharp\\Winforms\\FilmsAPI\\FilmsAPI\\Services\\BanVeService\\IBanVeService.cs",
-              "RelativeDocumentMoniker": "FilmsAPI\\Services\\BanVeService\\IBanVeService.cs",
-              "ToolTip": "D:\\CSharp\\Winforms\\FilmsAPI\\FilmsAPI\\Services\\BanVeService\\IBanVeService.cs",
-              "RelativeToolTip": "FilmsAPI\\Services\\BanVeService\\IBanVeService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAABPAAAAAAAAAA==",
+              "Title": "BanVeController.cs",
+              "DocumentMoniker": "D:\\CSharp\\Winforms\\FilmsAPI\\FilmsAPI\\Controllers\\BanVeController.cs",
+              "RelativeDocumentMoniker": "FilmsAPI\\Controllers\\BanVeController.cs",
+              "ToolTip": "D:\\CSharp\\Winforms\\FilmsAPI\\FilmsAPI\\Controllers\\BanVeController.cs",
+              "RelativeToolTip": "FilmsAPI\\Controllers\\BanVeController.cs",
+              "ViewState": "AgIAAKsAAAAAAAAAAAAwwLUAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-21T02:45:51.44Z"
+              "WhenOpened": "2024-12-29T02:53:21.834Z",
+              "EditorCaption": ""
             }
           ]
         },

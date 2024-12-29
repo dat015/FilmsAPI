@@ -40,7 +40,7 @@ namespace FilmsAPI.Controllers
                 return Ok(new { Message = "Success for save foods" });
             }
             catch (Exception ex)
-            {
+            {   
                 return StatusCode(500, new { Message = ex.Message });
             }
         }
@@ -112,7 +112,9 @@ namespace FilmsAPI.Controllers
         [HttpGet("Doan")]
         public async Task<ActionResult> GetDoAn()
         {
-            var result = await _db.Foods.ToListAsync();
+            var result = await _db.Foods
+                .Include(p => p.Cate)
+                .ToListAsync();
             return Ok(result);
         }
 
@@ -176,7 +178,7 @@ namespace FilmsAPI.Controllers
         }
 
         [HttpPost("GetVeTheoGhe/{maXuatChieu}")]
-        public async Task<ActionResult> GetVe([FromBody] List<Ghe> listGhe, int maXuatChieu)
+        public async Task<ActionResult> GetVe(int maXuatChieu, [FromBody] List<Ghe> listGhe)
         {
             try
             {

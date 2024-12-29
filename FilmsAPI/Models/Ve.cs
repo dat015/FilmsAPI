@@ -14,7 +14,7 @@ public partial class Ve
     public int MaLoaiVe { get; set; }
 
     public int MaGhe { get; set; }
-     
+
     public int MaXuatChieu { get; set; }
 
     public virtual ICollection<ChiTietHoaDon>? ChiTietHoaDons { get; set; } = new List<ChiTietHoaDon>();

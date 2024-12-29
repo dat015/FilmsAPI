@@ -7,7 +7,6 @@ namespace FilmsAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [RoleAuthorizationFilter("Admin")]
 
     public class NhanVienController : ControllerBase
     {
@@ -35,6 +34,19 @@ namespace FilmsAPI.Controllers
                 return BadRequest($"Lỗi: {ex.Message}");
             }
         }
+        //Lấy nhân viên theo sdt nhân viên
+        [HttpGet("byPhone/{phoneNumber}", Name = "GetNhanVienBySDT")]
+
+        public async Task<IActionResult> GetNhanVienBySDT(string phoneNumber)
+        {
+            var nhanVien = await _db.NhanViens.FirstOrDefaultAsync(nv => nv.Sdt == phoneNumber);
+            if (nhanVien == null)
+            {
+                return NotFound("Không tìm thấy nhân viên");
+            }
+            return Ok(nhanVien);
+        }
+
         //Lấy nhân viên theo mã nhân viên
         [HttpGet("{manhanvien}", Name = "GetNhanVienById")]
         public async Task<IActionResult> GetNhanVienById(int manhanvien)
@@ -47,8 +59,7 @@ namespace FilmsAPI.Controllers
             return Ok(nhanVien);
         }
 
-            // POST: api/NhanVien (Sử dụng POST thay vì PUT cho thêm mới)
-            [HttpPost(Name = "AddNhanVien")]
+        [HttpPost(Name = "AddNhanVien")]
         public async Task<IActionResult> AddNhanVien([FromBody] NhanVien dto)
         {
             if (dto == null)
@@ -65,7 +76,9 @@ namespace FilmsAPI.Controllers
                     Sdt = dto.Sdt,
                     Email = dto.Email,
                     MatKhau = dto.MatKhau,
-                    MaQuyen = dto.MaQuyen
+                    MaQuyen = dto.MaQuyen,
+                    RandomKey = dto.RandomKey,
+                    TenAlias = dto.TenAlias,
                 };
 
                 await _db.NhanViens.AddAsync(nhanVien);
@@ -77,7 +90,6 @@ namespace FilmsAPI.Controllers
                 return BadRequest($"Lỗi: {ex.Message}");
             }
         }
-
         // PUT: api/NhanVien (Cập nhật thông tin nhân viên)
         [HttpPut("{manhanvien}", Name = "UpdateNhanVien")]
         public async Task<IActionResult> UpdateNhanVien(int manhanvien, [FromBody] NhanVien dto)

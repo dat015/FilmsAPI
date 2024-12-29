@@ -140,6 +140,8 @@ public partial class FilmsDbContext : DbContext
 
             entity.ToTable("DetailFood");
 
+            entity.Property(e => e.ThanhTien).HasColumnType("decimal(18, 0)");
+
             entity.HasOne(d => d.Food).WithMany(p => p.DetailFoods)
                 .HasForeignKey(d => d.FoodId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
@@ -217,10 +219,18 @@ public partial class FilmsDbContext : DbContext
 
             entity.ToTable("KhachHang");
 
+            entity.HasIndex(e => e.Cccd, "UQ_CCCD").IsUnique();
+
             entity.Property(e => e.MaKh).HasColumnName("MaKH");
+            entity.Property(e => e.Cccd)
+                .HasMaxLength(12)
+                .IsUnicode(false)
+                .IsFixedLength()
+                .HasColumnName("CCCD");
             entity.Property(e => e.Email)
                 .HasMaxLength(100)
                 .IsUnicode(false);
+            entity.Property(e => e.NgaySinh).HasColumnType("datetime");
             entity.Property(e => e.Sdt)
                 .HasMaxLength(20)
                 .IsUnicode(false)
@@ -282,10 +292,12 @@ public partial class FilmsDbContext : DbContext
             entity.Property(e => e.MatKhau)
                 .HasMaxLength(50)
                 .IsUnicode(false);
+            entity.Property(e => e.RandomKey).HasMaxLength(50);
             entity.Property(e => e.Sdt)
                 .HasMaxLength(20)
                 .IsUnicode(false)
                 .HasColumnName("SDT");
+            entity.Property(e => e.TenAlias).HasMaxLength(50);
             entity.Property(e => e.TenNv)
                 .HasMaxLength(200)
                 .HasColumnName("TenNV");
