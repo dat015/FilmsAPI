@@ -11,7 +11,6 @@ namespace FilmsAPI.Controllers
     [Route("api/[controller]")]
     [ApiController]
     [RoleAuthorizationFilter("Admin")]
-
     public class LoaiPhimController : ControllerBase
     {
         private readonly FilmsDbContext _context;
@@ -36,11 +35,11 @@ namespace FilmsAPI.Controllers
                     return NotFound(new { message = "Không tìm thấy loại phim nào." });
                 }
 
-                return Ok(loaiPhims);
+                return Ok(new { message = "Lấy danh sách loại phim thành công.", data = loaiPhims });
             }
             catch (Exception ex)
             {
-                return BadRequest(new { message = ex.Message });
+                return BadRequest(new { message = "Lỗi khi lấy danh sách loại phim: " + ex.Message });
             }
         }
 
@@ -58,11 +57,11 @@ namespace FilmsAPI.Controllers
                     return NotFound(new { message = "Không tìm thấy loại phim với MaTheLoai " + id });
                 }
 
-                return Ok(loaiPhim);
+                return Ok(new { message = "Lấy thông tin loại phim thành công.", data = loaiPhim });
             }
             catch (Exception ex)
             {
-                return BadRequest(new { message = ex.Message });
+                return BadRequest(new { message = "Lỗi khi lấy thông tin loại phim: " + ex.Message });
             }
         }
 
@@ -80,19 +79,19 @@ namespace FilmsAPI.Controllers
                 _context.LoaiPhims.Add(loaiPhim);
                 await _context.SaveChangesAsync();
 
-                return Ok(new { Message = "Thêm thể loại thành công"});
+                return Ok(new { message = "Thêm loại phim thành công.", data = loaiPhim });
             }
             catch (Exception ex)
             {
-                return BadRequest(new { message = ex.Message });
+                return BadRequest(new { message = "Lỗi khi thêm loại phim: " + ex.Message });
             }
         }
 
         // PUT: api/LoaiPhim/{id}
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateLoaiPhim([FromBody] LoaiPhim loaiPhim)
+        public async Task<IActionResult> UpdateLoaiPhim(int id, [FromBody] LoaiPhim loaiPhim)
         {
-            if (loaiPhim == null || loaiPhim.MaTheLoai != loaiPhim.MaTheLoai)
+            if (loaiPhim == null || id != loaiPhim.MaTheLoai)
             {
                 return BadRequest(new { message = "Dữ liệu không hợp lệ hoặc MaTheLoai không khớp." });
             }
@@ -100,11 +99,11 @@ namespace FilmsAPI.Controllers
             try
             {
                 var existingLoaiPhim = await _context.LoaiPhims
-                    .FirstOrDefaultAsync(lp => lp.MaTheLoai == loaiPhim.MaTheLoai);
+                    .FirstOrDefaultAsync(lp => lp.MaTheLoai == id);
 
                 if (existingLoaiPhim == null)
                 {
-                    return NotFound(new { message = "Không tìm thấy loại phim với MaTheLoai " + loaiPhim.MaTheLoai });
+                    return NotFound(new { message = "Không tìm thấy loại phim với MaTheLoai " + id });
                 }
 
                 // Cập nhật thông tin loại phim
@@ -112,11 +111,11 @@ namespace FilmsAPI.Controllers
 
                 await _context.SaveChangesAsync();
 
-                return Ok(new { message = "Cập nhật loại phim thành công." });
+                return Ok(new { message = "Cập nhật loại phim thành công.", data = existingLoaiPhim });
             }
             catch (Exception ex)
             {
-                return BadRequest(new { message = ex.Message });
+                return BadRequest(new { message = "Lỗi khi cập nhật loại phim: " + ex.Message });
             }
         }
 
@@ -131,17 +130,17 @@ namespace FilmsAPI.Controllers
 
                 if (loaiPhim == null)
                 {
-                    return NotFound();
+                    return NotFound(new { message = "Không tìm thấy loại phim với MaTheLoai " + id });
                 }
 
                 _context.LoaiPhims.Remove(loaiPhim);
                 await _context.SaveChangesAsync();
 
-                return Ok();
+                return Ok(new { message = "Xóa loại phim thành công." });
             }
             catch (Exception ex)
             {
-                return BadRequest();
+                return BadRequest(new { message = "Lỗi khi xóa loại phim: " + ex.Message });
             }
         }
     }

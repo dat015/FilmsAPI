@@ -26,10 +26,14 @@ namespace FilmsAPI.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAllLoaiGhe()
         {
-            var loaiGhe = await _context.LoaiGhes
-                .ToListAsync();
+            var loaiGhe = await _context.LoaiGhes.ToListAsync();
 
-            return Ok(loaiGhe);
+            if (loaiGhe == null || loaiGhe.Count == 0)
+            {
+                return NotFound(new { message = "Không tìm thấy loại ghế nào." });
+            }
+
+            return Ok(new { message = "Lấy danh sách loại ghế thành công.", data = loaiGhe });
         }
 
         // GET: api/LoaiGhe/{id}
@@ -46,11 +50,11 @@ namespace FilmsAPI.Controllers
                     return NotFound(new { message = "Không tìm thấy loại ghế với MaLoai " + id });
                 }
 
-                return Ok(loaiGhe);
+                return Ok(new { message = "Lấy thông tin loại ghế thành công.", data = loaiGhe });
             }
             catch (Exception ex)
             {
-                return BadRequest(new { message = ex.Message });
+                return BadRequest(new { message = "Lỗi khi lấy thông tin loại ghế: " + ex.Message });
             }
         }
 
@@ -72,7 +76,7 @@ namespace FilmsAPI.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(new { message = ex.Message });
+                return BadRequest(new { message = "Lỗi khi tạo mới loại ghế: " + ex.Message });
             }
         }
 
@@ -104,7 +108,7 @@ namespace FilmsAPI.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(new { message = ex.Message });
+                return BadRequest(new { message = "Lỗi khi cập nhật loại ghế: " + ex.Message });
             }
         }
 
@@ -129,7 +133,7 @@ namespace FilmsAPI.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(new { message = ex.Message });
+                return BadRequest(new { message = "Lỗi khi xóa loại ghế: " + ex.Message });
             }
         }
     }
