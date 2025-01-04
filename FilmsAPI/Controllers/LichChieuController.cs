@@ -35,6 +35,26 @@ namespace FilmsAPI.Controllers
             {
                 return BadRequest(new { message = ex.Message });
             }
+        } 
+        [HttpGet("GetXuatChieuByTime")]
+        public async Task<IActionResult> GetXuatChieuByTime()
+        {
+            try
+            {
+                var xuatChieu = await _db.XuatChieus
+                    .Include(x => x.MaPhimNavigation)
+                    .ThenInclude(x => x.TheLoaiCuaPhims)
+                    .ThenInclude(x => x.MaTheLoaiNavigation)
+                    .Include(x => x.MaPhongNavigation)
+                    .Where(item => item.ThoiGianBatDau > DateTime.Now)
+                    .ToListAsync();
+
+                return Ok(xuatChieu);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
         }
 
         // Lấy tất cả các phim

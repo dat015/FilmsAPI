@@ -34,6 +34,7 @@ namespace FilmsAPI.Controllers
                 return BadRequest(new { message = ex.Message });
             }
         }
+       
         [HttpGet("{id}")]
         public async Task<ActionResult> GetXuatChieu(int id)
         {

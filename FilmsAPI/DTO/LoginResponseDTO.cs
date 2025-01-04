@@ -6,5 +6,6 @@ namespace FilmsAPI.DTO
     {
         public string? Token { get; set; }
         public NhanVien? User { get; set; }
+        public string? TenAlias { get; set; }
     }
 }

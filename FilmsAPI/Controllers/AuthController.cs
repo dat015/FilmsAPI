@@ -37,7 +37,8 @@ namespace FilmsAPI.Controllers
             {
                 Token = loginResponse.Token,
                 User = loginResponse.User,
-                Message = "Đăng nhập thành công!"
+                Message = "Đăng nhập thành công!",
+
             });
         }
     }
