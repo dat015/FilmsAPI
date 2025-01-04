@@ -10,6 +10,7 @@ public partial class XuatChieu
     public DateTime? ThoiGianBatDau { get; set; }
 
     public DateTime? ThoiGianKetThuc { get; set; }
+    public decimal? GiaCoBan { get; set; }
 
     public int MaPhong { get; set; }
 

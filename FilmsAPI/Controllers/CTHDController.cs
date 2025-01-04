@@ -42,6 +42,30 @@ namespace FilmsAPI.Controllers
                 return BadRequest(new { message = ex.Message });
             }
         }
+
+        [HttpGet("AllHD")]
+        public async Task<IActionResult> GetAllCTHD()
+        {
+            try
+            {
+                var result = await _db.ChiTietHoaDons.ToListAsync();
+
+                if (result != null)
+                {
+                    return Ok(result); 
+                }
+                else
+                {
+                    return NotFound(new List<ChiTietHoaDon>());
+                }
+            }
+            catch (Exception ex)
+            {
+                // Xử lý lỗi (ví dụ: ghi log lỗi)
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
+        }
+
         // POST: api/CTHD
         [HttpPost]
         public async Task<IActionResult> CreateChiTietHoaDon([FromBody] ChiTietHoaDon dto)

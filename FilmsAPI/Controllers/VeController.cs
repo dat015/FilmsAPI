@@ -8,7 +8,7 @@ namespace FilmsAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [RoleAuthorizationFilter("Admin")]
+    //[RoleAuthorizationFilter("Admin")]
 
     public class VeController : ControllerBase
     {
@@ -16,7 +16,7 @@ namespace FilmsAPI.Controllers
 
         public VeController()
         {
-            _db = new FilmsDbContext();                
+            _db = new FilmsDbContext();
         }
 
         // Lấy danh sách tất cả vé
@@ -29,6 +29,22 @@ namespace FilmsAPI.Controllers
                     .Include(v => v.MaLoaiVeNavigation)
                     .Include(v => v.MaGheNavigation)
                     .Include(v => v.MaXuatChieuNavigation)
+                    .ToListAsync();
+                return Ok(ve);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            }
+        }
+
+        [HttpGet("VeDaBan")]
+        public async Task<IActionResult> GetVeDaban()
+        {
+            try
+            {
+                var ve = await _db.Ves
+                    .Where(v => v.TrangThai == true)
                     .ToListAsync();
                 return Ok(ve);
             }
@@ -125,7 +141,7 @@ namespace FilmsAPI.Controllers
                 {
                     return NotFound(new { Message = "Không tìm thấy vé nào để xóa." });
                 }
-      
+
 
                 _db.RemoveRange(existingVe);
                 await _db.SaveChangesAsync();
@@ -134,7 +150,7 @@ namespace FilmsAPI.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(new { Message = ex.Message});
+                return BadRequest(new { Message = ex.Message });
             }
         }
 

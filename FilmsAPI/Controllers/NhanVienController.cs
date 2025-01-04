@@ -2,6 +2,8 @@
 using Microsoft.EntityFrameworkCore;
 using FilmsAPI.Models;
 using FilmsAPI.Filters;
+using FilmsAPI.Services.Mail;
+using FilmsManage.Helper;
 
 namespace FilmsAPI.Controllers
 {
@@ -33,6 +35,38 @@ namespace FilmsAPI.Controllers
             {
                 return BadRequest($"Lỗi: {ex.Message}");
             }
+        }
+        [HttpGet("DoiMatKhau/{id}")]
+        public async Task<IActionResult> SendEmail(int id)
+        {
+           
+
+            // Tìm người dùng theo email
+            var user = await _db.NhanViens.FirstOrDefaultAsync(u => u.MaNv == id);
+            if (user != null)
+            {
+                string randomKey = GenerateRandomString(6);
+                var pass = randomKey.ToMd5Hash(user.RandomKey);
+                user.MatKhau = pass;
+                await _db.SaveChangesAsync();
+
+                // Gửi lại email xác nhận
+                SendMail.SendEmail(user.Email, "Mật khẩu mới của bạn", randomKey, "");
+                return Ok("Thay đổi thành công!");
+
+            }
+
+
+            // Trả về view đăng nhập với thông báo
+            return BadRequest("Thay đổi mật khẩu mới thất bại!");
+        }
+        private string GenerateRandomString(int length)
+        {
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+            var random = new Random();
+            return new string(Enumerable.Repeat(chars, length)
+                                        .Select(s => s[random.Next(s.Length)])
+                                        .ToArray());
         }
         //Lấy nhân viên theo sdt nhân viên
         [HttpGet("byPhone/{phoneNumber}", Name = "GetNhanVienBySDT")]
@@ -69,13 +103,15 @@ namespace FilmsAPI.Controllers
 
             try
             {
+                string randomKey = GenerateRandomString(6);
+
                 // Thêm nhân viên mới
                 var nhanVien = new NhanVien
                 {
                     TenNv = dto.TenNv,
                     Sdt = dto.Sdt,
                     Email = dto.Email,
-                    MatKhau = dto.MatKhau,
+                    MatKhau = randomKey,
                     MaQuyen = dto.MaQuyen,
                     RandomKey = dto.RandomKey,
                     TenAlias = dto.TenAlias,
@@ -83,7 +119,7 @@ namespace FilmsAPI.Controllers
 
                 await _db.NhanViens.AddAsync(nhanVien);
                 await _db.SaveChangesAsync();
-                return Ok("Thêm nhân viên thành công");
+                return Ok(randomKey);
             }
             catch (Exception ex)
             {
@@ -102,8 +138,6 @@ namespace FilmsAPI.Controllers
             nhanVien.TenNv = dto.TenNv;
             nhanVien.Sdt = dto.Sdt;
             nhanVien.Email = dto.Email;
-            nhanVien.MatKhau = dto.MatKhau;
-            nhanVien.MaQuyen = dto.MaQuyen;
             try
             {
                 await _db.SaveChangesAsync();

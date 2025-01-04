@@ -13,7 +13,7 @@ public partial class NhanVien
 
     public string Email { get; set; } = null!;
 
-    public string MatKhau { get; set; } = null!;
+    public string? MatKhau { get; set; } = null!;
 
     public int MaQuyen { get; set; }
 
