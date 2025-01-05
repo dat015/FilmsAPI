@@ -13,7 +13,7 @@ namespace FilmsAPI.Controllers
     public class DangPhimController : ControllerBase
     {
 
-     
+
         private readonly FilmsDbContext _db;
 
         // Dependency Injection cho DbContext
@@ -33,7 +33,7 @@ namespace FilmsAPI.Controllers
                     .ToListAsync();
                 return Ok(dangPhim);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return NotFound(new { message = "Không tìm thấy dữ liệu dạng phim." });
 
@@ -132,6 +132,34 @@ namespace FilmsAPI.Controllers
             catch (Exception ex)
             {
                 return BadRequest(new { message = "Đã xảy ra lỗi khi thêm mới dạng phim.", error = ex.Message });
+
+            }
+        }
+
+        [HttpDelete("DeleteById/{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            if (id == 0)
+            {
+                return BadRequest("Vui lòng chọn 1 dạng phim để xóa!");
+            }
+            try
+            {
+                var dangPhim = await _db.DangPhims.FindAsync(id);
+                if (dangPhim == null)
+                {
+                    return BadRequest("Dạng phim này không tồn tại");
+                }
+
+                _db.DangPhims.Remove(dangPhim);
+                await _db.SaveChangesAsync();
+
+                return Ok("Xóa thành công!");
+                
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
 
             }
         }

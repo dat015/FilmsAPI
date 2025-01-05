@@ -115,5 +115,31 @@ namespace FilmsAPI.Controllers
                 return BadRequest(new { message = ex.Message, stackTrace = ex.StackTrace });
             }
         }
+
+        [HttpDelete("DeleteById/{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            if(id == 0)
+            {
+                return BadRequest("Vui lòng chọn một phòng chiếu để xóa!");
+            }
+            try
+            {
+                var phongChieu = await _db.PhongChieus.FindAsync(id);
+                if(phongChieu == null)
+                {
+                    return BadRequest("Phòng chiếu không tồn tại!");
+                }
+
+                _db.PhongChieus.Remove(phongChieu);
+                await _db.SaveChangesAsync();
+                return Ok("Xóa thành công!");
+            }
+            catch( Exception ex)
+            {
+                return BadRequest("Không thể xóa. Lỗi:  " +ex.Message);
+
+            }
+        }
     }
 }
